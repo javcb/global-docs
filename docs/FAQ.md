@@ -11,6 +11,12 @@ see [UPDATING.md](UPDATING.md).
 
 ---
 
+## How do I update the documentation site?
+
+Edit the relevant `.md` file and push to `main`. The site rebuilds and republishes automatically within 60 seconds. See [UPDATING.md](UPDATING.md) for full details.
+
+---
+
 ## Where do I start if I've been away for a while?
 
 1. Read [orgs/overview.md](orgs/overview.md) — remind yourself what each org is for

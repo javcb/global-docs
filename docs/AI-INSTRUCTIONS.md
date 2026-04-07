@@ -42,6 +42,23 @@ see [processes/operational-model.md](processes/operational-model.md).
 - When referencing a cross-repo asset, check [architecture/registry.md](architecture/registry.md) first
 - Update [index.md](index.md) master index when adding a new file to this repo
 
+### Adding new documentation pages
+
+When creating a new .md file anywhere in this repo:
+1. Create the file in the correct folder within docs/
+2. Open mkdocs.yml and add one nav entry under the correct section
+3. Position it alphabetically or logically within that section
+4. Do not reorder existing nav entries
+5. Push to main — the site rebuilds automatically
+
+Never create a .md file without a corresponding mkdocs.yml nav entry.
+The file will exist but will be invisible to the site and search if omitted.
+
+**Critical rule:** All markdown files live exclusively in `docs/` and its subdirectories.
+Never create documentation .md files at the repo root or in root-level subdirectories.
+The only permitted root-level .md file is `README.md`, which serves as a GitHub landing
+page pointing to the docs site at https://javcb.github.io/global-docs/.
+
 ## This repo structure
 
 orgs/          GitHub organization rules and purposes

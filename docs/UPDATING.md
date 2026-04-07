@@ -4,6 +4,48 @@ This page is the **single source** for when and how to change global-docs, run d
 
 ---
 
+## How the documentation site is published
+
+The documentation site at https://javcb.github.io/global-docs/ is auto-generated
+from the markdown files in this repo using MkDocs Material.
+
+**You never manually update the site.** The only thing you edit is markdown files.
+
+### How publishing works
+
+1. You edit or add a `.md` file in this repo
+2. You push to `main`
+3. GitHub Actions runs `.github/workflows/deploy-docs.yml` automatically
+4. MkDocs builds the site from all markdown files
+5. The built site is pushed to the `gh-pages` branch
+6. GitHub Pages serves it live at https://javcb.github.io/global-docs/
+
+Build time is approximately 30–60 seconds after pushing.
+
+### To preview before pushing
+
+```bash
+pip install -r requirements-docs.txt   # one-time setup
+mkdocs serve                           # starts local server
+```
+
+Then open http://127.0.0.1:8000 — full nav, search, and styling work here.
+Hot-reloads as you save changes. Use this to check formatting before pushing.
+
+### To add a new page
+
+1. Create the `.md` file in the appropriate folder
+2. Add it to the `nav:` section of `mkdocs.yml` in the correct position
+3. Push to `main` — the site updates automatically
+
+### What not to do
+
+- Do not edit anything inside `site/` — it is auto-generated and gitignored
+- Do not run `mkdocs build` and commit the output — the workflow handles this
+- Do not manually upload files to the `gh-pages` branch
+
+---
+
 ## 1. When to update (one-off changes vs. full audit)
 
 ### One-off updates

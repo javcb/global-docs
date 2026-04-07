@@ -118,6 +118,15 @@ placeholder content:
 - FAQ.md at repo root
 - UPDATING.md at repo root
 
+## 10. Duplicate filename check
+
+- Scan the entire repo for filenames appearing in more than one directory
+- Flag any root-level .md files that duplicate files in docs/
+- Verify docs/ is the single source of truth for all documentation
+- Verify no subdirectory outside docs/ contains .md files that belong in docs/
+- Confirm all markdown files live exclusively in docs/ and its subdirectories
+- Recommend deletion of any duplicate found outside docs/
+
 ---
 
 ## Report format
@@ -136,7 +145,7 @@ End with:
 
 ---
 
-## 10. Open items review
+## 11. Open items review
 
 - Open OPEN-ITEMS.md
 - For each unchecked item: verify whether it has been completed
