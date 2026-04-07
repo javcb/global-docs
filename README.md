@@ -113,6 +113,8 @@ Short version: edit the right file, keep it concise, update the index if you add
 |---|---|
 | `processes/maker-checker.md` | AI maker + checker review before promotion |
 | `processes/autonomous-build.md` | How to trigger any LLM for a full project build |
+| `processes/ai-tool-roles.md` | When and how to use Cursor vs Claude Code vs Copilot |
+| `processes/ai-tool-setup.md` | How to set up Cursor, Claude Code, and new AI tools |
 | `processes/repo-setup-standard.md` | Required structure for all repos |
 | `processes/new-repo-checklist.md` | Pre-flight checklist for any new repo |
 | `processes/access-tokens.md` | How to set up and manage GitHub access tokens |
@@ -123,7 +125,6 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `processes/template-intake.md` | How to add a purchased template to javcb-templates |
 | `processes/operational-model.md` | What is safe to automate, schema rules, rollback, ADRs |
 | `processes/workflow-scenarios.md` | Step-by-step paths for common project types (prototype, prod, refactor) |
-| `processes/ai-tool-setup.md` | How to set up Cursor, Claude Code, and new AI tools |
 | `processes/setup-history.md` | Log of major decisions and setup history |
 | `processes/expansion-roadmap.md` | Future documentation domains beyond engineering |
 | `processes/link-checker-setup.md` | Automated link checking via GitHub Actions |
@@ -142,6 +143,7 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `standards/commit-messages.md` | Commit message conventions |
 | `standards/branch-discipline.md` | Branch naming and workflow |
 | `standards/naming.md` | File, folder, and variable naming rules |
+| `standards/prompt-format.md` | How to format reusable prompts for copy-paste use |
 | `standards/ui-behavior.md` | UI behavior standards for sites and apps (state, nav, scroll, zoom, responsive) |
 
 ### Context

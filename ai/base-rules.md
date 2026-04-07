@@ -59,6 +59,16 @@ Rationale: global-docs is a living document. Rules change.
 A tool operating on stale rules will produce work that does not conform
 to current standards, which creates cleanup work and trust problems.
 
+## Prompt output format
+
+When generating a reusable prompt for the owner to copy and run:
+- Always use a fenced code block with the language tag: `prompt`
+- Make the prompt self-contained (include all necessary context)
+- Label the intended tool at the top if the prompt is tool-specific
+- Do not use plain text, blockquotes, or bold text for reusable prompts
+
+See [standards/prompt-format.md](../standards/prompt-format.md) for full rules.
+
 ## Rule override limits
 
 Repo-level AI-INSTRUCTIONS.md files may customize global rules for their context.

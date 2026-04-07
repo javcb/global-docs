@@ -21,6 +21,8 @@ Items are ordered by priority within each section.
 - [ ] Fill in context/roles.md with real content
 - [ ] Fill in context/priorities.md with real content
 - [ ] Fill in context/constraints.md with real content
+- [ ] Go through all existing prompts in global-docs and reformat to prompt code block standard per standards/prompt-format.md
+- [ ] Verify audit-prompt.md uses prompt code block format for its main prompt
 - [ ] Add "re-read global-docs at every session start" rule to ai-repo-starter/AI-INSTRUCTIONS.md
 - [ ] Verify ai-repo-starter exists in correct org (see architecture/registry.md)
 - [ ] Confirm all 5 GitHub orgs have fine-grained PATs enabled and tokens created
