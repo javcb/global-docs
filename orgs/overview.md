@@ -2,7 +2,7 @@
 
 This file explains the purpose of each GitHub location and how they relate to each other.
 
-## Main account: yourname
+## Main account: javcb-prod
 
 Purpose:
 - production-ready repos
@@ -17,7 +17,7 @@ Typical contents:
 - production-adjacent utilities
 - central documentation
 
-## Organization: yourname-templates
+## Organization: javcb-templates
 
 Purpose:
 - read-only templates
@@ -30,7 +30,7 @@ Rules:
 - clone/copy into a new repo before customization
 - archive template repos when appropriate
 
-## Organization: yourname-staging
+## Organization: javcb-staging
 
 Purpose:
 - work in progress
@@ -43,7 +43,7 @@ Rules:
 - promote mature components to main when proven
 - archive abandoned ideas instead of letting them rot
 
-## Organization: yourname-archive
+## Organization: javcb-archive
 
 Purpose:
 - retired projects
@@ -70,7 +70,7 @@ Rules:
 ## Design logic
 
 The overall system is:
-- main = durable assets
+- prod = durable assets
 - templates = reusable starting points
 - staging = incubation
 - archive = history
