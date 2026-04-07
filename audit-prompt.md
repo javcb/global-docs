@@ -1,5 +1,16 @@
 # Global-docs audit prompt
 
+## Note on running this audit
+
+Run this prompt with both Cursor and Claude Code when possible.
+They catch different issue types:
+- Cursor: better at site/HTML link integrity and file-existence checks
+- Claude Code: better at semantic consistency and content duplication detection
+
+Compare findings before making fixes.
+
+---
+
 Run this prompt against the global-docs repo whenever a documentation health
 check is needed. This prompt is LLM-agnostic — paste it into any AI tool that
 has the repo open locally.
@@ -77,6 +88,13 @@ Work through every item below. Do not make any changes. Report only.
 - Flag any content that should be consolidated into one canonical location
 - Check that ai/base-rules.md, ai/languages.md, ai/security.md, and
   standards/modularity.md do not contradict each other
+- Scan FAQ.md for any section containing step-by-step instructions or AI prompts
+  that also exist in a detail doc. Flag as duplication violation.
+- Scan all .md files for paragraphs that are substantially repeated elsewhere.
+  Flag any content that appears in more than one file at the same level of detail.
+- Verify README.md contains only index entries and no instructional content
+- Verify FAQ.md contains only pointers and one-liner summaries, no full instructions
+- Verify UPDATING.md is the only file containing update steps and audit prompt
 
 ## 7. Placeholder audit
 

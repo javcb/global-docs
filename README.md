@@ -50,6 +50,9 @@ When rules conflict, use this order:
 4. Global AI rules
 5. Language and style standards
 
+For operational boundaries (what is safe to automate, schema change rules, etc.),
+see [processes/operational-model.md](processes/operational-model.md).
+
 ## Change policy - How to update this repo
 See [processes/updating-docs.md](processes/updating-docs.md) for the change policy.
 Also see [UPDATING.md](UPDATING.md) for keeping the site in sync.
@@ -61,8 +64,9 @@ Short version: edit the right file, keep it concise, update the index if you add
 ## Master index
 
 ### Start here
+
 | Document | What it answers |
-|---|---|
+| --- | --- |
 | `orgs/overview.md` | What orgs exist, what they are for, and how they relate |
 | `architecture/system-overview.md` | How everything fits together as a system |
 | `processes/new-repo-checklist.md` | What to do before creating any new repo |
@@ -117,6 +121,7 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `processes/promote-staging-to-prod.md` | Steps to promote a repo to production |
 | `processes/template-intake.md` | How to add a purchased template to javcb-templates |
 | `processes/operational-model.md` | What is safe to automate, schema rules, rollback, ADRs |
+| `processes/workflow-scenarios.md` | Step-by-step paths for common project types (prototype, prod, refactor) |
 | `processes/ai-tool-setup.md` | How to set up Cursor, Claude Code, and new AI tools |
 | `processes/setup-history.md` | Log of major decisions and setup history |
 | `processes/expansion-roadmap.md` | Future documentation domains beyond engineering |
@@ -139,16 +144,18 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `standards/ui-behavior.md` | UI behavior standards for sites and apps (state, nav, scroll, zoom, responsive) |
 
 ### Context
-| Document | Covers |
-|---|---|
-| `context/about-me.md` | Owner background and working style (placeholder) |
-| `context/roles.md` | Roles the owner operates in (placeholder) |
-| `context/priorities.md` | Current priorities (placeholder) |
-| `context/constraints.md` | Time, tools, and skill constraints (placeholder) |
 
-### Reference
 | Document | Covers |
-|---|---|
+| --- | --- |
+| `context/about-me.md` | Owner background and working style (draft) |
+| `context/roles.md` | Roles the owner operates in (draft) |
+| `context/priorities.md` | Current priorities (draft) |
+| `context/constraints.md` | Time, tools, and skill constraints (draft) |
+
+### Tools and utilities
+
+| Document | Covers |
+| --- | --- |
 | `audit-prompt.md` | LLM-agnostic prompt to run a full documentation health audit |
 | `UPDATING.md` | How to keep global-docs current and in sync with site/ |
 | `AI-INSTRUCTIONS.md` | Entry point orientation file for AI tools |

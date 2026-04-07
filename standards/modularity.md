@@ -46,3 +46,31 @@ Flag these as modularity violations:
 - The same database connection logic in multiple scripts
 - The same utility function copied across modules
 - A UI component built from scratch when one exists in the design system
+
+---
+
+## Documentation hierarchy
+
+The same principle that prevents code duplication also prevents documentation duplication.
+
+Rules:
+- One topic belongs in exactly one file at exactly one level of detail
+- Higher-level documents (README, FAQ, index pages) point DOWN to detail files.
+  They do not duplicate the detail
+- Cross-references go downward (index → detail) not sideways (detail → detail)
+  or upward (detail → index)
+- When updating a topic, you update exactly one file
+- If the same instruction appears in two files, one of them is wrong
+
+Hierarchy for this repo:
+- README.md → master index, points to everything, contains no detail itself
+- FAQ.md → task-oriented pointers only, links to detail docs, no duplicated instructions
+- UPDATING.md → single source for all update and audit instructions
+- ai/, processes/, standards/, architecture/, orgs/ → detail files, one topic each
+- site/ → mirrors the above, never contains unique content not in a .md source
+
+Duplication signals to flag in audits:
+- The same step-by-step instructions appear in more than one file
+- A FAQ entry contains full instructions instead of a pointer + link
+- A process doc contains rules that belong in a standards doc
+- An AI prompt appears in more than one place

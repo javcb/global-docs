@@ -53,26 +53,21 @@ Go deeper: [ai/design-system.md](ai/design-system.md), `javcb-templates/design-s
 
 ---
 
-## How do I start a new project from scratch?
+## How do I start a project?
 
-### Steps
-1. Decide which org this belongs in (staging for WIP, ai for autonomous builds)
-2. Clone `javcb-ai/ai-repo-starter` into the correct org and rename it
-3. Update `AI-INSTRUCTIONS.md`: set org, status, and any repo-specific rules
-4. Update `README.md`: fill in project name, purpose, and who it is for
-5. Update `.env.example`: add all required credentials and variables
-6. Create a feature branch: `feature/[project-name]-scaffold`
-7. Hand to AI with the prompt below
+There are several common scenarios. See [processes/workflow-scenarios.md](processes/workflow-scenarios.md)
+for the full step-by-step path for each:
 
-### AI prompt to use
-Read AI-INSTRUCTIONS.md and all linked global-docs files before starting.
-This is a new project: [describe in plain English what it does].
-The repo has been scaffolded from ai-repo-starter.
-Start by confirming you have read the rules, then propose a build plan before writing any code.
-Wait for my approval before proceeding.
+- New prototype (quick and dirty): Scenario 1
+- New production-ready project: Scenario 2
+- Promote a prototype to production: Scenario 3
+- Use prod components in a prototype: Scenario 4
+- Refactor an existing monorepo: Scenario 5
 
-
-Go deeper: [processes/repo-setup-standard.md](processes/repo-setup-standard.md), [processes/new-repo-checklist.md](processes/new-repo-checklist.md)
+**Quick start for any scenario:**
+1. Check [architecture/registry.md](architecture/registry.md) for template and library locations
+2. Clone ai-repo-starter into the correct org
+3. Read AI-INSTRUCTIONS.md in the new repo before writing any code
 
 ---
 

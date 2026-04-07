@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "processes/workflow-scenarios" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>Workflow scenarios — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+<h1>Workflow scenarios</h1>
+<p>This document covers the most common project workflows so AI tools
+and team members know the expected path for each scenario.</p>
+<hr>
+<h2>Scenario 1: New project from scratch (prototype first)</h2>
+<p>Use when: you have an idea and need to validate it quickly before
+investing in a properly modularized version.</p>
+<p>Steps:</p>
+<ol>
+<li>Create a new repo in javcb-ai from ai-repo-starter template
+(see architecture/registry.md for template location)</li>
+<li>Set AI-INSTRUCTIONS.md status to: Prototype</li>
+<li>Instruct AI with the autonomous build prompt from FAQ.md</li>
+<li>Build freely — modularity is not required at prototype stage</li>
+<li>When prototype is validated: run maker/checker review</li>
+<li>Decide: is this worth productionizing?<ul>
+<li>No → archive the repo in javcb-archive</li>
+<li>Yes → proceed to Scenario 3 (prototype to production)</li>
+</ul>
+</li>
+</ol>
+<p>What AI tools should know:</p>
+<ul>
+<li>Prototype repos live in javcb-ai</li>
+<li>Speed over structure is acceptable here</li>
+<li>README must still document what was built and what to test</li>
+<li>No hardcoded credentials even in prototypes</li>
+</ul>
+<hr>
+<h2>Scenario 2: New project, production-ready from the start</h2>
+<p>Use when: you know exactly what you need and have time to build it right.</p>
+<p>Steps:</p>
+<ol>
+<li>Create a new repo in javcb-staging from ai-repo-starter template</li>
+<li>Set AI-INSTRUCTIONS.md status to: Staging</li>
+<li>Follow processes/repo-setup-standard.md fully</li>
+<li>Build with modularity from the start (standards/modularity.md)</li>
+<li>Run maker/checker review when feature-complete</li>
+<li>Promote to javcb-prod via processes/promote-staging-to-prod.md</li>
+</ol>
+<p>What AI tools should know:</p>
+<ul>
+<li>Reusable logic goes in src/ modules from the start</li>
+<li>Core libraries in javcb-prod should be used where they exist
+(see architecture/registry.md)</li>
+<li>Feature branches required, no direct commits to main</li>
+</ul>
+<hr>
+<h2>Scenario 3: Promote a prototype to production</h2>
+<p>Use when: a prototype in javcb-ai has been validated and is worth
+productionizing properly.</p>
+<p>Steps:</p>
+<ol>
+<li>Create a new repo in javcb-staging (do not modify the prototype repo)</li>
+<li>Use the prototype as reference, not as the base</li>
+<li>Rebuild with proper modular structure using ai-repo-starter</li>
+<li>Extract reusable logic into src/ modules</li>
+<li>Replace any hardcoded values with env vars</li>
+<li>Run maker/checker review</li>
+<li>Promote to javcb-prod</li>
+</ol>
+<p>What AI tools should know:</p>
+<ul>
+<li>Do not copy-paste from prototype; rebuild cleanly using it as a spec</li>
+<li>The prototype stays in javcb-ai as historical reference</li>
+<li>Follow processes/modularization-playbook.md for extraction guidance</li>
+</ul>
+<hr>
+<h2>Scenario 4: Use production components in a new prototype</h2>
+<p>Use when: you want to build a quick proof of concept that uses
+existing core libraries from javcb-prod.</p>
+<p>Steps:</p>
+<ol>
+<li>Create a new repo in javcb-ai from ai-repo-starter</li>
+<li>Set AI-INSTRUCTIONS.md status to: Prototype</li>
+<li>Import core libraries as dependencies (do not copy their code)</li>
+<li>Build the prototype logic as a thin adapter on top of core libs</li>
+<li>Keep prototype-specific code clearly separated from library code</li>
+</ol>
+<p>What AI tools should know:</p>
+<ul>
+<li>Core libraries are referenced, not modified</li>
+<li>If a core library is missing a needed function, flag it —
+do not add the function inside the prototype repo</li>
+<li>Missing core library functions should be noted in ai/future-ideas.md
+for a proper addition later</li>
+</ul>
+<hr>
+<h2>Scenario 5: Refactor an existing monorepo</h2>
+<p>Use when: you have an existing repo with mixed concerns that needs
+to be broken into proper modules.</p>
+<p>Steps:</p>
+<ol>
+<li>Confirm all current code is committed and pushed</li>
+<li>Create a feature branch: refactor/modularize</li>
+<li>Use ai-repo-starter as the target structure reference</li>
+<li>Follow processes/modularization-playbook.md</li>
+<li>Run maker/checker review when restructuring is complete</li>
+<li>Promote clean modules to javcb-prod</li>
+</ol>
+<p>What AI tools should know:</p>
+<ul>
+<li>Preserve all working behavior during refactor</li>
+<li>Do not change logic and structure in the same commit</li>
+<li>One concern per module</li>
+<li>SQL scripts move to sql/ folder or sql-core repo
+(see architecture/registry.md and architecture/sql-strategy.md)</li>
+</ul>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

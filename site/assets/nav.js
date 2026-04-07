@@ -86,6 +86,7 @@
     "architecture/local-machine-layout": { title: "Local machine layout", nav: "local-machine-layout" },
     "architecture/design-system": { title: "Design system (architecture)", nav: "design-system (arch)" },
     "processes/index": { title: "Processes", nav: "Overview" },
+    "processes/workflow-scenarios": { title: "Workflow scenarios", nav: "workflow-scenarios" },
     "processes/maker-checker": { title: "Maker / checker", nav: "maker-checker" },
     "processes/autonomous-build": { title: "Autonomous build", nav: "autonomous-build" },
     "processes/repo-setup-standard": { title: "Repo setup standard", nav: "repo-setup-standard" },
@@ -152,6 +153,7 @@
     "architecture/local-machine-layout",
     "architecture/design-system",
     "processes/index",
+    "processes/workflow-scenarios",
     "processes/maker-checker",
     "processes/autonomous-build",
     "processes/repo-setup-standard",
@@ -242,6 +244,7 @@
       label: "Processes",
       pageIds: [
         "processes/index",
+        "processes/workflow-scenarios",
         "processes/maker-checker",
         "processes/autonomous-build",
         "processes/repo-setup-standard",

@@ -9,190 +9,189 @@
 </head>
 <body>
   <main id="gd-source" class="gd-prose">
-    <h1>How to update global-docs</h1>
-    <p>This page is the <strong>single source</strong> for when and how to change global-docs, keep the static site in sync, run documentation health audits, and avoid stale documentation.</p>
-    <hr>
-    <h2>1. When to update (one-off changes vs. full audit)</h2>
-    <h3>One-off updates</h3>
-    <p>Use a normal edit when you are:</p>
-    <ul>
-    <li>Recording a new rule, standard, or process that came out of day-to-day work</li>
-    <li>Fixing a typo, link, or small inaccuracy</li>
-    <li>Adding or updating a single doc after a repo/org/tooling change</li>
-    <li>Adding a new <code>.md</code> file to this repo (and its <code>site/</code> page + README index)</li>
-    </ul>
-    <h3>Full documentation audit</h3>
-    <p>Run a <strong>full audit</strong> (see section 3) when:</p>
-    <ul>
-    <li>You are about to start a <strong>major project</strong> or large refactor that will lean on global-docs</li>
-    <li>You have made <strong>many doc changes</strong> in a short time and want a consistency check</li>
-    <li>Something feels “off” (broken links, duplicated rules, site out of sync) and you want a structured review</li>
-    </ul>
-    <p>Audits are <strong>read-only reports</strong> unless you then apply fixes as separate edits.</p>
-    <hr>
-    <h2>2. How to do a one-off update</h2>
-    <h3>Steps</h3>
-    <ol>
-    <li>Edit the relevant <code>.md</code> file (right file, right section).</li>
-    <li>If you add a <strong>new</strong> file: add it to the master index in <a href="./index.html">README.md</a>.</li>
-    <li><strong>In the same commit</strong>, update the matching page under <code>site/</code> so the HTML mirrors the markdown (<a href="./processes/link-checker-setup.html">processes/link-checker-setup.md</a> describes automated link checks; there is no automatic md→html sync).</li>
-    <li>If the change is a <strong>major decision</strong>, note it in <a href="./processes/setup-history.html">processes/setup-history.md</a>.</li>
-    <li>If the change needs a new user-facing “how do I…?” answer in the FAQ (not update/audit procedure), add or adjust a question in <a href="./faq.html">FAQ.md</a> — <strong>do not</strong> paste full update/audit instructions there; keep a pointer to this file instead (see <a href="./faq.html">FAQ.md</a>).</li>
-    <li>Commit with a clear message, e.g. <code>Update ai/languages.md to document OpenClaw rules</code> or <code>Sync site/processes/access-tokens.html with markdown</code>.</li>
-    </ol>
-    <h3>Site sync rule</h3>
-    <p>Markdown and HTML are maintained <strong>together</strong>. When any <code>.md</code> file changes, its corresponding <code>site/...html</code> file must be updated in the <strong>same commit</strong>.</p>
-    <p><strong>Prompt to sync one page</strong> (any AI tool):</p>
-    <pre><code class="language-text">The content of [filename].md has been updated.
-    Update site/[path]/[filename].html to match.
-    Do not change structural HTML, nav, or shared assets. Update content only.
-    </code></pre>
-    <p><strong>Prompt to compare many pages</strong> (report only):</p>
-    <pre><code class="language-text">Compare every .md file in global-docs with its corresponding .html page in site/.
-    List any pages where the HTML content does not match the current markdown.
-    Do not make changes yet. Report discrepancies only.
-    </code></pre>
-    <hr>
-    <h2>3. How to run a full documentation audit</h2>
-    <h3>When to run it</h3>
-    <ul>
-    <li>Before major projects (same as above): run an audit <strong>first</strong>, fix <strong>High</strong> issues, then start work.</li>
-    <li>After a batch of structural doc changes: run an audit to catch index gaps, broken links, and site drift.</li>
-    </ul>
-    <h3>The audit prompt (copy everything in the block)</h3>
-    <p>Paste the following into any AI tool that has this repo open locally. It is LLM-agnostic and <strong>report-only</strong> (no edits unless you ask for a follow-up).</p>
-    <pre><code class="language-text">Before starting, read README.md to understand the purpose and structure of this repo.
-    
-    I want a full documentation health audit of this global-docs repository,
-    including the static HTML site in site/.
-    
-    Background:
-    - This repo is the single source of truth for how I work across my main GitHub
-      account and 5 organizations: javcb-prod, javcb-staging, javcb-templates,
-      javcb-archive, and javcb-ai
-    - AI tools read this repo before starting any project — accuracy and internal
-      consistency are critical
-    - The repo covers: org governance, AI behavior rules, architecture, coding
-      standards, process playbooks, an operational model, and a static HTML site
-    - A static HTML documentation site lives in site/ and should mirror the .md files
-    
-    Work through every item below. Do not make any changes. Report only.
-    
-    ---
-    
-    ## 1. Registry check
-    
-    - Confirm architecture/registry.md exists
-    - Verify every doc that references a cross-repo asset (ai-repo-starter,
-      design-system, core libraries) links to the registry instead of
-      hardcoding an org/repo location
-    - Flag every file that hardcodes a location that should defer to the registry
-    
-    ## 2. Master index completeness
-    
-    - Find README.md and its master index tables
-    - List every .md file on disk that is NOT referenced in the index
-    - List every index entry that points to a file that does not exist on disk
-    - Flag orphaned files not referenced anywhere in the repo
-    
-    ## 3. Internal link integrity — markdown
-    
-    - Scan every .md file for relative links
-    - Flag every link pointing to a file or anchor that does not exist
-    - Include file name and line reference for each broken link
-    
-    ## 4. Site integrity and parity
-    
-    - Confirm site/ exists with assets/style.css, assets/nav.js, index.html, faq.html
-    - Confirm site/updating.html exists as a top-level page separate from faq.html
-    - List every .md file that does not have a corresponding .html page in site/
-    - List every .html page in site/ that does not have a corresponding .md source file
-    - Check nav.js sidebar order matches exactly:
-      Home → FAQ → How to update docs → Orgs → AI Rules → Architecture → Processes → Standards
-    - Scan every .html file in site/ for href links pointing to non-existent pages
-    - Flag any content visible in a .html page that contradicts or is out of sync
-      with its source .md file
-    - Confirm site/assets/nav.js implements localStorage-based sidebar state persistence
-    - Confirm the active page's nav section is always expanded on load
-    - Confirm no visible nav reflow or flash occurs on page load
-    - Confirm font sizes use relative units (rem/em) not fixed px
-    - Confirm a mobile breakpoint exists in style.css for sidebar collapse
-    
-    ## 5. Terminology consistency
-    
-    - Confirm &quot;main GitHub user account&quot; and org names (javcb-prod, javcb-staging,
-      javcb-templates, javcb-archive, javcb-ai) are used consistently throughout
-    - Flag any file that confuses the main account with an org
-    - Confirm local machine folder paths are consistent across all docs that reference them
-    
-    ## 6. Rules consistency
-    
-    - Find any rule, process, or standard that appears in more than one file
-      with different or conflicting content
-    - Flag any content that should be consolidated into one canonical location
-    - Check that ai/base-rules.md, ai/languages.md, ai/security.md, and
-      standards/modularity.md do not contradict each other
-    
-    ## 7. Placeholder audit
-    
-    - List every file or section marked TODO, &quot;not yet built&quot;, or &quot;placeholder&quot;
-    - Confirm each is clearly labeled as such and not presented as active content
-    - Flag any placeholder that appears in a visible HTML page without a draft label
-    
-    ## 8. AI readiness check
-    
-    - Read AI-INSTRUCTIONS.md at the repo root
-    - Verify every linked file path is valid
-    - Confirm the file gives a new AI tool enough orientation to understand the
-      repo and find the rules it needs without any prior conversation history
-    - Flag anything that would confuse a first-time reader
-    
-    ## 9. Coverage check
-    
-    Confirm the following files exist and contain substantive or clearly labeled
-    placeholder content:
-    - architecture/registry.md
-    - processes/operational-model.md
-    - processes/ai-tool-setup.md
-    - processes/expansion-roadmap.md
-    - processes/link-checker-setup.md
-    - standards/modularity.md
-    - context/about-me.md
-    - context/roles.md
-    - context/priorities.md
-    - context/constraints.md
-    - FAQ.md at repo root
-    - UPDATING.md at repo root
-    
-    ---
-    
-    ## Report format
-    
-    Group findings by severity: High / Medium / Low
-    
-    For each finding:
-    - File name and location (line or section if possible)
-    - What the problem is
-    - Suggested fix
-    
-    End with:
-    - Overall health score: 1–10
-    - Single most important fix to do first
-    - Any patterns in the issues that suggest a systemic problem to address
-    </code></pre>
-    <p>The machine-readable source of this checklist also lives in <a href="./audit-prompt.html">audit-prompt.md</a>; this section embeds the same prompt so you can run an audit without hunting for the file.</p>
-    <h3>What to do with audit findings</h3>
-    <ol>
-    <li><strong>Triage</strong> by severity (fix High first: wrong org pointers, broken links, missing security guidance).</li>
-    <li><strong>Track</strong> fixes as normal one-off updates (section 2): edit <code>.md</code>, sync <code>site/</code>, update <a href="./index.html">README.md</a> index if you add files.</li>
-    <li><strong>Re-run</strong> the audit after large fixes if you need confirmation (optional).</li>
-    </ol>
-    <p><strong>Optional:</strong> use GitHub Actions link checking — <a href="./processes/link-checker-setup.html">processes/link-checker-setup.md</a>.</p>
-    <hr>
-    <h2>4. Staleness rule</h2>
-    <p>If something important was decided or changed in a work session, <strong>update global-docs before you close the session</strong> (including the matching <code>site/</code> page when a <code>.md</code> file changed).</p>
-    <p>Do not rely on AI chat history or tool memory: <strong>this repo is the durable context</strong> that survives tool and session changes.</p>
-    
+<h1>How to update global-docs</h1>
+<p>This page is the <strong>single source</strong> for when and how to change global-docs, keep the static site in sync, run documentation health audits, and avoid stale documentation.</p>
+<hr>
+<h2>1. When to update (one-off changes vs. full audit)</h2>
+<h3>One-off updates</h3>
+<p>Use a normal edit when you are:</p>
+<ul>
+<li>Recording a new rule, standard, or process that came out of day-to-day work</li>
+<li>Fixing a typo, link, or small inaccuracy</li>
+<li>Adding or updating a single doc after a repo/org/tooling change</li>
+<li>Adding a new <code>.md</code> file to this repo (and its <code>site/</code> page + README index)</li>
+</ul>
+<h3>Full documentation audit</h3>
+<p>Run a <strong>full audit</strong> (see section 3) when:</p>
+<ul>
+<li>You are about to start a <strong>major project</strong> or large refactor that will lean on global-docs</li>
+<li>You have made <strong>many doc changes</strong> in a short time and want a consistency check</li>
+<li>Something feels “off” (broken links, duplicated rules, site out of sync) and you want a structured review</li>
+</ul>
+<p>Audits are <strong>read-only reports</strong> unless you then apply fixes as separate edits.</p>
+<hr>
+<h2>2. How to do a one-off update</h2>
+<h3>Steps</h3>
+<ol>
+<li>Edit the relevant <code>.md</code> file (right file, right section).</li>
+<li>If you add a <strong>new</strong> file: add it to the master index in <a href="index.html">README.md</a>.</li>
+<li><strong>In the same commit</strong>, update the matching page under <code>site/</code> so the HTML mirrors the markdown (<a href="processes/link-checker-setup.html">processes/link-checker-setup.md</a> describes automated link checks; there is no automatic md→html sync).</li>
+<li>If the change is a <strong>major decision</strong>, note it in <a href="processes/setup-history.html">processes/setup-history.md</a>.</li>
+<li>If the change needs a new user-facing “how do I…?” answer in the FAQ (not update/audit procedure), add or adjust a question in <a href="faq.html">FAQ.md</a> — <strong>do not</strong> paste full update/audit instructions there; keep a pointer to this file instead (see <a href="faq.html">FAQ.md</a>).</li>
+<li>Commit with a clear message, e.g. <code>Update ai/languages.md to document OpenClaw rules</code> or <code>Sync site/processes/access-tokens.html with markdown</code>.</li>
+</ol>
+<h3>Site sync rule</h3>
+<p>Markdown and HTML are maintained <strong>together</strong>. When any <code>.md</code> file changes, its corresponding <code>site/...html</code> file must be updated in the <strong>same commit</strong>.</p>
+<p><strong>Prompt to sync one page</strong> (any AI tool):</p>
+<pre><code class="language-text">The content of [filename].md has been updated.
+Update site/[path]/[filename].html to match.
+Do not change structural HTML, nav, or shared assets. Update content only.
+</code></pre>
+<p><strong>Prompt to compare many pages</strong> (report only):</p>
+<pre><code class="language-text">Compare every .md file in global-docs with its corresponding .html page in site/.
+List any pages where the HTML content does not match the current markdown.
+Do not make changes yet. Report discrepancies only.
+</code></pre>
+<hr>
+<h2>3. How to run a full documentation audit</h2>
+<h3>When to run it</h3>
+<ul>
+<li>Before major projects (same as above): run an audit <strong>first</strong>, fix <strong>High</strong> issues, then start work.</li>
+<li>After a batch of structural doc changes: run an audit to catch index gaps, broken links, and site drift.</li>
+</ul>
+<h3>The audit prompt (copy everything in the block)</h3>
+<p>Paste the following into any AI tool that has this repo open locally. It is LLM-agnostic and <strong>report-only</strong> (no edits unless you ask for a follow-up).</p>
+<pre><code class="language-text">Before starting, read README.md to understand the purpose and structure of this repo.
+
+I want a full documentation health audit of this global-docs repository,
+including the static HTML site in site/.
+
+Background:
+- This repo is the single source of truth for how I work across my main GitHub
+  account and 5 organizations: javcb-prod, javcb-staging, javcb-templates,
+  javcb-archive, and javcb-ai
+- AI tools read this repo before starting any project — accuracy and internal
+  consistency are critical
+- The repo covers: org governance, AI behavior rules, architecture, coding
+  standards, process playbooks, an operational model, and a static HTML site
+- A static HTML documentation site lives in site/ and should mirror the .md files
+
+Work through every item below. Do not make any changes. Report only.
+
+---
+
+## 1. Registry check
+
+- Confirm architecture/registry.md exists
+- Verify every doc that references a cross-repo asset (ai-repo-starter,
+  design-system, core libraries) links to the registry instead of
+  hardcoding an org/repo location
+- Flag every file that hardcodes a location that should defer to the registry
+
+## 2. Master index completeness
+
+- Find README.md and its master index tables
+- List every .md file on disk that is NOT referenced in the index
+- List every index entry that points to a file that does not exist on disk
+- Flag orphaned files not referenced anywhere in the repo
+
+## 3. Internal link integrity — markdown
+
+- Scan every .md file for relative links
+- Flag every link pointing to a file or anchor that does not exist
+- Include file name and line reference for each broken link
+
+## 4. Site integrity and parity
+
+- Confirm site/ exists with assets/style.css, assets/nav.js, index.html, faq.html
+- Confirm site/updating.html exists as a top-level page separate from faq.html
+- List every .md file that does not have a corresponding .html page in site/
+- List every .html page in site/ that does not have a corresponding .md source file
+- Check nav.js sidebar order matches exactly:
+  Home → FAQ → How to update docs → Orgs → AI Rules → Architecture → Processes → Standards
+- Scan every .html file in site/ for href links pointing to non-existent pages
+- Flag any content visible in a .html page that contradicts or is out of sync
+  with its source .md file
+- Confirm site/assets/nav.js implements localStorage-based sidebar state persistence
+- Confirm the active page&#39;s nav section is always expanded on load
+- Confirm no visible nav reflow or flash occurs on page load
+- Confirm font sizes use relative units (rem/em) not fixed px
+- Confirm a mobile breakpoint exists in style.css for sidebar collapse
+
+## 5. Terminology consistency
+
+- Confirm &quot;main GitHub user account&quot; and org names (javcb-prod, javcb-staging,
+  javcb-templates, javcb-archive, javcb-ai) are used consistently throughout
+- Flag any file that confuses the main account with an org
+- Confirm local machine folder paths are consistent across all docs that reference them
+
+## 6. Rules consistency
+
+- Find any rule, process, or standard that appears in more than one file
+  with different or conflicting content
+- Flag any content that should be consolidated into one canonical location
+- Check that ai/base-rules.md, ai/languages.md, ai/security.md, and
+  standards/modularity.md do not contradict each other
+
+## 7. Placeholder audit
+
+- List every file or section marked TODO, &quot;not yet built&quot;, or &quot;placeholder&quot;
+- Confirm each is clearly labeled as such and not presented as active content
+- Flag any placeholder that appears in a visible HTML page without a draft label
+
+## 8. AI readiness check
+
+- Read AI-INSTRUCTIONS.md at the repo root
+- Verify every linked file path is valid
+- Confirm the file gives a new AI tool enough orientation to understand the
+  repo and find the rules it needs without any prior conversation history
+- Flag anything that would confuse a first-time reader
+
+## 9. Coverage check
+
+Confirm the following files exist and contain substantive or clearly labeled
+placeholder content:
+- architecture/registry.md
+- processes/operational-model.md
+- processes/ai-tool-setup.md
+- processes/expansion-roadmap.md
+- processes/link-checker-setup.md
+- standards/modularity.md
+- context/about-me.md
+- context/roles.md
+- context/priorities.md
+- context/constraints.md
+- FAQ.md at repo root
+- UPDATING.md at repo root
+
+---
+
+## Report format
+
+Group findings by severity: High / Medium / Low
+
+For each finding:
+- File name and location (line or section if possible)
+- What the problem is
+- Suggested fix
+
+End with:
+- Overall health score: 1–10
+- Single most important fix to do first
+- Any patterns in the issues that suggest a systemic problem to address
+</code></pre>
+<p>The machine-readable source of this checklist also lives in <a href="audit-prompt.html">audit-prompt.md</a>; this section embeds the same prompt so you can run an audit without hunting for the file.</p>
+<h3>What to do with audit findings</h3>
+<ol>
+<li><strong>Triage</strong> by severity (fix High first: wrong org pointers, broken links, missing security guidance).</li>
+<li><strong>Track</strong> fixes as normal one-off updates (section 2): edit <code>.md</code>, sync <code>site/</code>, update <a href="index.html">README.md</a> index if you add files.</li>
+<li><strong>Re-run</strong> the audit after large fixes if you need confirmation (optional).</li>
+</ol>
+<p><strong>Optional:</strong> use GitHub Actions link checking — <a href="processes/link-checker-setup.html">processes/link-checker-setup.md</a>.</p>
+<hr>
+<h2>4. Staleness rule</h2>
+<p>If something important was decided or changed in a work session, <strong>update global-docs before you close the session</strong> (including the matching <code>site/</code> page when a <code>.md</code> file changed).</p>
+<p>Do not rely on AI chat history or tool memory: <strong>this repo is the durable context</strong> that survives tool and session changes.</p>
   </main>
   <script src="assets/nav.js"></script>
 </body>

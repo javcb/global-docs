@@ -18,6 +18,7 @@ It is also used for human onboarding and team reference.
 5. [ai/security.md](ai/security.md) — secrets and credential rules
 6. [ai/workflow.md](ai/workflow.md) — how to approach changes
 7. [architecture/registry.md](architecture/registry.md) — canonical cross-repo asset locations
+8. [processes/operational-model.md](processes/operational-model.md) — operational boundaries (automation, schema change rules, etc.)
 
 ## Rule precedence
 
@@ -27,6 +28,9 @@ When rules conflict:
 3. Org-specific rules
 4. Global AI rules
 5. Language and style standards
+
+For operational boundaries (what is safe to automate, schema change rules, etc.),
+see [processes/operational-model.md](processes/operational-model.md).
 
 ## Key rules summary
 
