@@ -1,5 +1,21 @@
 # Setup history and decisions
 
+## Changelog
+
+This section tracks meaningful changes to global-docs in reverse chronological order.
+Add an entry whenever a significant rule, process, or structure changes.
+
+Format: `YYYY-MM-DD: [what changed and why]`
+
+Entries:
+- 2026-04-07: Added OPEN-ITEMS.md backlog, workflow-scenarios, post-mortem process,
+  ui-behavior standards, documentation hierarchy rule, operational model,
+  context folder, registry, modularity standards, site/ HTML documentation
+- 2026-04-06: Initial global-docs setup — orgs, AI rules, architecture,
+  processes, standards established
+
+---
+
 This file documents major decisions made during the initial global-docs setup
 so context is not lost when returning to this work later.
 

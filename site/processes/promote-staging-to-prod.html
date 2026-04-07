@@ -5,45 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>window.__GD__ = { base: "../", pageId: "processes/promote-staging-to-prod" };</script>
   <link rel="stylesheet" href="../assets/style.css">
-  <title>processes/promote-staging-to-prod — global-docs</title>
+  <title>Promote staging to prod — global-docs</title>
 </head>
 <body>
   <main id="gd-source" class="gd-prose">
-    <h1>Promote staging to prod</h1>
-    <h2 id="when-to-promote">When to promote</h2>
-    <p>A repo is ready to promote from javcb-staging to javcb-prod when:</p>
-    <ul>
-    <li>Maker/checker review is complete and issues are resolved</li>
-    <li>README is accurate and complete</li>
-    <li>.env.example lists all required variables</li>
-    <li>No hardcoded credentials exist anywhere</li>
-    <li>Standard repo structure is in place</li>
-    <li>Feature branch has been merged to main</li>
-    </ul>
-    <h2 id="steps">Steps</h2>
-    <ol>
-    <li>Run final maker/checker review if not already done</li>
-    </ol>
-    <p>See <a href="./maker-checker.html"><code>processes/maker-checker.md</code></a></p>
-    <ol>
-    <li>Confirm checklist:</li>
-    </ol>
-    <p>- [ ] README complete - [ ] .env.example complete - [ ] .gitignore in place - [ ] No secrets in code - [ ] src/ structure correct - [ ] Tests present (even minimal) - [ ] Branch merged to main</p>
-    <ol>
-    <li>Transfer repo to javcb-prod:</li>
-    </ol>
-    <p>- Open repo on GitHub - Settings → scroll to Danger Zone → Transfer ownership - Select javcb-prod as destination - Confirm by typing repo name</p>
-    <ol>
-    <li>Update README status field:</li>
-    </ol>
-    <p>- Change: <code>[ ] Production-ready</code> to <code>[x] Production-ready</code></p>
-    <ol>
-    <li>Update processes/setup-history.md with a note about what was promoted and when</li>
-    </ol>
-    <ol>
-    <li>Remove local staging copy if no longer needed:</li>
-    </ol>
-    <p>- In GitHub Desktop: right-click repo → Remove - Choose to delete local folder - Re-clone from javcb-prod location if still needed locally</p>
+<h1>Promote staging to prod</h1>
+<h2>When to promote</h2>
+<p>A repo is ready to promote from javcb-staging to javcb-prod when:</p>
+<ul>
+<li>Maker/checker review is complete and issues are resolved</li>
+<li>README is accurate and complete</li>
+<li>.env.example lists all required variables</li>
+<li>No hardcoded credentials exist anywhere</li>
+<li>Standard repo structure is in place</li>
+<li>Feature branch has been merged to main</li>
+</ul>
+<h2>Definition of done</h2>
+<p>Before any repo is promoted to javcb-prod, all of the following must be true.
+No exceptions without a documented and approved reason.</p>
+<h3>Code quality</h3>
+<ul>
+<li><input disabled="" type="checkbox"> All functions handle errors explicitly (no bare excepts, no silent failures)</li>
+<li><input disabled="" type="checkbox"> No print statements left as debugging artifacts (use logging module instead)</li>
+<li><input disabled="" type="checkbox"> No TODO comments left unaddressed — either resolved or documented in OPEN-ITEMS.md</li>
+<li><input disabled="" type="checkbox"> No hardcoded values that should be configuration (paths, credentials, IDs)</li>
+<li><input disabled="" type="checkbox"> Reusable logic is in src/ modules, not inline in scripts</li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li><input disabled="" type="checkbox"> README accurately describes current state, not intended state</li>
+<li><input disabled="" type="checkbox"> README includes: what it does, setup steps, env vars, how to run, known limitations</li>
+<li><input disabled="" type="checkbox"> .env.example lists every required environment variable with descriptions</li>
+<li><input disabled="" type="checkbox"> AI-INSTRUCTIONS.md is present and links are valid</li>
+</ul>
+<h3>Testing</h3>
+<ul>
+<li><input disabled="" type="checkbox"> At least one manual end-to-end test confirmed working by owner</li>
+<li><input disabled="" type="checkbox"> Any automated tests present are passing</li>
+<li><input disabled="" type="checkbox"> Known failure modes are documented in README</li>
+</ul>
+<h3>Review</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Maker/checker review completed</li>
+<li><input disabled="" type="checkbox"> All high-severity checker findings resolved</li>
+<li><input disabled="" type="checkbox"> Medium-severity findings either resolved or documented with rationale for deferral</li>
+</ul>
+<h3>Security</h3>
+<ul>
+<li><input disabled="" type="checkbox"> No credentials, tokens, or secrets anywhere in code or commit history</li>
+<li><input disabled="" type="checkbox"> .gitignore covers all sensitive file patterns</li>
+<li><input disabled="" type="checkbox"> All external connections use environment variables</li>
+</ul>
+<h2>Steps</h2>
+<ol>
+<li><p>Run final maker/checker review if not already done
+See <code>processes/maker-checker.md</code></p>
+</li>
+<li><p>Confirm checklist:</p>
+<ul>
+<li><input disabled="" type="checkbox"> README complete</li>
+<li><input disabled="" type="checkbox"> .env.example complete</li>
+<li><input disabled="" type="checkbox"> .gitignore in place</li>
+<li><input disabled="" type="checkbox"> No secrets in code</li>
+<li><input disabled="" type="checkbox"> src/ structure correct</li>
+<li><input disabled="" type="checkbox"> Tests present (even minimal)</li>
+<li><input disabled="" type="checkbox"> Branch merged to main</li>
+</ul>
+</li>
+<li><p>Transfer repo to javcb-prod:</p>
+<ul>
+<li>Open repo on GitHub</li>
+<li>Settings → scroll to Danger Zone → Transfer ownership</li>
+<li>Select javcb-prod as destination</li>
+<li>Confirm by typing repo name</li>
+</ul>
+</li>
+<li><p>Update README status field:</p>
+<ul>
+<li>Change: <code>[ ] Production-ready</code> to <code>[x] Production-ready</code></li>
+</ul>
+</li>
+<li><p>Update processes/setup-history.md with a note about what was promoted and when</p>
+</li>
+<li><p>Remove local staging copy if no longer needed:</p>
+<ul>
+<li>In GitHub Desktop: right-click repo → Remove</li>
+<li>Choose to delete local folder</li>
+<li>Re-clone from javcb-prod location if still needed locally</li>
+</ul>
+</li>
+</ol>
   </main>
   <script src="../assets/nav.js"></script>
 </body>

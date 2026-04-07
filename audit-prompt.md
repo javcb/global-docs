@@ -142,3 +142,15 @@ End with:
 - Overall health score: 1–10
 - Single most important fix to do first
 - Any patterns in the issues that suggest a systemic problem to address
+
+---
+
+## 10. Open items review
+
+- Open OPEN-ITEMS.md
+- For each unchecked item: verify whether it has been completed
+  Mark completed items with ✅ and today's date
+- Add any newly discovered issues from this audit as new items
+  in the correct priority section
+- Report: how many items were completed since last audit,
+  how many new items were added, and current total open count

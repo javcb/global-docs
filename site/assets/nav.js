@@ -57,6 +57,7 @@
     home: { title: "Home", nav: "Home" },
     faq: { title: "Quick reference FAQ", nav: "Quick reference" },
     updating: { title: "How to update global-docs", nav: "How to update docs" },
+    "open-items": { title: "Open items", nav: "Open items" },
     "ai-instructions": { title: "AI instructions for global-docs", nav: "AI instructions" },
     "audit-prompt": { title: "Documentation audit prompt", nav: "Audit prompt" },
     "orgs/index": { title: "Organizations", nav: "Overview" },
@@ -101,6 +102,8 @@
     "processes/setup-history": { title: "Setup history", nav: "setup-history" },
     "processes/expansion-roadmap": { title: "Expansion roadmap", nav: "expansion-roadmap" },
     "processes/link-checker-setup": { title: "Link checker setup", nav: "link-checker-setup" },
+    "processes/post-mortem": { title: "Post-mortem process", nav: "post-mortem" },
+    "processes/post-mortems/index": { title: "Post-mortems", nav: "post-mortems" },
     "standards/index": { title: "Standards", nav: "Overview" },
     "standards/python": { title: "Python", nav: "python" },
     "standards/sql": { title: "SQL", nav: "sql" },
@@ -126,6 +129,7 @@
     "home",
     "faq",
     "updating",
+    "open-items",
     "orgs/index",
     "orgs/overview",
     "orgs/javcb-prod",
@@ -168,6 +172,8 @@
     "processes/setup-history",
     "processes/expansion-roadmap",
     "processes/link-checker-setup",
+    "processes/post-mortem",
+    "processes/post-mortems/index",
     "standards/index",
     "standards/python",
     "standards/sql",
@@ -195,6 +201,7 @@
     { kind: "link", pageId: "home" },
     { kind: "link", pageId: "faq" },
     { kind: "link", pageId: "updating" },
+    { kind: "link", pageId: "open-items" },
     {
       kind: "group",
       label: "Orgs",
@@ -259,6 +266,8 @@
         "processes/setup-history",
         "processes/expansion-roadmap",
         "processes/link-checker-setup",
+        "processes/post-mortem",
+        "processes/post-mortems/index",
       ],
     },
     {
@@ -303,6 +312,7 @@
     if (pageId === "home") return "index.html";
     if (pageId === "faq") return "faq.html";
     if (pageId === "updating") return "updating.html";
+    if (pageId === "open-items") return "open-items.html";
     if (pageId === "ai-instructions") return "ai-instructions.html";
     if (pageId === "audit-prompt") return "audit-prompt.html";
     return pageId + ".html";
@@ -317,6 +327,7 @@
       pageId === "home" ||
       pageId === "faq" ||
       pageId === "updating" ||
+      pageId === "open-items" ||
       pageId === "ai-instructions" ||
       pageId === "audit-prompt"
     ) {

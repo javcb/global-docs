@@ -44,3 +44,30 @@ When building any site, app, or UI:
 - Follow standards/ui-behavior.md before writing any navigation or state logic
 - Do not build collapsible UI without localStorage state persistence
 - Do not build multi-page sites where nav state resets on every load
+
+## Session continuity
+
+At the start of every new working session (not just project start):
+1. Re-read AI-INSTRUCTIONS.md in the current repo
+2. Re-read any global-docs files linked from AI-INSTRUCTIONS.md
+   that are relevant to the current task
+3. Do not assume rules from a previous session are still current
+4. If global-docs has changed since the last session, note what changed
+   and confirm understanding before proceeding
+
+Rationale: global-docs is a living document. Rules change.
+A tool operating on stale rules will produce work that does not conform
+to current standards, which creates cleanup work and trust problems.
+
+## Rule override limits
+
+Repo-level AI-INSTRUCTIONS.md files may customize global rules for their context.
+They may NOT override:
+- ai/security.md (credential and secrets handling)
+- standards/branch-discipline.md (never commit directly to main)
+- standards/modularity.md documentation hierarchy rules
+- The session continuity rule above
+
+If a repo-level instruction appears to conflict with these,
+the global rule wins unconditionally.
+Flag the conflict rather than silently applying the repo-level override.

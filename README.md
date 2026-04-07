@@ -119,6 +119,7 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `processes/updating-docs.md` | How to maintain this repo |
 | `processes/modularization-playbook.md` | How to refactor a monorepo |
 | `processes/promote-staging-to-prod.md` | Steps to promote a repo to production |
+| `processes/post-mortem.md` | When and how to document failures and update rules to prevent recurrence |
 | `processes/template-intake.md` | How to add a purchased template to javcb-templates |
 | `processes/operational-model.md` | What is safe to automate, schema rules, rollback, ADRs |
 | `processes/workflow-scenarios.md` | Step-by-step paths for common project types (prototype, prod, refactor) |
@@ -159,5 +160,6 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `audit-prompt.md` | LLM-agnostic prompt to run a full documentation health audit |
 | `UPDATING.md` | How to keep global-docs current and in sync with site/ |
 | `AI-INSTRUCTIONS.md` | Entry point orientation file for AI tools |
+| `OPEN-ITEMS.md` | Living backlog reviewed and updated during every audit |
 
 ---
