@@ -6,7 +6,7 @@ This page is the **single source** for when and how to change global-docs, run d
 
 ## 1. When to update (one-off changes vs. full audit)
 
-### One-off updates
+### One-off updates:
 
 Use a normal edit when you are:
 
