@@ -4,19 +4,16 @@
 
 Local folders should mirror GitHub locations closely enough to preserve a 1:1 mental model.
 
-## Preferred root
+## Preferred layout
 
-Use a single root such as:
+Use this as the canonical pattern:
 
-~/dev/00_github repos/
-
-## Layout
-
-- ~/dev/00_github repos/javcb/
-- ~/dev/00_github repos/javcb-templates/
-- ~/dev/00_github repos/javcb-staging/
-- ~/dev/00_github repos/javcb-archive/
-- ~/dev/00_github repos/javcb-ai/
+- ~/code/github/[your-github-username]/   ← main account repos
+- ~/code/github/javcb-prod/
+- ~/code/github/javcb-staging/
+- ~/code/github/javcb-templates/
+- ~/code/github/javcb-archive/
+- ~/code/github/javcb-ai/
 
 ## Rules
 

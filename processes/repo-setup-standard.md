@@ -2,7 +2,7 @@
 
 ## Starter template
 
-All new repos (AI-created or manual) should start from the ai-repo-starter template in javcb-templates.
+All new repos (AI-created or manual) should start from the ai-repo-starter template. See architecture/registry.md for canonical location.
 
 To use:
 1. Clone ai-repo-starter into the appropriate org
@@ -13,7 +13,7 @@ To use:
 ## For refactoring existing repos
 
 Use the same standard:
-1. Clone ai-repo-starter as a reference
+1. Clone ai-repo-starter as a reference (see architecture/registry.md for canonical location)
 2. Instruct the AI: "Refactor this repo to match the structure in ai-repo-starter.
    Preserve all working behavior. Extract reusable modules into src/.
    Update README and .env.example. Create a feature branch first."

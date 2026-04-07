@@ -35,11 +35,11 @@ This repo exists to:
 
 ## How to use this repo
 
-- Read `orgs/overview.md` for the GitHub map.
-- Read `architecture/` for reusable system design.
-- Read `ai/` for AI operating rules and tool behavior.
-- Read `processes/` for implementation playbooks.
-- Read `standards/` for language- and platform-specific conventions.
+- Read [orgs/overview.md](orgs/overview.md) for the GitHub map.
+- Read [architecture/system-overview.md](architecture/system-overview.md) for reusable system design.
+- Read [ai/base-rules.md](ai/base-rules.md) for AI operating rules and tool behavior.
+- Read [processes/new-repo-checklist.md](processes/new-repo-checklist.md) and other playbooks in [processes/](processes/).
+- Read [standards/](standards/) for language- and platform-specific conventions.
 
 ## Rule precedence
 
@@ -51,7 +51,8 @@ When rules conflict, use this order:
 5. Language and style standards
 
 ## Change policy - How to update this repo
-See `processes/updating-docs.md` for the change policy.
+See [processes/updating-docs.md](processes/updating-docs.md) for the change policy.
+Also see [UPDATING.md](UPDATING.md) for keeping the site in sync.
 Short version: edit the right file, keep it concise, update the index if you add a new file.
 
 
@@ -65,7 +66,6 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `orgs/overview.md` | What orgs exist, what they are for, and how they relate |
 | `architecture/system-overview.md` | How everything fits together as a system |
 | `processes/new-repo-checklist.md` | What to do before creating any new repo |
-
 | `FAQ.md` | Quick reference cheatsheet for all common tasks |
 | `processes/link-checker-setup.md` | Automated link checking via GitHub Actions |
 | `standards/modularity.md` | Modularity and centralization rules |
@@ -102,6 +102,7 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `architecture/data-platforms.md` | Snowflake, Supabase, Excel, SharePoint strategy |
 | `architecture/sql-strategy.md` | Where SQL lives and how it is organized |
 | `architecture/local-machine-layout.md` | Local folder structure mirroring GitHub |
+| `architecture/design-system.md` | Design system status and AI usage rules (placeholder) |
 
 ### Processes
 | Document | Covers |
@@ -115,6 +116,11 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `processes/modularization-playbook.md` | How to refactor a monorepo |
 | `processes/promote-staging-to-prod.md` | Steps to promote a repo to production |
 | `processes/template-intake.md` | How to add a purchased template to javcb-templates |
+| `processes/operational-model.md` | What is safe to automate, schema rules, rollback, ADRs |
+| `processes/ai-tool-setup.md` | How to set up Cursor, Claude Code, and new AI tools |
+| `processes/setup-history.md` | Log of major decisions and setup history |
+| `processes/expansion-roadmap.md` | Future documentation domains beyond engineering |
+| `processes/link-checker-setup.md` | Automated link checking via GitHub Actions |
 
 ### Standards
 | Document | Covers |
@@ -130,5 +136,20 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `standards/commit-messages.md` | Commit message conventions |
 | `standards/branch-discipline.md` | Branch naming and workflow |
 | `standards/naming.md` | File, folder, and variable naming rules |
+
+### Context
+| Document | Covers |
+|---|---|
+| `context/about-me.md` | Owner background and working style (placeholder) |
+| `context/roles.md` | Roles the owner operates in (placeholder) |
+| `context/priorities.md` | Current priorities (placeholder) |
+| `context/constraints.md` | Time, tools, and skill constraints (placeholder) |
+
+### Reference
+| Document | Covers |
+|---|---|
+| `audit-prompt.md` | LLM-agnostic prompt to run a full documentation health audit |
+| `UPDATING.md` | How to keep global-docs current and in sync with site/ |
+| `AI-INSTRUCTIONS.md` | Entry point orientation file for AI tools |
 
 ---

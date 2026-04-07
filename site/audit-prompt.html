@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "", pageId: "audit-prompt" };</script>
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Documentation audit prompt — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Global-docs audit prompt</h1>
+    <p>Run this prompt against the global-docs repo whenever a documentation health check is needed. This prompt is LLM-agnostic — paste it into any AI tool that has the repo open locally.</p>
+    <hr>
+    <p>Before starting, read README.md to understand the purpose and structure of this repo.</p>
+    <p>I want a full documentation health audit of this global-docs repository, including the static HTML site in site/.</p>
+    <p>Background:</p>
+    <ul>
+    <li>This repo is the single source of truth for how I work across my main GitHub</li>
+    </ul>
+    <p>account and 5 organizations: javcb-prod, javcb-staging, javcb-templates, javcb-archive, and javcb-ai</p>
+    <ul>
+    <li>AI tools read this repo before starting any project — accuracy and internal</li>
+    </ul>
+    <p>consistency are critical</p>
+    <ul>
+    <li>The repo covers: org governance, AI behavior rules, architecture, coding</li>
+    </ul>
+    <p>standards, process playbooks, an operational model, and a static HTML site</p>
+    <ul>
+    <li>A static HTML documentation site lives in site/ and should mirror the .md files</li>
+    </ul>
+    <p>Work through every item below. Do not make any changes. Report only.</p>
+    <hr>
+    <h2 id="1-registry-check">1. Registry check</h2>
+    <ul>
+    <li>Confirm architecture/registry.md exists</li>
+    <li>Verify every doc that references a cross-repo asset (ai-repo-starter,</li>
+    </ul>
+    <p>design-system, core libraries) links to the registry instead of hardcoding an org/repo location</p>
+    <ul>
+    <li>Flag every file that hardcodes a location that should defer to the registry</li>
+    </ul>
+    <h2 id="2-master-index-completeness">2. Master index completeness</h2>
+    <ul>
+    <li>Find README.md and its master index tables</li>
+    <li>List every .md file on disk that is NOT referenced in the index</li>
+    <li>List every index entry that points to a file that does not exist on disk</li>
+    <li>Flag orphaned files not referenced anywhere in the repo</li>
+    </ul>
+    <h2 id="3-internal-link-integrity-markdown">3. Internal link integrity — markdown</h2>
+    <ul>
+    <li>Scan every .md file for relative links</li>
+    <li>Flag every link pointing to a file or anchor that does not exist</li>
+    <li>Include file name and line reference for each broken link</li>
+    </ul>
+    <h2 id="4-site-integrity-and-parity">4. Site integrity and parity</h2>
+    <ul>
+    <li>Confirm site/ exists with assets/style.css, assets/nav.js, index.html, faq.html</li>
+    <li>Confirm site/updating.html exists as a top-level page separate from faq.html</li>
+    <li>List every .md file that does not have a corresponding .html page in site/</li>
+    <li>List every .html page in site/ that does not have a corresponding .md source file</li>
+    <li>Check nav.js sidebar order matches exactly:</li>
+    </ul>
+    <p>Home → FAQ → How to update docs → Orgs → AI Rules → Architecture → Processes → Standards</p>
+    <ul>
+    <li>Scan every .html file in site/ for href links pointing to non-existent pages</li>
+    <li>Flag any content visible in a .html page that contradicts or is out of sync</li>
+    </ul>
+    <p>with its source .md file</p>
+    <h2 id="5-terminology-consistency">5. Terminology consistency</h2>
+    <ul>
+    <li>Confirm &quot;main GitHub user account&quot; and org names (javcb-prod, javcb-staging,</li>
+    </ul>
+    <p>javcb-templates, javcb-archive, javcb-ai) are used consistently throughout</p>
+    <ul>
+    <li>Flag any file that confuses the main account with an org</li>
+    <li>Confirm local machine folder paths are consistent across all docs that reference them</li>
+    </ul>
+    <h2 id="6-rules-consistency">6. Rules consistency</h2>
+    <ul>
+    <li>Find any rule, process, or standard that appears in more than one file</li>
+    </ul>
+    <p>with different or conflicting content</p>
+    <ul>
+    <li>Flag any content that should be consolidated into one canonical location</li>
+    <li>Check that ai/base-rules.md, ai/languages.md, ai/security.md, and</li>
+    </ul>
+    <p>standards/modularity.md do not contradict each other</p>
+    <h2 id="7-placeholder-audit">7. Placeholder audit</h2>
+    <ul>
+    <li>List every file or section marked TODO, &quot;not yet built&quot;, or &quot;placeholder&quot;</li>
+    <li>Confirm each is clearly labeled as such and not presented as active content</li>
+    <li>Flag any placeholder that appears in a visible HTML page without a draft label</li>
+    </ul>
+    <h2 id="8-ai-readiness-check">8. AI readiness check</h2>
+    <ul>
+    <li>Read AI-INSTRUCTIONS.md at the repo root</li>
+    <li>Verify every linked file path is valid</li>
+    <li>Confirm the file gives a new AI tool enough orientation to understand the</li>
+    </ul>
+    <p>repo and find the rules it needs without any prior conversation history</p>
+    <ul>
+    <li>Flag anything that would confuse a first-time reader</li>
+    </ul>
+    <h2 id="9-coverage-check">9. Coverage check</h2>
+    <p>Confirm the following files exist and contain substantive or clearly labeled placeholder content:</p>
+    <ul>
+    <li>architecture/registry.md</li>
+    <li>processes/operational-model.md</li>
+    <li>processes/ai-tool-setup.md</li>
+    <li>processes/expansion-roadmap.md</li>
+    <li>processes/link-checker-setup.md</li>
+    <li>standards/modularity.md</li>
+    <li>context/about-me.md</li>
+    <li>context/roles.md</li>
+    <li>context/priorities.md</li>
+    <li>context/constraints.md</li>
+    <li>FAQ.md at repo root</li>
+    <li>UPDATING.md at repo root</li>
+    </ul>
+    <hr>
+    <h2 id="report-format">Report format</h2>
+    <p>Group findings by severity: High / Medium / Low</p>
+    <p>For each finding:</p>
+    <ul>
+    <li>File name and location (line or section if possible)</li>
+    <li>What the problem is</li>
+    <li>Suggested fix</li>
+    </ul>
+    <p>End with:</p>
+    <ul>
+    <li>Overall health score: 1–10</li>
+    <li>Single most important fix to do first</li>
+    <li>Any patterns in the issues that suggest a systemic problem to address</li>
+    </ul>
+  </main>
+  <script src="assets/nav.js"></script>
+</body>
+</html>

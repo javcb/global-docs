@@ -11,7 +11,7 @@ The workflow is: clone locally → open in tool → push via git.
 1. GitHub Desktop installed and signed in
 2. All orgs enabled for fine-grained PATs (see processes/access-tokens.md)
 3. SSH key or HTTPS credential configured in git for pushing
-4. global-docs cloned locally at ~/code/github/[yourusername]/global-docs/
+4. global-docs cloned locally at ~/code/github/[your-github-username]/global-docs/
 
 ## Cursor setup
 
@@ -31,7 +31,7 @@ The workflow is: clone locally → open in tool → push via git.
 4. Claude Code reads all files in the current directory
 5. It will find AI-INSTRUCTIONS.md automatically if present at repo root
 6. To give it global-docs context explicitly:
-   "Before starting, read ~/code/github/[yourusername]/global-docs/README.md
+   "Before starting, read ~/code/github/[your-github-username]/global-docs/README.md
     and follow the links relevant to this repo"
 
 ## For any new AI tool

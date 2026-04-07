@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "architecture/system-overview" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>architecture/system-overview — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>System overview</h1>
+    <h2 id="the-big-picture">The big picture</h2>
+    <p>This system is designed so that one person can work across multiple roles (work, personal projects, UI/UX prototyping, data engineering) using shared, reusable components without duplicating effort or creating role-specific silos.</p>
+    <h2 id="core-design-principles">Core design principles</h2>
+    <ul>
+    <li>Build once, reuse across roles</li>
+    <li>Core libraries are role-agnostic</li>
+    <li>Credentials and environment config belong in adapters, not libraries</li>
+    <li>Python and SQL for durable production systems</li>
+    <li>TypeScript/JavaScript/CSS for UI prototypes only</li>
+    <li>AI tools operate within documented boundaries, not freestyle</li>
+    </ul>
+    <h2 id="how-the-pieces-connect">How the pieces connect</h2>
+    <p>global-docs (this repo) ↓ governs GitHub orgs (javcb-prod, javcb-staging, javcb-templates, javcb-archive, javcb-ai) ↓ contain Repos (core libraries, apps, templates, experiments) ↓ mirror Local machine folders (~/code/github/[org-or-username]/[repo-name])</p>
+    <h2 id="repo-categories">Repo categories</h2>
+    <table><thead><tr><th>Category</th><th>Org</th><th>Purpose</th></tr></thead><tbody><tr><td>Core libraries</td><td>javcb-prod</td><td>Reusable Python/SQL building blocks</td></tr><tr><td>Active projects</td><td>javcb-staging</td><td>Work in progress</td></tr><tr><td>Templates/kits</td><td>javcb-templates</td><td>Purchased kits, read-only starters</td></tr><tr><td>AI builds</td><td>javcb-ai</td><td>Autonomous agent output, prototypes</td></tr><tr><td>Retired work</td><td>javcb-archive</td><td>Historical reference only</td></tr></tbody></table>
+    <h2 id="data-platform-strategy">Data platform strategy</h2>
+    <ul>
+    <li>Snowflake: work role only (credentials not shared)</li>
+    <li>Supabase: personal projects (credentials not shared)</li>
+    <li>Excel/SharePoint: work role</li>
+    <li>Core libraries handle all platforms generically via env vars</li>
+    </ul>
+    <p>See <a href="./data-platforms.html"><code>architecture/data-platforms.md</code></a> and <a href="./core-vs-adapters.html"><code>architecture/core-vs-adapters.md</code></a> for detail.</p>
+    <h2 id="ai-tool-strategy">AI tool strategy</h2>
+    <ul>
+    <li>All AI tools read global-docs before working</li>
+    <li>Access is scoped per token (read-only for docs/templates, write for sandbox)</li>
+    <li>Maker builds in staging/ai sandbox, checker reviews, owner promotes to prod</li>
+    </ul>
+    <p>See <a href="../processes/maker-checker.html"><code>processes/maker-checker.md</code></a> and <a href="../processes/access-tokens.html"><code>processes/access-tokens.md</code></a> for detail.</p>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

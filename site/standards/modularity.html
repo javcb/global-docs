@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "standards/modularity" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>standards/modularity — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Modularity and centralization standards</h1>
+    <h2 id="core-principle">Core principle</h2>
+    <p>Shared elements are defined once and referenced everywhere. No copy-pasting of structural, styling, or behavioral code across files.</p>
+    <h2 id="what-this-means-per-context">What this means per context</h2>
+    <h3 id="html-css-js-projects">HTML/CSS/JS projects</h3>
+    <ul>
+    <li>Shared layout, navigation, header, footer: driven from one JS module or include</li>
+    <li>Shared styles: one CSS file (or one design-token-based stylesheet)</li>
+    <li>Shared scripts: one JS file per concern (nav.js, search.js, etc.)</li>
+    <li>Each page contains only its unique content plus the minimal shell to load shared assets</li>
+    <li>If a structural element appears in more than one place, it belongs in a shared module</li>
+    </ul>
+    <h3 id="python-projects">Python projects</h3>
+    <ul>
+    <li>Shared logic (connections, logging, config, utilities): extracted into src/ modules</li>
+    <li>Scripts and workflows import from modules; they do not reimplement shared logic</li>
+    <li>If the same pattern appears in two scripts, it belongs in a module</li>
+    </ul>
+    <h3 id="ui-component-projects-design-system">UI component projects (design system)</h3>
+    <ul>
+    <li>Follow atomic design: atoms → molecules → organisms → templates → pages</li>
+    <li>No one-off components; every UI element traces back to the design system</li>
+    <li>New UI work uses existing components by name; does not re-implement from scratch</li>
+    </ul>
+    <h3 id="sql">SQL</h3>
+    <ul>
+    <li>Reusable logic belongs in views or stored procedures, not repeated inline</li>
+    <li>CTEs are preferred over subquery repetition within a single query</li>
+    </ul>
+    <h2 id="rule-for-ai-tools">Rule for AI tools</h2>
+    <p>Before adding any new page, component, script, or module, ask:</p>
+    <ul>
+    <li>Does a shared version of this already exist?</li>
+    <li>If yes: use it, do not duplicate it.</li>
+    <li>If no: create it as a shared/reusable asset, then reference it.</li>
+    </ul>
+    <p>Never add a structural or behavioral element to a single file if it is likely to be needed in more than one place.</p>
+    <h2 id="violation-signals">Violation signals</h2>
+    <p>Flag these as modularity violations:</p>
+    <ul>
+    <li>The same CSS class defined in multiple files</li>
+    <li>The same nav/header/footer HTML block in multiple pages</li>
+    <li>The same database connection logic in multiple scripts</li>
+    <li>The same utility function copied across modules</li>
+    <li>A UI component built from scratch when one exists in the design system</li>
+    </ul>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

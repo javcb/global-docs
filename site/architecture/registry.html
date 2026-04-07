@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "architecture/registry" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>architecture/registry — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Cross-repo registry</h1>
+    <p>This is the single canonical reference for where key assets live across orgs and repos. All other docs should reference this file instead of hardcoding locations.</p>
+    <p>Last updated: April 2026</p>
+    <h2 id="core-assets">Core assets</h2>
+    <table><thead><tr><th>Asset</th><th>Org</th><th>Repo</th><th>Status</th></tr></thead><tbody><tr><td>Global documentation</td><td>main user account</td><td>global-docs</td><td>Active</td></tr><tr><td>AI repo starter template</td><td>javcb-templates</td><td>templates_repo-starter</td><td>Active</td></tr><tr><td>Design system</td><td>javcb-templates</td><td>design-system</td><td>Not yet built</td></tr><tr><td>Python Excel core library</td><td>javcb-prod</td><td>py-excel-core</td><td>Not yet built</td></tr><tr><td>Python Snowflake core library</td><td>javcb-prod</td><td>py-snowflake-core</td><td>Not yet built</td></tr><tr><td>Python Supabase core library</td><td>javcb-prod</td><td>py-supabase-core</td><td>Not yet built</td></tr><tr><td>SQL core repo</td><td>javcb-prod</td><td>sql-core</td><td>Not yet built</td></tr></tbody></table>
+    <h2 id="rules">Rules</h2>
+    <ul>
+    <li>When a new canonical repo is created, add it here first</li>
+    <li>All docs that reference a cross-repo asset should link to this registry</li>
+    <li>Do not hardcode org/repo locations in multiple docs</li>
+    </ul>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

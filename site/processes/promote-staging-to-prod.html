@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "processes/promote-staging-to-prod" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>processes/promote-staging-to-prod — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Promote staging to prod</h1>
+    <h2 id="when-to-promote">When to promote</h2>
+    <p>A repo is ready to promote from javcb-staging to javcb-prod when:</p>
+    <ul>
+    <li>Maker/checker review is complete and issues are resolved</li>
+    <li>README is accurate and complete</li>
+    <li>.env.example lists all required variables</li>
+    <li>No hardcoded credentials exist anywhere</li>
+    <li>Standard repo structure is in place</li>
+    <li>Feature branch has been merged to main</li>
+    </ul>
+    <h2 id="steps">Steps</h2>
+    <ol>
+    <li>Run final maker/checker review if not already done</li>
+    </ol>
+    <p>See <a href="./maker-checker.html"><code>processes/maker-checker.md</code></a></p>
+    <ol>
+    <li>Confirm checklist:</li>
+    </ol>
+    <p>- [ ] README complete - [ ] .env.example complete - [ ] .gitignore in place - [ ] No secrets in code - [ ] src/ structure correct - [ ] Tests present (even minimal) - [ ] Branch merged to main</p>
+    <ol>
+    <li>Transfer repo to javcb-prod:</li>
+    </ol>
+    <p>- Open repo on GitHub - Settings → scroll to Danger Zone → Transfer ownership - Select javcb-prod as destination - Confirm by typing repo name</p>
+    <ol>
+    <li>Update README status field:</li>
+    </ol>
+    <p>- Change: <code>[ ] Production-ready</code> to <code>[x] Production-ready</code></p>
+    <ol>
+    <li>Update processes/setup-history.md with a note about what was promoted and when</li>
+    </ol>
+    <ol>
+    <li>Remove local staging copy if no longer needed:</li>
+    </ol>
+    <p>- In GitHub Desktop: right-click repo → Remove - Choose to delete local folder - Re-clone from javcb-prod location if still needed locally</p>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

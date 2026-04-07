@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "ai/languages" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>ai/languages — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Language and technology boundaries</h1>
+    <h2 id="global-default">Global default</h2>
+    <p>Preferred durable production stack:</p>
+    <ul>
+    <li>Python</li>
+    <li>SQL</li>
+    </ul>
+    <p>Allowed secondary/prototyping stack:</p>
+    <ul>
+    <li>TypeScript</li>
+    <li>JavaScript</li>
+    <li>CSS</li>
+    </ul>
+    <h2 id="production-oriented-repos">Production-oriented repos</h2>
+    <p>Use:</p>
+    <ul>
+    <li>Python for automation, data workflows, APIs, utilities</li>
+    <li>SQL for database logic, transformations, views, procedures</li>
+    </ul>
+    <p>Do not introduce:</p>
+    <ul>
+    <li>TypeScript/JavaScript/CSS into backend or data repos unless explicitly required</li>
+    </ul>
+    <h2 id="ui-ux-prototype-repos">UI/UX prototype repos</h2>
+    <p>Use:</p>
+    <ul>
+    <li>TypeScript</li>
+    <li>JavaScript</li>
+    <li>CSS</li>
+    <li>supporting frontend libraries when justified</li>
+    </ul>
+    <h2 id="ai-sandbox-repos">AI sandbox repos</h2>
+    <p>Any language may be used for experimentation. However:</p>
+    <ul>
+    <li>prefer Python/SQL if the work may later be promoted to production</li>
+    <li>clearly label prototype vs production-ready output</li>
+    </ul>
+    <h2 id="constraint-handling">Constraint handling</h2>
+    <p>If the best solution falls outside the allowed stack:</p>
+    <ol>
+    <li>explain why</li>
+    <li>describe the recommended outside-boundary solution at a high level</li>
+    <li>provide the best within-boundary solution</li>
+    <li>do not implement outside-boundary code unless explicitly instructed</li>
+    </ol>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

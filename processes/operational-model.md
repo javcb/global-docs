@@ -142,7 +142,7 @@ What this makes easier or harder going forward.
 
 ### Where to store ADRs
 `processes/adrs/` folder in global-docs.
-Create one file per decision: `adr-001-python-only-for-prod.md` etc.
+Create one file per decision, e.g. `adr-001-python-only-for-prod` (add `.md` when you create the file).
 
 ---
 

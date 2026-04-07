@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "processes/link-checker-setup" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>processes/link-checker-setup — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Automated link checker setup</h1>
+    <h2 id="purpose">Purpose</h2>
+    <p>Automatically check all links in global-docs markdown files on a schedule. Catches broken internal links, dead external URLs, and missing file references without any manual work.</p>
+    <h2 id="setup-github-actions">Setup (GitHub Actions)</h2>
+    <p>Create this file in global-docs repo: <code>.github/workflows/link-check.yml</code></p>
+    <pre><code>name: Link Checker
+    
+    on:
+      schedule:
+        - cron: '0 9 * * 1'  # Every Monday at 9am UTC
+      workflow_dispatch:       # Allow manual trigger from GitHub Actions tab
+    
+    jobs:
+      link-check:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+    
+          - name: Check links in markdown files
+            uses: lycheeverse/lychee-action@v1
+            with:
+              args: &gt;
+                --verbose
+                --no-progress
+                --exclude-loopback
+                --exclude 'localhost'
+                './**/*.md'
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+          - name: Check links in HTML site
+            uses: lycheeverse/lychee-action@v1
+            with:
+              args: &gt;
+                --verbose
+                --no-progress
+                --exclude-loopback
+                './site/**/*.html'
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}</code></pre>
+    <h2 id="what-it-checks">What it checks</h2>
+    <ul>
+    <li>All links in every .md file in global-docs</li>
+    <li>All links in every .html file in site/</li>
+    <li>Reports broken links, 404s, and unreachable URLs</li>
+    </ul>
+    <h2 id="where-to-see-results">Where to see results</h2>
+    <ul>
+    <li>GitHub → global-docs repo → Actions tab → Link Checker workflow</li>
+    <li>If a run fails, GitHub will show which links are broken</li>
+    </ul>
+    <h2 id="manual-trigger">Manual trigger</h2>
+    <ul>
+    <li>Go to GitHub → global-docs → Actions → Link Checker → Run workflow</li>
+    </ul>
+    <h2 id="what-to-do-when-links-break">What to do when links break</h2>
+    <ol>
+    <li>Open the Actions log to see which links failed</li>
+    <li>Fix the broken links in the relevant .md and .html files</li>
+    <li>Re-run the workflow to confirm fixes</li>
+    </ol>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

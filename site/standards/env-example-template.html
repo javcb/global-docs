@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "standards/env-example-template" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>standards/env-example-template — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>.env.example standard</h1>
+    <p>Every repo that requires credentials or environment-specific config must include a <code>.env.example</code> file.</p>
+    <h2 id="rules">Rules</h2>
+    <ul>
+    <li>.env.example is committed to the repo</li>
+    <li>.env is never committed (covered by .gitignore)</li>
+    <li>Every required variable must appear in .env.example with a dummy or descriptive value</li>
+    <li>Add a comment above each variable explaining what it is</li>
+    </ul>
+    <h2 id="template">Template</h2>
+    <p>Snowflake connection SNOWFLAKE_ACCOUNT=your_account.region SNOWFLAKE_USER=your_username SNOWFLAKE_PASSWORD=your_password SNOWFLAKE_DATABASE=your_database SNOWFLAKE_SCHEMA=your_schema SNOWFLAKE_WAREHOUSE=your_warehouse SNOWFLAKE_ROLE=your_role</p>
+    <p>Supabase connection SUPABASE_URL=https://your-project.supabase.co SUPABASE_KEY=your_anon_or_service_key</p>
+    <p>SharePoint (if applicable) SHAREPOINT_SITE_URL=https://yourorg.sharepoint.com/sites/your-site SHAREPOINT_CLIENT_ID=your_client_id SHAREPOINT_CLIENT_SECRET=your_client_secret</p>
+    <p>Excel paths (adjust per machine) EXCEL_SOURCE_DIR=/path/to/source/files EXCEL_OUTPUT_DIR=/path/to/output/files</p>
+    <p>AI tools must create this file when scaffolding any repo that connects to external systems.</p>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

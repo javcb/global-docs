@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "", pageId: "updating" };</script>
+  <link rel="stylesheet" href="assets/style.css">
+  <title>How to update global-docs — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>How to update global-docs</h1>
+    <h2 id="when-to-update">When to update</h2>
+    <ul>
+    <li>A new recurring rule or pattern emerges from a project</li>
+    <li>A structural change is made to orgs or repos</li>
+    <li>A new AI tool or access token is added</li>
+    <li>A major process decision is made</li>
+    <li>A new file is added to global-docs</li>
+    </ul>
+    <h2 id="steps">Steps</h2>
+    <ol>
+    <li>Edit the relevant file directly</li>
+    <li>If adding a new file: add it to <a href="./index.html">README.md</a> master index table</li>
+    <li>Update the corresponding HTML page in site/ in the same commit</li>
+    <li>If adding a new process or standard: add a FAQ entry in <a href="./faq.html">FAQ.md</a></li>
+    <li>If the change is a major decision: note it in <a href="./processes/setup-history.html">processes/setup-history.md</a></li>
+    <li>Commit with a clear message: e.g. &quot;Add operational-model.md rollback section&quot;</li>
+    </ol>
+    <h2 id="site-sync-rule">Site sync rule</h2>
+    <p>When any .md file is updated, its corresponding site/ HTML page must be updated in the same commit. They are not automatically synced.</p>
+    <p>To sync a specific page, prompt any AI tool: &quot;The content of [filename].md has been updated. Update site/[path]/[filename].html to match. Do not change structural HTML, nav, or shared assets. Update content only.&quot;</p>
+    <h2 id="full-documentation-audit">Full documentation audit</h2>
+    <p>Run <a href="./audit-prompt.html">audit-prompt.md</a> periodically and before any major project. See <a href="./faq.html">FAQ.md</a> for the audit AI prompt to use.</p>
+    <h2 id="staleness-rule">Staleness rule</h2>
+    <p>If something important was decided or changed in a session: update global-docs before closing the session. Do not rely on AI tool memory or conversation history. global-docs is the only persistent context that survives tool changes.</p>
+  </main>
+  <script src="assets/nav.js"></script>
+</body>
+</html>

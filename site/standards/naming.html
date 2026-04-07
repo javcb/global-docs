@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "standards/naming" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>standards/naming — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Naming conventions</h1>
+    <h2 id="repos">Repos</h2>
+    <ul>
+    <li>Use lowercase, hyphen-separated names</li>
+    <li>Be descriptive, not clever</li>
+    <li>Include the tech or purpose where helpful</li>
+    </ul>
+    <p>Good: <code>py-snowflake-core</code>, <code>sql-supabase-core</code>, <code>excel-automation-tools</code> Bad: <code>utils</code>, <code>stuff</code>, <code>my-project</code></p>
+    <h2 id="python-files-and-modules">Python files and modules</h2>
+    <ul>
+    <li>Lowercase, underscore-separated (snake_case)</li>
+    <li>Module names describe what they do</li>
+    </ul>
+    <p>Good: <code>snowflake_connect.py</code>, <code>excel_file_ops.py</code> Bad: <code>snowflakeStuff.py</code>, <code>helper.py</code></p>
+    <h2 id="python-functions-and-variables">Python functions and variables</h2>
+    <ul>
+    <li>snake_case</li>
+    <li>Verb-first for functions, noun-first for variables</li>
+    </ul>
+    <p>Good: <code>get_sheet_data()</code>, <code>load_to_snowflake()</code>, <code>source_file_path</code> Bad: <code>getData()</code>, <code>doThing()</code>, <code>x</code></p>
+    <h2 id="sql-files">SQL files</h2>
+    <ul>
+    <li>Lowercase, underscore-separated</li>
+    <li>Name by object type and purpose</li>
+    </ul>
+    <p>Good: <code>vw_sales_by_day.sql</code>, <code>sp_load_daily_summary.sql</code>, <code>tbl_customers.sql</code> Bad: <code>query1.sql</code>, <code>new.sql</code></p>
+    <h2 id="sql-objects">SQL objects</h2>
+    <ul>
+    <li>Tables: <code>tbl_</code> prefix or no prefix, consistent throughout</li>
+    <li>Views: <code>vw_</code> prefix</li>
+    <li>Stored procedures: <code>sp_</code> prefix</li>
+    <li>Staging tables: <code>stg_</code> prefix</li>
+    </ul>
+    <h2 id="environment-variables">Environment variables</h2>
+    <ul>
+    <li>SCREAMING_SNAKE_CASE</li>
+    <li>Platform prefix where applicable</li>
+    </ul>
+    <p>Good: <code>SNOWFLAKE_ACCOUNT</code>, <code>SUPABASE_URL</code>, <code>EXCEL_SOURCE_DIR</code> Bad: <code>account</code>, <code>myKey</code>, <code>path1</code></p>
+    <h2 id="branches">Branches</h2>
+    <ul>
+    <li>feature/short-description</li>
+    <li>fix/short-description</li>
+    <li>refactor/short-description</li>
+    <li>experiment/short-description</li>
+    </ul>
+    <h2 id="commit-messages">Commit messages</h2>
+    <p>See <a href="./commit-messages.html"><code>standards/commit-messages.md</code></a></p>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

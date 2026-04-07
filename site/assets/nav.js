@@ -6,10 +6,12 @@
 (function () {
   "use strict";
 
-  /** Title shown in <title> and breadcrumbs (current page). */
   var PAGE = {
     home: { title: "Home", nav: "Home" },
-    faq: { title: "Quick reference FAQ", nav: "FAQ (Quick reference)" },
+    faq: { title: "Quick reference FAQ", nav: "Quick reference" },
+    updating: { title: "How to update global-docs", nav: "How to update docs" },
+    "ai-instructions": { title: "AI instructions for global-docs", nav: "AI instructions" },
+    "audit-prompt": { title: "Documentation audit prompt", nav: "Audit prompt" },
     "orgs/index": { title: "Organizations", nav: "Overview" },
     "orgs/overview": { title: "Organization overview", nav: "Organization overview" },
     "orgs/javcb-prod": { title: "Org: javcb-prod", nav: "javcb-prod" },
@@ -30,10 +32,12 @@
     "ai/future-ideas": { title: "Future ideas", nav: "future-ideas" },
     "architecture/index": { title: "Architecture", nav: "Overview" },
     "architecture/system-overview": { title: "System overview", nav: "system-overview" },
+    "architecture/registry": { title: "Cross-repo registry", nav: "registry" },
     "architecture/core-vs-adapters": { title: "Core vs adapters", nav: "core-vs-adapters" },
     "architecture/data-platforms": { title: "Data platforms", nav: "data-platforms" },
     "architecture/sql-strategy": { title: "SQL strategy", nav: "sql-strategy" },
     "architecture/local-machine-layout": { title: "Local machine layout", nav: "local-machine-layout" },
+    "architecture/design-system": { title: "Design system (architecture)", nav: "design-system (arch)" },
     "processes/index": { title: "Processes", nav: "Overview" },
     "processes/maker-checker": { title: "Maker / checker", nav: "maker-checker" },
     "processes/autonomous-build": { title: "Autonomous build", nav: "autonomous-build" },
@@ -44,7 +48,11 @@
     "processes/modularization-playbook": { title: "Modularization playbook", nav: "modularization-playbook" },
     "processes/promote-staging-to-prod": { title: "Promote staging to prod", nav: "promote-staging-to-prod" },
     "processes/template-intake": { title: "Template intake", nav: "template-intake" },
+    "processes/operational-model": { title: "Operational model", nav: "operational-model" },
+    "processes/ai-tool-setup": { title: "AI tool setup", nav: "ai-tool-setup" },
     "processes/setup-history": { title: "Setup history", nav: "setup-history" },
+    "processes/expansion-roadmap": { title: "Expansion roadmap", nav: "expansion-roadmap" },
+    "processes/link-checker-setup": { title: "Link checker setup", nav: "link-checker-setup" },
     "standards/index": { title: "Standards", nav: "Overview" },
     "standards/python": { title: "Python", nav: "python" },
     "standards/sql": { title: "SQL", nav: "sql" },
@@ -57,11 +65,18 @@
     "standards/commit-messages": { title: "Commit messages", nav: "commit-messages" },
     "standards/branch-discipline": { title: "Branch discipline", nav: "branch-discipline" },
     "standards/naming": { title: "Naming", nav: "naming" },
+    "standards/modularity": { title: "Modularity", nav: "modularity" },
+    "context/about-me": { title: "About me", nav: "about-me" },
+    "context/roles": { title: "Roles", nav: "roles" },
+    "context/priorities": { title: "Current priorities", nav: "priorities" },
+    "context/constraints": { title: "Constraints", nav: "constraints" },
+    "context/CONTEXT_OPEN-ITEMS": { title: "Context open items", nav: "CONTEXT_OPEN-ITEMS" },
   };
 
   var PAGE_ORDER = [
     "home",
     "faq",
+    "updating",
     "orgs/index",
     "orgs/overview",
     "orgs/javcb-prod",
@@ -82,10 +97,12 @@
     "ai/future-ideas",
     "architecture/index",
     "architecture/system-overview",
+    "architecture/registry",
     "architecture/core-vs-adapters",
     "architecture/data-platforms",
     "architecture/sql-strategy",
     "architecture/local-machine-layout",
+    "architecture/design-system",
     "processes/index",
     "processes/maker-checker",
     "processes/autonomous-build",
@@ -96,7 +113,11 @@
     "processes/modularization-playbook",
     "processes/promote-staging-to-prod",
     "processes/template-intake",
+    "processes/operational-model",
+    "processes/ai-tool-setup",
     "processes/setup-history",
+    "processes/expansion-roadmap",
+    "processes/link-checker-setup",
     "standards/index",
     "standards/python",
     "standards/sql",
@@ -109,12 +130,20 @@
     "standards/commit-messages",
     "standards/branch-discipline",
     "standards/naming",
+    "standards/modularity",
+    "context/about-me",
+    "context/roles",
+    "context/priorities",
+    "context/constraints",
+    "context/CONTEXT_OPEN-ITEMS",
+    "ai-instructions",
+    "audit-prompt",
   ];
 
-  /** Collapsible groups (sidebar order). Single items rendered above groups. */
   var SIDEBAR = [
     { kind: "link", pageId: "home" },
     { kind: "link", pageId: "faq" },
+    { kind: "link", pageId: "updating" },
     {
       kind: "group",
       label: "Orgs",
@@ -151,10 +180,12 @@
       pageIds: [
         "architecture/index",
         "architecture/system-overview",
+        "architecture/registry",
         "architecture/core-vs-adapters",
         "architecture/data-platforms",
         "architecture/sql-strategy",
         "architecture/local-machine-layout",
+        "architecture/design-system",
       ],
     },
     {
@@ -171,7 +202,11 @@
         "processes/modularization-playbook",
         "processes/promote-staging-to-prod",
         "processes/template-intake",
+        "processes/operational-model",
+        "processes/ai-tool-setup",
         "processes/setup-history",
+        "processes/expansion-roadmap",
+        "processes/link-checker-setup",
       ],
     },
     {
@@ -190,13 +225,33 @@
         "standards/commit-messages",
         "standards/branch-discipline",
         "standards/naming",
+        "standards/modularity",
       ],
+    },
+    {
+      kind: "group",
+      label: "Context",
+      pageIds: [
+        "context/about-me",
+        "context/roles",
+        "context/priorities",
+        "context/constraints",
+        "context/CONTEXT_OPEN-ITEMS",
+      ],
+    },
+    {
+      kind: "group",
+      label: "Reference",
+      pageIds: ["ai-instructions", "audit-prompt"],
     },
   ];
 
   function pageIdToPath(pageId) {
     if (pageId === "home") return "index.html";
     if (pageId === "faq") return "faq.html";
+    if (pageId === "updating") return "updating.html";
+    if (pageId === "ai-instructions") return "ai-instructions.html";
+    if (pageId === "audit-prompt") return "audit-prompt.html";
     return pageId + ".html";
   }
 
@@ -205,7 +260,15 @@
   }
 
   function breadcrumbMidSegment(pageId) {
-    if (pageId === "home" || pageId === "faq") return null;
+    if (
+      pageId === "home" ||
+      pageId === "faq" ||
+      pageId === "updating" ||
+      pageId === "ai-instructions" ||
+      pageId === "audit-prompt"
+    ) {
+      return null;
+    }
     var i = pageId.indexOf("/");
     return i >= 0 ? pageId.slice(0, i) : null;
   }
@@ -445,7 +508,7 @@
 
     var pn = document.createElement("nav");
     pn.className = "gd-pn";
-    pn.setAttribute("aria-label", "Previous and next page");
+    pn.setAttribute("aria-label", "Previous and next page information");
     fillPrevNext(pn, pageId, base);
 
     artWrap.appendChild(article);
@@ -461,7 +524,6 @@
     article.appendChild(source);
     source.removeAttribute("id");
     if (!source.classList.contains("gd-prose")) source.classList.add("gd-prose");
-
   }
 
   if (document.readyState === "loading") {

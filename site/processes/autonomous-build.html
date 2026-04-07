@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "processes/autonomous-build" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>processes/autonomous-build — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Autonomous build process</h1>
+    <h2 id="design-principle">Design principle</h2>
+    <p>This process is designed to work with any capable LLM coding agent, now or in the future, including but not limited to: Claude Code, Cursor, Copilot Workspace, OpenClaw, or similar tools. No step should be tool-specific. All behavior is governed by global-docs rules.</p>
+    <h2 id="how-to-trigger-any-agent">How to trigger any agent</h2>
+    <p>Paste this prompt pattern at the start of any autonomous build session:</p>
+    <hr>
+    <p>Before starting any work:</p>
+    <ol>
+    <li>Read AI-INSTRUCTIONS.md in this repo</li>
+    <li>Follow all linked files in global-docs</li>
+    <li>Use the standard repo structure from global-docs/processes/repo-setup-standard.md</li>
+    <li>Work only in the javcb-ai org unless told otherwise</li>
+    <li>Do not touch credentials, prod repos, or global-docs</li>
+    </ol>
+    <p>Task: [describe the project in plain English]</p>
+    <p>When complete:</p>
+    <ul>
+    <li>Update README with: what it does, how to set it up, what to test, what is incomplete</li>
+    <li>Create .env.example with all required variables</li>
+    <li>Confirm the standard repo structure is in place</li>
+    <li>Signal completion with a summary of what was built and what needs review</li>
+    </ul>
+    <hr>
+    <h2 id="what-any-agent-should-do">What any agent should do</h2>
+    <ol>
+    <li>Read global-docs context fully before writing a single line</li>
+    <li>Create repo in javcb-ai with standard structure</li>
+    <li>Build logic using allowed languages and personas</li>
+    <li>Use design system components by name if UI is involved</li>
+    <li>Use core libraries from javcb-prod where available</li>
+    <li>Update README and .env.example</li>
+    <li>Signal completion with a plain-English summary</li>
+    </ol>
+    <h2 id="promotion-path">Promotion path</h2>
+    <p>javcb-ai (built) → checker review → javcb-staging (refined) → prod review → javcb-prod</p>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

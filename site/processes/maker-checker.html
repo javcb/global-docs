@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "processes/maker-checker" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>processes/maker-checker — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Maker/checker process</h1>
+    <h2 id="goal">Goal</h2>
+    <p>Produce reviewed, durable code before anything moves to production.</p>
+    <h2 id="roles">Roles</h2>
+    <ul>
+    <li>Maker: Cursor (interactive builds) or Claude Code (autonomous tasks)</li>
+    <li>Checker: Claude reviewing diffs for quality, security, and rule compliance</li>
+    <li>Owner: final human review and promotion decision</li>
+    </ul>
+    <h2 id="process">Process</h2>
+    <ol>
+    <li>Build in javcb-staging or javcb-ai</li>
+    <li>When feature is complete, run checker review</li>
+    <li>Ask checker: &quot;Review this diff. Find bugs, missing cases, security issues, violations of global-docs rules. Do not rewrite. Flag only.&quot;</li>
+    <li>Address flagged issues</li>
+    <li>Owner sanity check</li>
+    <li>Promote to prod</li>
+    </ol>
+    <h2 id="rules">Rules</h2>
+    <ul>
+    <li>Never promote directly from ai org to prod without checker review</li>
+    <li>Checker reviews diffs, not full files, for precision</li>
+    <li>README must be updated before promotion</li>
+    </ul>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

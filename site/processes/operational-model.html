@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "processes/operational-model" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>processes/operational-model — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Operational model</h1>
+    <h2 id="purpose">Purpose</h2>
+    <p>This document defines constraints and decision points that affect how systems are built, changed, and maintained. It is not a technical implementation guide. It exists so that AI tools and team members understand the boundaries of what is safe to automate, change, or deploy without additional oversight.</p>
+    <hr>
+    <h2 id="what-is-safe-to-automate-vs-what-requires-caution">What is safe to automate vs. what requires caution</h2>
+    <h3 id="safe-to-automate">Safe to automate</h3>
+    <ul>
+    <li>Reading and transforming data (non-destructive)</li>
+    <li>Creating new files, modules, or repos from templates</li>
+    <li>Running queries against non-production data</li>
+    <li>Generating documentation drafts</li>
+    <li>Scaffolding new project structures</li>
+    </ul>
+    <h3 id="requires-human-review-before-proceeding">Requires human review before proceeding</h3>
+    <ul>
+    <li>Any change to a production database schema</li>
+    <li>Any change that modifies existing data (updates, deletes)</li>
+    <li>Any new external API integration or credential</li>
+    <li>Any change to authentication or access control logic</li>
+    <li>Promoting code from staging to prod</li>
+    <li>Deleting or archiving a repo</li>
+    </ul>
+    <h3 id="do-not-automate-without-explicit-instruction">Do not automate without explicit instruction</h3>
+    <ul>
+    <li>Running migrations against production databases</li>
+    <li>Modifying .env files or secrets</li>
+    <li>Changing GitHub org settings or access tokens</li>
+    <li>Any action that is difficult or impossible to reverse</li>
+    </ul>
+    <hr>
+    <h2 id="database-schema-changes">Database schema changes</h2>
+    <h3 id="principle">Principle</h3>
+    <p>Schema changes are among the highest-risk changes in any data system. What breaks quietly is worse than what breaks loudly.</p>
+    <h3 id="rules-for-ai-tools">Rules for AI tools</h3>
+    <ul>
+    <li>Never apply a schema migration without explicit instruction</li>
+    <li>Always propose the change first and explain what is reversible vs. destructive</li>
+    <li>Additive changes (add column, add table) are lower risk</li>
+    <li>Destructive changes (drop column, drop table, rename) require explicit approval</li>
+    <li>Always check whether existing data will be affected</li>
+    </ul>
+    <h3 id="rollback-expectation">Rollback expectation</h3>
+    <ul>
+    <li>For Supabase: schema changes can be rolled back via migration history if managed properly</li>
+    <li>For Snowflake: some changes are reversible, some are not — always flag which category</li>
+    </ul>
+    <hr>
+    <h2 id="dependency-management">Dependency management</h2>
+    <h3 id="rules">Rules</h3>
+    <ul>
+    <li>Do not add a new package without noting it in requirements.txt or package.json</li>
+    <li>Check for known vulnerabilities before adding a new dependency (ask AI to flag any)</li>
+    <li>Prefer well-maintained, widely-used packages over niche ones</li>
+    <li>Avoid packages with no recent updates or low adoption</li>
+    </ul>
+    <h3 id="for-ai-tools">For AI tools</h3>
+    <ul>
+    <li>Always update requirements.txt or package.json when adding a dependency</li>
+    <li>Flag any package that is not widely used or has known security issues</li>
+    <li>Do not install packages globally; use project-level virtual environments</li>
+    </ul>
+    <hr>
+    <h2 id="testing-expectations-by-repo-type">Testing expectations by repo type</h2>
+    <h3 id="production-repos-javcb-prod">Production repos (javcb-prod)</h3>
+    <ul>
+    <li>At minimum: one test per critical function that verifies expected behavior</li>
+    <li>Tests must pass before promotion from staging</li>
+    </ul>
+    <h3 id="staging-repos">Staging repos</h3>
+    <ul>
+    <li>Tests encouraged but not blocking</li>
+    <li>At minimum: a manual test script or README section describing how to verify it works</li>
+    </ul>
+    <h3 id="ai-sandbox-repos-javcb-ai">AI sandbox repos (javcb-ai)</h3>
+    <ul>
+    <li>Tests optional</li>
+    <li>README must describe how to manually verify the output</li>
+    </ul>
+    <h3 id="design-system">Design system</h3>
+    <ul>
+    <li>Visual review is the primary &quot;test&quot;</li>
+    <li>Each component should have a usage example in its documentation</li>
+    </ul>
+    <hr>
+    <h2 id="rollback-procedures">Rollback procedures</h2>
+    <h3 id="code-rollback">Code rollback</h3>
+    <ul>
+    <li>Every repo works on feature branches</li>
+    <li>Rolling back means reverting the merge commit or checking out the previous commit</li>
+    <li>AI tools should always work on branches, never directly on main</li>
+    </ul>
+    <h3 id="data-rollback">Data rollback</h3>
+    <ul>
+    <li>Snowflake: Time Travel allows querying/restoring data within a configurable window</li>
+    <li>Supabase: point-in-time recovery available depending on plan</li>
+    <li>Excel files: always save a copy before running any transformation script</li>
+    </ul>
+    <h3 id="what-ai-tools-should-do-when-something-breaks">What AI tools should do when something breaks</h3>
+    <ol>
+    <li>Stop and do not attempt further changes</li>
+    <li>Report exactly what was changed and what the error is</li>
+    <li>Suggest a rollback or fix but wait for approval before executing</li>
+    </ol>
+    <hr>
+    <h2 id="architecture-decision-records-adrs">Architecture Decision Records (ADRs)</h2>
+    <h3 id="what-they-are">What they are</h3>
+    <p>Short documents that capture why a significant decision was made. Not implementation details — just context, options considered, and the reason for the choice.</p>
+    <h3 id="when-to-write-one">When to write one</h3>
+    <ul>
+    <li>When choosing between two meaningfully different technical approaches</li>
+    <li>When deciding to deviate from a standard in global-docs</li>
+    <li>When a decision will be hard to reverse</li>
+    </ul>
+    <h3 id="format-keep-it-short">Format (keep it short)</h3>
+    <pre><code>## ADR-[number]: [Short title]
+    
+    Date: YYYY-MM-DD
+    Status: decided / superseded / revisited
+    
+    ### Context
+    What situation forced this decision?
+    
+    ### Options considered
+    - Option A: ...
+    - Option B: ...
+    
+    ### Decision
+    What was chosen and why.
+    
+    ### Consequences
+    What this makes easier or harder going forward.</code></pre>
+    <h3 id="where-to-store-adrs">Where to store ADRs</h3>
+    <p><code>processes/adrs/</code> folder in global-docs. Create one file per decision, e.g. <code>adr-001-python-only-for-prod</code> (add <code>.md</code> when you create the file).</p>
+    <hr>
+    <h2 id="placeholders-for-future-operational-docs">Placeholders for future operational docs</h2>
+    <p>The following topics are not yet relevant but should be documented when they become real:</p>
+    <ul>
+    <li>CI/CD pipelines: when automated deployment is introduced</li>
+    <li>Monitoring and alerting: when production systems need observability</li>
+    <li>Infrastructure as Code: when cloud provisioning becomes part of the workflow</li>
+    <li>Cost management: when cloud spend requires tracking</li>
+    <li>Incident response: when systems are live enough that outages have real consequences</li>
+    </ul>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

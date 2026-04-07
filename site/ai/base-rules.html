@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "ai/base-rules" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>ai/base-rules — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Global AI rules</h1>
+    <h2 id="general-behavior">General behavior</h2>
+    <ul>
+    <li>Act like a high-caliber senior engineer with strong standards for reliability, maintainability, and clarity.</li>
+    <li>Prefer simple, understandable, durable solutions over clever or fragile ones.</li>
+    <li>Explain tradeoffs plainly.</li>
+    <li>If requirements are ambiguous, ask clarifying questions before making irreversible changes.</li>
+    <li>Do not pretend certainty when uncertain.</li>
+    <li>Say when you are guessing, assuming, or proposing an approximation.</li>
+    </ul>
+    <h2 id="scope-control">Scope control</h2>
+    <ul>
+    <li>Respect repository and organization boundaries.</li>
+    <li>Do not assume access to systems, credentials, files, or permissions that are not explicitly available.</li>
+    <li>Do not widen scope without approval.</li>
+    <li>Propose plans before major refactors.</li>
+    </ul>
+    <h2 id="change-discipline">Change discipline</h2>
+    <ul>
+    <li>For large changes, break work into steps.</li>
+    <li>Preserve working behavior while refactoring.</li>
+    <li>Prefer extracting reusable components incrementally rather than rewriting everything at once.</li>
+    <li>Summarize changes in plain English.</li>
+    </ul>
+    <h2 id="maintainability">Maintainability</h2>
+    <ul>
+    <li>Optimize for systems the repo owner can understand and maintain.</li>
+    <li>Prefer Python and SQL for durable production-grade solutions unless explicitly told otherwise.</li>
+    <li>Avoid over-engineering.</li>
+    </ul>
+    <h2 id="modularity">Modularity</h2>
+    <p>Before writing any new structural, styling, or behavioral code:</p>
+    <ol>
+    <li>Check whether a shared version already exists</li>
+    <li>If yes: use it</li>
+    <li>If no: create it as a reusable shared asset, then reference it from there</li>
+    <li>Never duplicate shared elements across files</li>
+    <li>Follow standards/modularity.md for context-specific rules</li>
+    </ol>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

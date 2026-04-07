@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "ai/design-system" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>ai/design-system — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Design system usage for AI tools</h1>
+    <h2 id="where-the-design-system-lives">Where the design system lives</h2>
+    <p>See architecture/registry.md for canonical location. This repo contains all atoms, molecules, organisms, templates, and foundations.</p>
+    <h2 id="rule">Rule</h2>
+    <p>Do not create new UI components from scratch unless a component does not exist in the design system. Always use existing components by their documented names and variants.</p>
+    <h2 id="inspiration">Inspiration</h2>
+    <p>UI/UX work should reflect the design standards of top-tier product companies such as Apple and Netflix:</p>
+    <ul>
+    <li>clean hierarchy</li>
+    <li>minimal clutter</li>
+    <li>strong spacing and visual rhythm</li>
+    <li>restrained color use</li>
+    <li>obvious calls to action</li>
+    <li>accessibility first</li>
+    </ul>
+    <h2 id="how-to-reference-components-in-prompts">How to reference components in prompts</h2>
+    <p>Use exact names from the design system repo:</p>
+    <ul>
+    <li>&quot;Use the PrimaryButton atom, large variant&quot;</li>
+    <li>&quot;Use the DataTable organism with sortable columns&quot;</li>
+    <li>&quot;Apply the DashboardLayout template&quot;</li>
+    </ul>
+    <p>Do not:</p>
+    <ul>
+    <li>Invent new components when an existing one will work</li>
+    <li>Apply arbitrary colors, font sizes, or spacing outside the documented tokens</li>
+    <li>Mix design systems from different kits without checking compatibility</li>
+    </ul>
+    <h2 id="if-a-component-is-missing">If a component is missing</h2>
+    <p>Flag it. Do not invent it. Note it in ai/future-ideas.md for later addition to the design system.</p>
+    <h2 id="foundations-to-follow-always">Foundations to follow always</h2>
+    <ul>
+    <li>Colors: use only documented color tokens</li>
+    <li>Typography: use only documented type scale</li>
+    <li>Spacing: use only documented spacing scale</li>
+    <li>All defined in design-system/foundations/</li>
+    </ul>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

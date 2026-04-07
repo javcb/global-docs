@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "processes/ai-tool-setup" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>processes/ai-tool-setup — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>AI tool setup</h1>
+    <h2 id="principle">Principle</h2>
+    <p>Both Cursor and Claude Code work on local files. They do not need direct GitHub API access for most tasks. The workflow is: clone locally → open in tool → push via git.</p>
+    <h2 id="prerequisites-for-all-tools">Prerequisites for all tools</h2>
+    <ol>
+    <li>GitHub Desktop installed and signed in</li>
+    <li>All orgs enabled for fine-grained PATs (see processes/access-tokens.md)</li>
+    <li>SSH key or HTTPS credential configured in git for pushing</li>
+    <li>global-docs cloned locally at ~/code/github/[your-github-username]/global-docs/</li>
+    </ol>
+    <h2 id="cursor-setup">Cursor setup</h2>
+    <ol>
+    <li>Open Cursor</li>
+    <li>Settings → Features → GitHub → Connect GitHub account</li>
+    <li>To work on a repo: clone it locally via GitHub Desktop first,</li>
+    </ol>
+    <p>then File → Open Folder in Cursor</p>
+    <ol>
+    <li>Cursor reads local files; no token needed for file access</li>
+    <li>Give Cursor context by opening AI-INSTRUCTIONS.md first</li>
+    </ol>
+    <p>and saying &quot;read this before we start&quot;</p>
+    <h2 id="claude-code-setup">Claude Code setup</h2>
+    <ol>
+    <li>Install: npm install -g @anthropic-ai/claude-code</li>
+    <li>Authenticate: claude (follow login prompt on first run)</li>
+    <li>To work on a repo: cd into the local clone, then run claude</li>
+    <li>Claude Code reads all files in the current directory</li>
+    <li>It will find AI-INSTRUCTIONS.md automatically if present at repo root</li>
+    <li>To give it global-docs context explicitly:</li>
+    </ol>
+    <p>&quot;Before starting, read ~/code/github/[your-github-username]/global-docs/README.md and follow the links relevant to this repo&quot;</p>
+    <h2 id="for-any-new-ai-tool">For any new AI tool</h2>
+    <ol>
+    <li>Check whether it works on local files or needs API access</li>
+    <li>If API access needed: create a scoped token per processes/access-tokens.md</li>
+    <li>Clone the relevant repo locally first regardless</li>
+    <li>Confirm AI-INSTRUCTIONS.md is present in the repo root</li>
+    <li>Run the onboarding prompt from FAQ.md before first task</li>
+    </ol>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

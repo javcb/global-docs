@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "processes/setup-history" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>processes/setup-history — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Setup history and decisions</h1>
+    <p>This file documents major decisions made during the initial global-docs setup so context is not lost when returning to this work later.</p>
+    <hr>
+    <h2 id="april-2026-initial-github-reorganization">April 2026: Initial GitHub reorganization</h2>
+    <h3 id="problem">Problem</h3>
+    <p>Repos were scattered across a single GitHub account with no structure. Old experiments, active work, purchased templates, and AI-generated code all lived together. No documentation, no standards, no AI guardrails.</p>
+    <h3 id="what-was-done">What was done</h3>
+    <ol>
+    <li>Created four GitHub organizations:</li>
+    </ol>
+    <p>- javcb-prod: production-ready repos - javcb-staging: active work and WIP - javcb-templates: purchased kits and read-only templates - javcb-archive: retired projects - javcb-ai: AI coding sandbox</p>
+    <ol>
+    <li>Moved repos into appropriate orgs:</li>
+    </ol>
+    <p>- Old and retired repos → javcb-archive (archived on GitHub) - Purchased UI kits and Excel templates → javcb-templates (archived) - Active work repos → javcb-staging - Core libraries when ready → javcb-prod</p>
+    <ol>
+    <li>Created global-docs repo under main GitHub user account (not inside any org)</li>
+    </ol>
+    <p>- Single source of truth for all rules, architecture, processes, and standards - AI tools read this before working on any repo</p>
+    <ol>
+    <li>Created ai-repo-starter in javcb-ai</li>
+    </ol>
+    <p>- Scaffold template for all new repos created by AI or manually</p>
+    <h3 id="why-the-main-github-user-account-holds-global-docs">Why the main GitHub user account holds global-docs</h3>
+    <p>global-docs is cross-org. Putting it inside one org would require AI tools to have access to that specific org just to read documentation. Under the main user account it is accessible with a single read-only token.</p>
+    <hr>
+    <h2 id="access-token-design">Access token design</h2>
+    <h3 id="problem">Problem</h3>
+    <p>AI tools were being given broad access. Risk of accidentally modifying production code, documentation, or template masters.</p>
+    <h3 id="decision">Decision</h3>
+    <p>Use GitHub fine-grained personal access tokens, scoped per org and per purpose.</p>
+    <p>Three tokens:</p>
+    <ul>
+    <li>read-only-docs-templates: read access to global-docs and javcb-templates only</li>
+    <li>staging-write: read+write to javcb-staging only</li>
+    <li>ai-sandbox-full: read+write to javcb-ai only</li>
+    </ul>
+    <p>See processes/access-tokens.md for full setup instructions.</p>
+    <hr>
+    <h2 id="tech-stack-decisions">Tech stack decisions</h2>
+    <h3 id="production-python-sql-only">Production: Python + SQL only</h3>
+    <p>Rationale: owner can maintain, debug, and understand these languages without external help. Complexity from other languages in production systems is not worth the maintenance risk.</p>
+    <h3 id="typescript-javascript-css-prototyping-and-ui-only">TypeScript/JavaScript/CSS: prototyping and UI only</h3>
+    <p>Rationale: owner uses these for design exploration and UI mockups. Not used in backend, data, or automation systems.</p>
+    <h3 id="ai-sandbox-any-language">AI sandbox: any language</h3>
+    <p>Rationale: experimentation should not be constrained. Anything worth promoting must be reviewed and translated to the production stack.</p>
+    <hr>
+    <h2 id="design-system-decision">Design system decision</h2>
+    <h3 id="problem">Problem</h3>
+    <p>Previous AI-assisted UI work produced inconsistent, fragile front-ends because AI tools invented components instead of using a consistent system.</p>
+    <h3 id="decision">Decision</h3>
+    <p>Build an atomic design system from purchased UI kits (Tailwind, component libraries). Document all atoms, molecules, organisms, templates, and foundations. Instruct AI tools to use components by name, never invent new ones.</p>
+    <p>Status: design system repo to be built from purchased kits in javcb-templates.</p>
+    <hr>
+    <h2 id="maker-checker-process">Maker/checker process</h2>
+    <h3 id="problem">Problem</h3>
+    <p>AI-generated code went directly into use without review. Hard to maintain. Hard to debug. No quality bar.</p>
+    <h3 id="decision">Decision</h3>
+    <p>Formalize a two-stage process:</p>
+    <ul>
+    <li>Maker: Cursor or Claude Code builds in staging or ai sandbox</li>
+    <li>Checker: Claude reviews diff for bugs, security issues, rule violations</li>
+    <li>Owner: final review before promotion to prod</li>
+    </ul>
+    <p>See processes/maker-checker.md.</p>
+    <hr>
+    <h2 id="notes-for-future-self">Notes for future self</h2>
+    <ul>
+    <li>global-docs should be updated before starting any new project</li>
+    <li>When a recurring rule or pattern emerges, add it here immediately</li>
+    <li>ai/future-ideas.md is the parking lot for rough ideas not yet formalized</li>
+    <li>processes/setup-history.md (this file) should be updated when major decisions are made</li>
+    </ul>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 ## Where the design system lives
 
-Repo: javcb/design-system
+See architecture/registry.md for canonical location.
 This repo contains all atoms, molecules, organisms, templates, and foundations.
 
 ## Rule
