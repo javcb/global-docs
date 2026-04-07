@@ -1,26 +1,42 @@
 # Autonomous build process
 
-## How to trigger
+## Design principle
 
-Begin any new autonomous project with this prompt pattern:
+This process is designed to work with any capable LLM coding agent, now or in the future,
+including but not limited to: Claude Code, Cursor, Copilot Workspace, OpenClaw, or similar tools.
+No step should be tool-specific. All behavior is governed by global-docs rules.
 
-"Read AI-INSTRUCTIONS.md and the linked global-docs files. Then [describe the project in plain English]. Work in the javcb-ai org. Use the standard repo structure from global-docs. When complete, update the README with what to test, what is incomplete, and what credentials are needed."
+## How to trigger any agent
 
-## What the agent should do
+Paste this prompt pattern at the start of any autonomous build session:
 
-1. Read global-docs context
+---
+Before starting any work:
+1. Read AI-INSTRUCTIONS.md in this repo
+2. Follow all linked files in global-docs
+3. Use the standard repo structure from global-docs/processes/repo-setup-standard.md
+4. Work only in the javcb-ai org unless told otherwise
+5. Do not touch credentials, prod repos, or global-docs
+
+Task: [describe the project in plain English]
+
+When complete:
+- Update README with: what it does, how to set it up, what to test, what is incomplete
+- Create .env.example with all required variables
+- Confirm the standard repo structure is in place
+- Signal completion with a summary of what was built and what needs review
+---
+
+## What any agent should do
+
+1. Read global-docs context fully before writing a single line
 2. Create repo in javcb-ai with standard structure
-3. Set up required infrastructure (Supabase, env vars, etc.)
-4. Build core logic in Python/SQL
-5. Use templates from javcb-templates for UI scaffolding
-6. Apply atomic design system components by name where applicable
-7. Update README with review instructions
-8. Signal completion
+3. Build logic using allowed languages and personas
+4. Use design system components by name if UI is involved
+5. Use core libraries from javcb-prod where available
+6. Update README and .env.example
+7. Signal completion with a plain-English summary
 
-## Review checklist before promoting
+## Promotion path
 
-- Does it run?
-- Does the README explain setup clearly?
-- Are credentials handled via env vars?
-- Does it follow the standard repo structure?
-- Has the checker review been run?
+javcb-ai (built) → checker review → javcb-staging (refined) → prod review → javcb-prod
