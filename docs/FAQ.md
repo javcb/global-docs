@@ -17,7 +17,7 @@ see [UPDATING.md](UPDATING.md).
 2. Read [ai/base-rules.md](ai/base-rules.md) — refresh the AI operating rules
 3. Check [processes/setup-history.md](processes/setup-history.md) — review major decisions made so far
 4. Check [ai/future-ideas.md](ai/future-ideas.md) — anything you parked that needs attention
-5. Pick up where you left off using the master index in [README.md](README.md)
+5. Pick up where you left off using the master index in [index.md](index.md)
 
 ---
 
@@ -40,7 +40,7 @@ see [UPDATING.md](UPDATING.md).
 ```prompt
 # Intended for: Cursor
 
-Read global-docs/ai/design-system.md and javcb-templates/design-system/README.md.
+Read global-docs/ai/design-system.md and javcb-templates/design-system/index.md.
 I want to add [describe component or kit].
 Propose where it fits in the atomic design structure (atom/molecule/organism/template).
 Suggest the documentation format to use, consistent with existing entries.

@@ -11,7 +11,7 @@ It is also used for human onboarding and team reference.
 
 ## Read before doing anything else
 
-1. [README.md](README.md) — master index and rule precedence
+1. [index.md](index.md) — master index and rule precedence
 2. [orgs/overview.md](orgs/overview.md) — GitHub org map
 3. [ai/base-rules.md](ai/base-rules.md) — how AI tools must behave
 4. [ai/languages.md](ai/languages.md) — allowed languages per context
@@ -40,7 +40,7 @@ see [processes/operational-model.md](processes/operational-model.md).
 - Always work on a feature branch, never directly on main
 - Follow [standards/modularity.md](standards/modularity.md) before adding any new file or component
 - When referencing a cross-repo asset, check [architecture/registry.md](architecture/registry.md) first
-- Update [README.md](README.md) master index when adding a new file to this repo
+- Update [index.md](index.md) master index when adding a new file to this repo
 
 ## This repo structure
 

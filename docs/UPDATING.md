@@ -33,7 +33,7 @@ Audits are **read-only reports** unless you then apply fixes as separate edits.
 
 1. Edit the relevant `.md` file (right file, right section).
 2. If you add a **new** file:
-   - Add it to the master index in [README.md](README.md)
+   - Add it to the master index in [index.md](index.md)
    - Add it to the nav in `mkdocs.yml`
 3. If the change is a **major decision**, note it in [processes/setup-history.md](processes/setup-history.md).
 4. If the change needs a new user-facing “how do I…?” answer in the FAQ (not update/audit procedure), add or adjust a question in [FAQ.md](FAQ.md) — **do not** paste full update/audit instructions there; keep a pointer to this file instead (see [FAQ.md](FAQ.md)).
@@ -64,7 +64,7 @@ Then open http://127.0.0.1:8000 and verify your changes look correct.
 Paste the following into any AI tool that has this repo open locally. It is LLM-agnostic and **report-only** (no edits unless you ask for a follow-up).
 
 ```text
-Before starting, read README.md to understand the purpose and structure of this repo.
+Before starting, read index.md to understand the purpose and structure of this repo.
 
 I want a full documentation health audit of this global-docs repository.
 
@@ -92,7 +92,7 @@ Work through every item below. Do not make any changes. Report only.
 
 ## 2. Master index completeness
 
-- Find README.md and its master index tables
+- Find index.md and its master index tables
 - List every .md file on disk that is NOT referenced in the index
 - List every index entry that points to a file that does not exist on disk
 - Flag orphaned files not referenced anywhere in the repo
@@ -180,7 +180,7 @@ The machine-readable source of this checklist also lives in [audit-prompt.md](au
 ### What to do with audit findings
 
 1. **Triage** by severity (fix High first: wrong org pointers, broken links, missing security guidance).
-2. **Track** fixes as normal one-off updates (section 2): edit `.md`, sync `site/`, update [README.md](README.md) index if you add files.
+2. **Track** fixes as normal one-off updates (section 2): edit `.md`, sync `site/`, update [index.md](index.md) index if you add files.
 3. **Re-run** the audit after large fixes if you need confirmation (optional).
 
 **Optional:** use GitHub Actions link checking — [processes/link-checker-setup.md](processes/link-checker-setup.md).

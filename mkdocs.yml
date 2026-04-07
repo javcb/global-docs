@@ -1,0 +1,112 @@
+site_name: global-docs
+site_description: Personal documentation hub for GitHub orgs, AI rules, architecture, and processes
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - docs/assets/extra.css
+
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+  - minify:
+      minify_html: true
+
+nav:
+  - Home: index.md
+  - Quick reference:
+    - FAQ: FAQ.md
+    - How to update: UPDATING.md
+    - Open items: OPEN-ITEMS.md
+  - Orgs:
+    - Overview: orgs/overview.md
+    - Main account: orgs/javcb.md
+    - javcb-prod: orgs/javcb-prod.md
+    - javcb-staging: orgs/javcb-staging.md
+    - javcb-templates: orgs/javcb-templates.md
+    - javcb-archive: orgs/javcb-archive.md
+    - javcb-ai: orgs/javcb-ai.md
+  - AI rules:
+    - Base rules: ai/base-rules.md
+    - Personas: ai/personas.md
+    - Languages: ai/languages.md
+    - Security: ai/security.md
+    - Workflow: ai/workflow.md
+    - Quality bar: ai/quality-bar.md
+    - UI/UX style: ai/ui-ux-style.md
+    - Design system: ai/design-system.md
+    - Review checklist: ai/review-checklist.md
+    - Future ideas: ai/future-ideas.md
+  - Architecture:
+    - System overview: architecture/system-overview.md
+    - Registry: architecture/registry.md
+    - Core vs adapters: architecture/core-vs-adapters.md
+    - Data platforms: architecture/data-platforms.md
+    - SQL strategy: architecture/sql-strategy.md
+    - Local machine layout: architecture/local-machine-layout.md
+    - Design system: architecture/design-system.md
+  - Processes:
+    - Workflow scenarios: processes/workflow-scenarios.md
+    - Maker checker: processes/maker-checker.md
+    - Autonomous build: processes/autonomous-build.md
+    - Repo setup standard: processes/repo-setup-standard.md
+    - New repo checklist: processes/new-repo-checklist.md
+    - Modularization playbook: processes/modularization-playbook.md
+    - Promote to prod: processes/promote-staging-to-prod.md
+    - Operational model: processes/operational-model.md
+    - AI tool roles: processes/ai-tool-roles.md
+    - AI tool setup: processes/ai-tool-setup.md
+    - Access tokens: processes/access-tokens.md
+    - Template intake: processes/template-intake.md
+    - Post-mortem: processes/post-mortem.md
+    - Expansion roadmap: processes/expansion-roadmap.md
+    - Setup history: processes/setup-history.md
+    - Updating docs: processes/updating-docs.md
+  - Standards:
+    - Python: standards/python.md
+    - SQL: standards/sql.md
+    - JavaScript/TypeScript: standards/javascript-typescript.md
+    - Excel automation: standards/excel-automation.md
+    - Configuration: standards/configuration.md
+    - Naming: standards/naming.md
+    - Modularity: standards/modularity.md
+    - Branch discipline: standards/branch-discipline.md
+    - Commit messages: standards/commit-messages.md
+    - Gitignore template: standards/gitignore-template.md
+    - Env example template: standards/env-example-template.md
+    - Readme template: standards/readme-template.md
+    - Prompt format: standards/prompt-format.md
+    - UI behavior: standards/ui-behavior.md
+  - Context:
+    - About me: context/about-me.md
+    - Roles: context/roles.md
+    - Priorities: context/priorities.md
+    - Constraints: context/constraints.md
+    - Open items: context/CONTEXT_OPEN-ITEMS.md
+  - System maintenance:
+    - Audit prompt: audit-prompt.md
+    - AI instructions: AI-INSTRUCTIONS.md
+    - Link checker setup: processes/link-checker-setup.md
