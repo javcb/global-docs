@@ -1,25 +1,32 @@
-# Standard repo structure
+# Repo setup standard
 
-Every repo created by AI or by hand should follow this layout:
+## Starter template
 
-project-name/
-  .env.example         # Required env variables with dummy values
-  .gitignore           # Standard ignore rules
-  README.md            # Setup, purpose, env vars, how to run
-  AI-INSTRUCTIONS.md   # Links to global-docs + repo-specific rules
-  src/
-    main entry point
-    core logic modules
-  sql/                 # SQL scripts if applicable
-  tests/               # Basic tests or sanity checks
-  docs/                # Extended documentation if needed
-  assets/              # Static assets if applicable
+All new repos (AI-created or manual) should start from the ai-repo-starter template in javcb-templates.
 
-## Rules
+To use:
+1. Clone ai-repo-starter into the appropriate org
+2. Rename to the new project name
+3. AI agent reads AI-INSTRUCTIONS.md before starting any work
+4. Agent fills in README, .env.example, and src/ before writing business logic
 
-- Always create README before considering work complete
-- Always create .env.example listing every required env var
-- Always create .gitignore
-- Never commit .env, secrets, or credentials
-- Always put reusable logic in src/ modules, not inline in scripts
-- AI tools must follow this structure without being reminded
+## For refactoring existing repos
+
+Use the same standard:
+1. Clone ai-repo-starter as a reference
+2. Instruct the AI: "Refactor this repo to match the structure in ai-repo-starter.
+   Preserve all working behavior. Extract reusable modules into src/.
+   Update README and .env.example. Create a feature branch first."
+
+## Required files in every repo
+
+| File | Required | Purpose |
+|---|---|---|
+| README.md | Yes | Setup, purpose, how to run |
+| AI-INSTRUCTIONS.md | Yes | Links to global-docs + repo rules |
+| .env.example | Yes (if credentials needed) | Document required env vars |
+| .gitignore | Yes | Exclude secrets and build artifacts |
+| src/ | Yes | All logic lives here |
+| sql/ | If SQL used | SQL scripts |
+| tests/ | Yes (even if minimal) | Sanity checks |
+| docs/ | Optional | Extended documentation |
