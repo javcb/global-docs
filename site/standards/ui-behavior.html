@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "standards/ui-behavior" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>UI behavior standards — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>UI behavior standards</h1>
+    <h2>Purpose</h2>
+    <p>These standards apply to any site, app, or UI built under this system.
+    AI tools must follow these without being reminded on each project.</p>
+    <h2>State persistence</h2>
+    <ul>
+    <li>Any UI element with collapsible, expandable, or toggle state across page
+    navigations must persist that state using localStorage</li>
+    <li>Key naming: use a descriptive key prefixed by app name, e.g. &quot;global-docs-sidebar-state&quot;</li>
+    <li>On page load: restore state before first render to avoid visible layout flicker</li>
+    <li>Default state must be explicitly defined and applied when no stored state exists</li>
+    <li>The currently active item (current page, current route) must always be visible
+    and its parent section always expanded, regardless of stored state</li>
+    </ul>
+    <h2>Navigation</h2>
+    <ul>
+    <li>Active page must be visually indicated in the nav (highlighted, bold, or accented)</li>
+    <li>Sidebar or nav must not flash or reflow visibly on page load</li>
+    <li>Nav state should be managed in one shared JS file, not per-page scripts</li>
+    </ul>
+    <h2>Scroll position</h2>
+    <ul>
+    <li>Do not reset scroll position unexpectedly on navigation</li>
+    <li>For single-page apps: restore scroll position on back navigation where possible</li>
+    </ul>
+    <h2>Zoom and font scaling</h2>
+    <ul>
+    <li>Never override or interfere with browser zoom or user font size settings</li>
+    <li>Use relative units (rem, em, %) not fixed px for font sizes and spacing
+    so user zoom preferences are respected</li>
+    </ul>
+    <h2>Responsive behavior</h2>
+    <ul>
+    <li>All sites and apps must be readable on both desktop and mobile</li>
+    <li>Sidebar should collapse to a hamburger menu on mobile viewports (below 768px)</li>
+    <li>Content max-width should be respected on wide screens (e.g. max-width: 860px centered)</li>
+    </ul>
+    <h2>Accessibility basics</h2>
+    <ul>
+    <li>All interactive elements must be keyboard navigable</li>
+    <li>Color contrast must meet WCAG AA minimum</li>
+    <li>Never rely on color alone to convey meaning</li>
+    </ul>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

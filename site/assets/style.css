@@ -444,14 +444,54 @@ body {
   visibility: hidden;
 }
 
-@media (max-width: 900px) {
+.gd-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0.65rem;
+  left: 0.65rem;
+  z-index: 250;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--gd-border);
+  border-radius: 6px;
+  background: var(--gd-bg);
+  font-family: var(--gd-font);
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--gd-text);
+}
+
+.gd-burger:focus {
+  outline: none;
+  border-color: var(--gd-link);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+@media (max-width: 768px) {
+  .gd-burger {
+    display: flex;
+  }
+
   .gd-sidebar {
     transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    z-index: 200;
+  }
+
+  .gd-app.gd-nav-mobile-open .gd-sidebar {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
   }
 
   .gd-main {
     margin-left: 0;
   }
 
-  /* simple mobile: could add toggle later */
+  .gd-breadcrumb-wrap {
+    padding-left: 3.25rem;
+  }
 }

@@ -3,103 +3,11 @@
 This is your fast-access cheatsheet. For full details, follow the "Go deeper" links.
 
 ---
-## How do I keep the documentation system clean and trustworthy?
 
-### Why this matters
+## Documentation updates and audits
 
-The entire AI-assisted workflow depends on global-docs being accurate.
-If links are broken, instructions are contradictory, or the site is out of sync
-with the markdown files, AI tools will get confused and produce bad output.
-This section tells you how to catch and fix problems before they compound.
-
-### Run a full documentation audit (do this before any major project)
-
-### Prompt for Claude
-I want you to audit the global-docs repository for documentation health.
-Work through this checklist:
-
-LINK INTEGRITY
-
-Check every internal link in every .md file
-
-Check every AI-INSTRUCTIONS.md link in any repo you have access to
-
-Flag any links that are broken, point to wrong paths, or reference files that do not exist
-
-CONSISTENCY CHECK
-
-Find any rules that appear in more than one file with conflicting content
-
-Find any duplicate content that should be consolidated into one place
-
-Flag any repo-level AI-INSTRUCTIONS.md that contradicts global-docs rules
-
-COVERAGE CHECK
-
-Check that every .md file in global-docs is referenced in README.md master index
-
-Check that every .md file has a corresponding page in site/
-
-Flag any new files added to global-docs that are not yet in the site nav
-
-ACCURACY CHECK
-
-Flag any instructions that reference repos, orgs, or tools that no longer exist
-
-Flag any placeholder TODOs that should have been completed by now
-
-Report each issue with: file name, line or section, what the problem is, and suggested fix.
-Do not make any changes. Report only.
-
-
-### Automated link checking (GitHub Actions)
-
-A GitHub Action runs on a schedule and checks all links in your markdown files.
-Setup: see [processes/link-checker-setup.md](processes/link-checker-setup.md)
-This catches broken links automatically without any manual work.
-
-### Keep the HTML site in sync with markdown
-
-The current static site does not auto-update when markdown files change.
-When you update a markdown file, also update the corresponding HTML page in site/.
-
-### Prompt to sync a specific page
-The content of [filename].md has been updated.
-Update site/[path]/[filename].html to match.
-Do not change any structural HTML, nav, or shared assets.
-Only update the content section.
-
-### Prompt to do a full site sync
-Compare every .md file in global-docs with its corresponding .html page in site/.
-List any pages where the HTML content does not match the current markdown.
-Do not make changes yet. Report discrepancies only.
-
-### Keep AI-INSTRUCTIONS.md files consistent across repos
-
-### Prompt to audit all AI instruction files
-Review the AI-INSTRUCTIONS.md file in [repo name].
-Check:
-
-All global-docs links are valid and point to existing files
-
-Repo-specific rules do not contradict global-docs rules
-
-The org, status, and persona fields are accurate for this repo
-
-The completion checklist is appropriate for this repo type
-Report issues. Do not make changes.
-
-
-### Rule: documentation before code
-
-Before starting any new project or major refactor:
-- Run the full documentation audit prompt above
-- Fix any flagged issues
-- Then start the project
-
-This ensures AI tools always have a clean, accurate context to work from.
-
-Go deeper: [processes/updating-docs.md](processes/updating-docs.md), [processes/link-checker-setup.md](processes/link-checker-setup.md)
+For documentation update instructions and the full audit prompt,
+see [UPDATING.md](UPDATING.md).
 
 ---
 
@@ -110,31 +18,6 @@ Go deeper: [processes/updating-docs.md](processes/updating-docs.md), [processes/
 3. Check [processes/setup-history.md](processes/setup-history.md) — review major decisions made so far
 4. Check [ai/future-ideas.md](ai/future-ideas.md) — anything you parked that needs attention
 5. Pick up where you left off using the master index in [README.md](README.md)
-
----
-
-## How do I update global-docs?
-
-### When to update
-- A new recurring rule or pattern emerges from your work
-- You make a structural change to orgs or repos
-- You add a new AI tool or access token
-- You complete a major process (new project, design system update, etc.)
-
-### Steps
-1. Edit the relevant file directly (right file, right section)
-2. If adding a new file, add it to [README.md](README.md) master index table
-3. If adding a new process or standard, add a FAQ entry here
-4. Commit with a clear message: "Update ai/languages.md to add OpenClaw rules"
-5. Update [processes/setup-history.md](processes/setup-history.md) if the change is a major decision
-
-### AI prompt to use
-Read [README.md](README.md) and [processes/updating-docs.md](processes/updating-docs.md).
-Then review [specific file or section].
-Suggest any gaps, outdated content, or improvements based on what you know about my setup.
-Do not rewrite. Flag issues and propose additions only.
-
-Go deeper: [processes/updating-docs.md](processes/updating-docs.md)
 
 ---
 

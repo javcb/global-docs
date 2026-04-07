@@ -37,3 +37,10 @@ Before writing any new structural, styling, or behavioral code:
 3. If no: create it as a reusable shared asset, then reference it from there
 4. Never duplicate shared elements across files
 5. Follow standards/modularity.md for context-specific rules
+
+## UI behavior
+
+When building any site, app, or UI:
+- Follow standards/ui-behavior.md before writing any navigation or state logic
+- Do not build collapsible UI without localStorage state persistence
+- Do not build multi-page sites where nav state resets on every load

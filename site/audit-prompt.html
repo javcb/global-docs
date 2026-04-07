@@ -65,9 +65,13 @@
     <p>Home → FAQ → How to update docs → Orgs → AI Rules → Architecture → Processes → Standards</p>
     <ul>
     <li>Scan every .html file in site/ for href links pointing to non-existent pages</li>
-    <li>Flag any content visible in a .html page that contradicts or is out of sync</li>
+    <li>Flag any content visible in a .html page that contradicts or is out of sync with its source .md file</li>
+    <li>Confirm site/assets/nav.js implements localStorage-based sidebar state persistence</li>
+    <li>Confirm the active page's nav section is always expanded on load</li>
+    <li>Confirm no visible nav reflow or flash occurs on page load</li>
+    <li>Confirm font sizes use relative units (rem/em) not fixed px</li>
+    <li>Confirm a mobile breakpoint exists in style.css for sidebar collapse</li>
     </ul>
-    <p>with its source .md file</p>
     <h2 id="5-terminology-consistency">5. Terminology consistency</h2>
     <ul>
     <li>Confirm &quot;main GitHub user account&quot; and org names (javcb-prod, javcb-staging,</li>

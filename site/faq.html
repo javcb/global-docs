@@ -12,67 +12,9 @@
     <h1>Quick reference FAQ</h1>
     <p>This is your fast-access cheatsheet. For full details, follow the &quot;Go deeper&quot; links.</p>
     <hr>
-    <h2>How do I keep the documentation system clean and trustworthy?</h2>
-    <h3>Why this matters</h3>
-    <p>The entire AI-assisted workflow depends on global-docs being accurate.
-    If links are broken, instructions are contradictory, or the site is out of sync
-    with the markdown files, AI tools will get confused and produce bad output.
-    This section tells you how to catch and fix problems before they compound.</p>
-    <h3>Run a full documentation audit (do this before any major project)</h3>
-    <h3>Prompt for Claude</h3>
-    <p>I want you to audit the global-docs repository for documentation health.
-    Work through this checklist:</p>
-    <p>LINK INTEGRITY</p>
-    <p>Check every internal link in every .md file</p>
-    <p>Check every AI-INSTRUCTIONS.md link in any repo you have access to</p>
-    <p>Flag any links that are broken, point to wrong paths, or reference files that do not exist</p>
-    <p>CONSISTENCY CHECK</p>
-    <p>Find any rules that appear in more than one file with conflicting content</p>
-    <p>Find any duplicate content that should be consolidated into one place</p>
-    <p>Flag any repo-level AI-INSTRUCTIONS.md that contradicts global-docs rules</p>
-    <p>COVERAGE CHECK</p>
-    <p>Check that every .md file in global-docs is referenced in README.md master index</p>
-    <p>Check that every .md file has a corresponding page in site/</p>
-    <p>Flag any new files added to global-docs that are not yet in the site nav</p>
-    <p>ACCURACY CHECK</p>
-    <p>Flag any instructions that reference repos, orgs, or tools that no longer exist</p>
-    <p>Flag any placeholder TODOs that should have been completed by now</p>
-    <p>Report each issue with: file name, line or section, what the problem is, and suggested fix.
-    Do not make any changes. Report only.</p>
-    <h3>Automated link checking (GitHub Actions)</h3>
-    <p>A GitHub Action runs on a schedule and checks all links in your markdown files.
-    Setup: see <a href="./processes/link-checker-setup.html">processes/link-checker-setup.md</a>
-    This catches broken links automatically without any manual work.</p>
-    <h3>Keep the HTML site in sync with markdown</h3>
-    <p>The current static site does not auto-update when markdown files change.
-    When you update a markdown file, also update the corresponding HTML page in site/.</p>
-    <h3>Prompt to sync a specific page</h3>
-    <p>The content of [filename].md has been updated.
-    Update site/[path]/[filename].html to match.
-    Do not change any structural HTML, nav, or shared assets.
-    Only update the content section.</p>
-    <h3>Prompt to do a full site sync</h3>
-    <p>Compare every .md file in global-docs with its corresponding .html page in site/.
-    List any pages where the HTML content does not match the current markdown.
-    Do not make changes yet. Report discrepancies only.</p>
-    <h3>Keep AI-INSTRUCTIONS.md files consistent across repos</h3>
-    <h3>Prompt to audit all AI instruction files</h3>
-    <p>Review the AI-INSTRUCTIONS.md file in [repo name].
-    Check:</p>
-    <p>All global-docs links are valid and point to existing files</p>
-    <p>Repo-specific rules do not contradict global-docs rules</p>
-    <p>The org, status, and persona fields are accurate for this repo</p>
-    <p>The completion checklist is appropriate for this repo type
-    Report issues. Do not make changes.</p>
-    <h3>Rule: documentation before code</h3>
-    <p>Before starting any new project or major refactor:</p>
-    <ul>
-    <li>Run the full documentation audit prompt above</li>
-    <li>Fix any flagged issues</li>
-    <li>Then start the project</li>
-    </ul>
-    <p>This ensures AI tools always have a clean, accurate context to work from.</p>
-    <p>Go deeper: <a href="./processes/updating-docs.html">processes/updating-docs.md</a>, <a href="./processes/link-checker-setup.html">processes/link-checker-setup.md</a></p>
+    <h2>Documentation updates and audits</h2>
+    <p>For documentation update instructions and the full audit prompt,
+    see <a href="./updating.html">UPDATING.md</a>.</p>
     <hr>
     <h2>Where do I start if I&#39;ve been away for a while?</h2>
     <ol>
@@ -82,29 +24,6 @@
     <li>Check <a href="./ai/future-ideas.html">ai/future-ideas.md</a> — anything you parked that needs attention</li>
     <li>Pick up where you left off using the master index in <a href="./index.html">README.md</a></li>
     </ol>
-    <hr>
-    <h2>How do I update global-docs?</h2>
-    <h3>When to update</h3>
-    <ul>
-    <li>A new recurring rule or pattern emerges from your work</li>
-    <li>You make a structural change to orgs or repos</li>
-    <li>You add a new AI tool or access token</li>
-    <li>You complete a major process (new project, design system update, etc.)</li>
-    </ul>
-    <h3>Steps</h3>
-    <ol>
-    <li>Edit the relevant file directly (right file, right section)</li>
-    <li>If adding a new file, add it to <a href="./index.html">README.md</a> master index table</li>
-    <li>If adding a new process or standard, add a FAQ entry here</li>
-    <li>Commit with a clear message: &quot;Update ai/languages.md to add OpenClaw rules&quot;</li>
-    <li>Update <a href="./processes/setup-history.html">processes/setup-history.md</a> if the change is a major decision</li>
-    </ol>
-    <h3>AI prompt to use</h3>
-    <p>Read <a href="./index.html">README.md</a> and <a href="./processes/updating-docs.html">processes/updating-docs.md</a>.
-    Then review [specific file or section].
-    Suggest any gaps, outdated content, or improvements based on what you know about my setup.
-    Do not rewrite. Flag issues and propose additions only.</p>
-    <p>Go deeper: <a href="./processes/updating-docs.html">processes/updating-docs.md</a></p>
     <hr>
     <h2>How do I update the design system?</h2>
     <h3>When to update</h3>

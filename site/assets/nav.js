@@ -6,6 +6,53 @@
 (function () {
   "use strict";
 
+  var SIDEBAR_STATE_KEY = "global-docs-sidebar-state";
+
+  function readStoredSidebarState() {
+    try {
+      var raw = localStorage.getItem(SIDEBAR_STATE_KEY);
+      if (!raw) return null;
+      var o = JSON.parse(raw);
+      return typeof o === "object" && o !== null ? o : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeStoredSidebarState(obj) {
+    try {
+      localStorage.setItem(SIDEBAR_STATE_KEY, JSON.stringify(obj));
+    } catch (e) {}
+  }
+
+  function persistSidebarState(scrollRoot) {
+    var map = {};
+    scrollRoot.querySelectorAll(".gd-nav-section:not(.gd-nav-flat)").forEach(function (sec) {
+      var btn = sec.querySelector(".gd-nav-toggle");
+      if (!btn) return;
+      var labEl = btn.querySelector("span");
+      if (!labEl) return;
+      var label = labEl.textContent;
+      var collapsed = sec.getAttribute("data-collapsed") === "true";
+      map[label] = !collapsed;
+    });
+    writeStoredSidebarState(map);
+  }
+
+  function isGroupActive(block, activeId) {
+    return block.kind === "group" && block.pageIds.indexOf(activeId) >= 0;
+  }
+
+  function shouldGroupStartExpanded(block, activeId) {
+    if (block.kind !== "group") return true;
+    if (isGroupActive(block, activeId)) return true;
+    var saved = readStoredSidebarState();
+    if (saved && Object.prototype.hasOwnProperty.call(saved, block.label)) {
+      return !!saved[block.label];
+    }
+    return true;
+  }
+
   var PAGE = {
     home: { title: "Home", nav: "Home" },
     faq: { title: "Quick reference FAQ", nav: "Quick reference" },
@@ -66,6 +113,7 @@
     "standards/branch-discipline": { title: "Branch discipline", nav: "branch-discipline" },
     "standards/naming": { title: "Naming", nav: "naming" },
     "standards/modularity": { title: "Modularity", nav: "modularity" },
+    "standards/ui-behavior": { title: "UI behavior standards", nav: "ui-behavior" },
     "context/about-me": { title: "About me", nav: "about-me" },
     "context/roles": { title: "Roles", nav: "roles" },
     "context/priorities": { title: "Current priorities", nav: "priorities" },
@@ -131,6 +179,7 @@
     "standards/branch-discipline",
     "standards/naming",
     "standards/modularity",
+    "standards/ui-behavior",
     "context/about-me",
     "context/roles",
     "context/priorities",
@@ -226,6 +275,7 @@
         "standards/branch-discipline",
         "standards/naming",
         "standards/modularity",
+        "standards/ui-behavior",
       ],
     },
     {
@@ -380,12 +430,13 @@
       if (block.kind === "group") {
         var sec = document.createElement("div");
         sec.className = "gd-nav-section";
-        sec.setAttribute("data-collapsed", "false");
+        var expanded = shouldGroupStartExpanded(block, activeId);
+        sec.setAttribute("data-collapsed", expanded ? "false" : "true");
 
         var btn = document.createElement("button");
         btn.type = "button";
         btn.className = "gd-nav-toggle";
-        btn.setAttribute("aria-expanded", "true");
+        btn.setAttribute("aria-expanded", expanded ? "true" : "false");
         var spLabel = document.createElement("span");
         spLabel.textContent = block.label;
         var ic = document.createElement("span");
@@ -397,6 +448,7 @@
           var col = sec.getAttribute("data-collapsed") === "true";
           sec.setAttribute("data-collapsed", col ? "false" : "true");
           btn.setAttribute("aria-expanded", col ? "true" : "false");
+          persistSidebarState(scroll);
         });
 
         var ulg = document.createElement("ul");
@@ -459,6 +511,7 @@
     var navHost = document.createElement("nav");
     navHost.className = "gd-nav";
     navHost.setAttribute("aria-label", "Documentation");
+    navHost.id = "gd-docs-nav";
     var scrollPart = buildSidebar(pageId, base);
     navHost.appendChild(scrollPart);
 
@@ -518,6 +571,27 @@
 
     app.appendChild(sidebar);
     app.appendChild(main);
+
+    var burger = document.createElement("button");
+    burger.type = "button";
+    burger.className = "gd-burger";
+    burger.setAttribute("aria-controls", "gd-docs-nav");
+    burger.setAttribute("aria-expanded", "false");
+    burger.setAttribute("aria-label", "Open or close navigation menu");
+    burger.innerHTML = "\u2630";
+    burger.addEventListener("click", function () {
+      var open = app.classList.toggle("gd-nav-mobile-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    scrollPart.addEventListener("click", function (e) {
+      if (typeof window.matchMedia === "function" && window.matchMedia("(max-width: 768px)").matches) {
+        if (e.target.closest("a.gd-nav-link")) {
+          app.classList.remove("gd-nav-mobile-open");
+          burger.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+    app.insertBefore(burger, sidebar);
 
     var parent = source.parentNode;
     parent.insertBefore(app, source);

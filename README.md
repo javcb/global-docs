@@ -136,6 +136,7 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `standards/commit-messages.md` | Commit message conventions |
 | `standards/branch-discipline.md` | Branch naming and workflow |
 | `standards/naming.md` | File, folder, and variable naming rules |
+| `standards/ui-behavior.md` | UI behavior standards for sites and apps (state, nav, scroll, zoom, responsive) |
 
 ### Context
 | Document | Covers |

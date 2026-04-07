@@ -57,6 +57,11 @@ Work through every item below. Do not make any changes. Report only.
 - Scan every .html file in site/ for href links pointing to non-existent pages
 - Flag any content visible in a .html page that contradicts or is out of sync
   with its source .md file
+- Confirm site/assets/nav.js implements localStorage-based sidebar state persistence
+- Confirm the active page's nav section is always expanded on load
+- Confirm no visible nav reflow or flash occurs on page load
+- Confirm font sizes use relative units (rem/em) not fixed px
+- Confirm a mobile breakpoint exists in style.css for sidebar collapse
 
 ## 5. Terminology consistency
 
