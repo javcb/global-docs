@@ -28,3 +28,12 @@
 - Optimize for systems the repo owner can understand and maintain.
 - Prefer Python and SQL for durable production-grade solutions unless explicitly told otherwise.
 - Avoid over-engineering.
+
+## Modularity
+
+Before writing any new structural, styling, or behavioral code:
+1. Check whether a shared version already exists
+2. If yes: use it
+3. If no: create it as a reusable shared asset, then reference it from there
+4. Never duplicate shared elements across files
+5. Follow standards/modularity.md for context-specific rules
