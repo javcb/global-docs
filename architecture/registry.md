@@ -10,7 +10,7 @@ Last updated: April 2026
 | Asset | Org | Repo | Status |
 |---|---|---|---|
 | Global documentation | main user account | global-docs | Active |
-| AI repo starter template | javcb-ai | ai-repo-starter | Active |
+| AI repo starter template | javcb-templates | templates_repo-starter | Active |
 | Design system | javcb-templates | design-system | Not yet built |
 | Python Excel core library | javcb-prod | py-excel-core | Not yet built |
 | Python Snowflake core library | javcb-prod | py-snowflake-core | Not yet built |
