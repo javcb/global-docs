@@ -3,6 +3,105 @@
 This is your fast-access cheatsheet. For full details, follow the "Go deeper" links.
 
 ---
+## How do I keep the documentation system clean and trustworthy?
+
+### Why this matters
+
+The entire AI-assisted workflow depends on global-docs being accurate.
+If links are broken, instructions are contradictory, or the site is out of sync
+with the markdown files, AI tools will get confused and produce bad output.
+This section tells you how to catch and fix problems before they compound.
+
+### Run a full documentation audit (do this before any major project)
+
+**Prompt for Claude:**
+I want you to audit the global-docs repository for documentation health.
+Work through this checklist:
+
+LINK INTEGRITY
+
+Check every internal link in every .md file
+
+Check every AI-INSTRUCTIONS.md link in any repo you have access to
+
+Flag any links that are broken, point to wrong paths, or reference files that do not exist
+
+CONSISTENCY CHECK
+
+Find any rules that appear in more than one file with conflicting content
+
+Find any duplicate content that should be consolidated into one place
+
+Flag any repo-level AI-INSTRUCTIONS.md that contradicts global-docs rules
+
+COVERAGE CHECK
+
+Check that every .md file in global-docs is referenced in README.md master index
+
+Check that every .md file has a corresponding page in site/
+
+Flag any new files added to global-docs that are not yet in the site nav
+
+ACCURACY CHECK
+
+Flag any instructions that reference repos, orgs, or tools that no longer exist
+
+Flag any placeholder TODOs that should have been completed by now
+
+Report each issue with: file name, line or section, what the problem is, and suggested fix.
+Do not make any changes. Report only.
+
+
+### Automated link checking (GitHub Actions)
+
+A GitHub Action runs on a schedule and checks all links in your markdown files.
+Setup: see `processes/link-checker-setup.md`
+This catches broken links automatically without any manual work.
+
+### Keep the HTML site in sync with markdown
+
+The current static site does not auto-update when markdown files change.
+When you update a markdown file, also update the corresponding HTML page in site/.
+
+**Prompt to sync a specific page:**
+The content of [filename].md has been updated.
+Update site/[path]/[filename].html to match.
+Do not change any structural HTML, nav, or shared assets.
+Only update the content section.
+
+**Prompt to do a full site sync:**
+Compare every .md file in global-docs with its corresponding .html page in site/.
+List any pages where the HTML content does not match the current markdown.
+Do not make changes yet. Report discrepancies only.
+
+### Keep AI-INSTRUCTIONS.md files consistent across repos
+
+**Prompt to audit all AI instruction files:**
+Review the AI-INSTRUCTIONS.md file in [repo name].
+Check:
+
+All global-docs links are valid and point to existing files
+
+Repo-specific rules do not contradict global-docs rules
+
+The org, status, and persona fields are accurate for this repo
+
+The completion checklist is appropriate for this repo type
+Report issues. Do not make changes.
+
+
+### Rule: documentation before code
+
+Before starting any new project or major refactor:
+- Run the full documentation audit prompt above
+- Fix any flagged issues
+- Then start the project
+
+This ensures AI tools always have a clean, accurate context to work from.
+
+Go deeper: `processes/updating-docs.md`, `processes/link-checker-setup.md`
+
+---
 
 ## Where do I start if I've been away for a while?
 
