@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "../", pageId: "orgs/overview" };</script>
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>Organization overview — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Organization overview</h1>
+    <p>This file explains the purpose of each GitHub location and how they relate to each other.</p>
+    <p>Go deeper: <a href="index.html">Organizations index</a>, <a href="javcb-prod.html">javcb-prod</a>, <a href="../ai/base-rules.html">AI base rules</a>.</p>
+
+    <h2>Main account: javcb-prod</h2>
+    <p><strong>Purpose:</strong></p>
+    <ul>
+      <li>production-ready repos</li>
+      <li>core reusable libraries</li>
+      <li>serious personal systems</li>
+      <li>long-term maintainable code</li>
+    </ul>
+    <p><strong>Typical contents:</strong></p>
+    <ul>
+      <li>Python libraries</li>
+      <li>SQL repositories</li>
+      <li>data tooling</li>
+      <li>production-adjacent utilities</li>
+      <li>central documentation</li>
+    </ul>
+
+    <h2>Organization: javcb-templates</h2>
+    <p><strong>Purpose:</strong></p>
+    <ul>
+      <li>read-only templates</li>
+      <li>purchased UI kits</li>
+      <li>starter repos</li>
+      <li>reference implementations</li>
+    </ul>
+    <p><strong>Rules:</strong></p>
+    <ul>
+      <li>do not modify template masters directly</li>
+      <li>clone/copy into a new repo before customization</li>
+      <li>archive template repos when appropriate</li>
+    </ul>
+    <p>Details: <a href="javcb-templates.html">javcb-templates</a></p>
+
+    <h2>Organization: javcb-staging</h2>
+    <p><strong>Purpose:</strong></p>
+    <ul>
+      <li>work in progress</li>
+      <li>refactors</li>
+      <li>experiments likely to become real projects</li>
+      <li>pre-production or incubation work</li>
+    </ul>
+    <p><strong>Rules:</strong></p>
+    <ul>
+      <li>ideas can start here</li>
+      <li>promote mature components to main when proven</li>
+      <li>archive abandoned ideas instead of letting them rot</li>
+    </ul>
+    <p>Details: <a href="javcb-staging.html">javcb-staging</a></p>
+
+    <h2>Organization: javcb-archive</h2>
+    <p><strong>Purpose:</strong></p>
+    <ul>
+      <li>retired projects</li>
+      <li>old experiments</li>
+      <li>historical references</li>
+    </ul>
+    <p><strong>Rules:</strong></p>
+    <ul>
+      <li>archive repos</li>
+      <li>no active development</li>
+      <li>recover only when needed</li>
+    </ul>
+    <p>Details: <a href="javcb-archive.html">javcb-archive</a></p>
+
+    <h2>Organization: javcb-ai</h2>
+    <p><strong>Purpose:</strong></p>
+    <ul>
+      <li>AI sandbox</li>
+      <li>repos where coding agents can operate with limited blast radius</li>
+      <li>prototypes and experiments safe to break</li>
+    </ul>
+    <p><strong>Rules:</strong></p>
+    <ul>
+      <li>grant tools access only to this org when possible</li>
+      <li>prefer least privilege</li>
+      <li>clearly label prototype vs production-ready output</li>
+    </ul>
+    <p>Details: <a href="javcb-ai.html">javcb-ai</a>, <a href="../processes/autonomous-build.html">autonomous build</a></p>
+
+    <h2>Design logic</h2>
+    <p>The overall system is:</p>
+    <ul>
+      <li>prod = durable assets</li>
+      <li>templates = reusable starting points</li>
+      <li>staging = incubation</li>
+      <li>archive = history</li>
+      <li>javcb-ai = experimentation sandbox</li>
+    </ul>
+  </main>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

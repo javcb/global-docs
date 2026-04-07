@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "", pageId: "faq" };</script>
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Quick reference FAQ — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>Quick reference FAQ</h1>
+    <p>This is your fast-access cheatsheet. For full details, follow the “Go deeper” links.</p>
+
+    <hr>
+
+    <h2 id="where-do-i-start-if-ive-been-away-for-a-while">Where do I start if I’ve been away for a while?</h2>
+    <ol>
+      <li>Read <a href="orgs/overview.html"><code>orgs/overview.md</code></a> — remind yourself what each org is for</li>
+      <li>Read <a href="ai/base-rules.html"><code>ai/base-rules.md</code></a> — refresh the AI operating rules</li>
+      <li>Check <a href="processes/setup-history.html"><code>processes/setup-history.md</code></a> — review major decisions made so far</li>
+      <li>Check <a href="ai/future-ideas.html"><code>ai/future-ideas.md</code></a> — anything you parked that needs attention</li>
+      <li>Pick up where you left off using the master index in <a href="index.html">README</a></li>
+    </ol>
+
+    <hr>
+
+    <h2 id="how-do-i-update-global-docs">How do I update global-docs?</h2>
+    <p><strong>When to update:</strong></p>
+    <ul>
+      <li>A new recurring rule or pattern emerges from your work</li>
+      <li>You make a structural change to orgs or repos</li>
+      <li>You add a new AI tool or access token</li>
+      <li>You complete a major process (new project, design system update, etc.)</li>
+    </ul>
+    <p><strong>Steps:</strong></p>
+    <ol>
+      <li>Edit the relevant file directly (right file, right section)</li>
+      <li>If adding a new file, add it to README.md master index table</li>
+      <li>If adding a new process or standard, add a FAQ entry here</li>
+      <li>Commit with a clear message: “Update ai/languages.md to add OpenClaw rules”</li>
+      <li>Update <a href="processes/setup-history.html"><code>processes/setup-history.md</code></a> if the change is a major decision</li>
+    </ol>
+    <p><strong>AI prompt to use:</strong></p>
+    <pre><code>Read global-docs/README.md and global-docs/processes/updating-docs.md.
+Then review [specific file or section].
+Suggest any gaps, outdated content, or improvements based on what you know about my setup.
+Do not rewrite. Flag issues and propose additions only.</code></pre>
+    <p>Go deeper: <a href="processes/updating-docs.html"><code>processes/updating-docs.md</code></a></p>
+
+    <hr>
+
+    <h2 id="how-do-i-update-the-design-system">How do I update the design system?</h2>
+    <p><strong>When to update:</strong></p>
+    <ul>
+      <li>You add a new purchased UI kit or component library</li>
+      <li>You define new atoms, molecules, or organisms</li>
+      <li>You discover a missing component during a project</li>
+      <li>An AI tool invents a component instead of using one from the system</li>
+    </ul>
+    <p><strong>Steps:</strong></p>
+    <ol>
+      <li>Open <code>javcb-templates/design-system</code></li>
+      <li>Add or update the relevant atomic layer (atoms/molecules/organisms/templates/foundations)</li>
+      <li>Update <a href="ai/design-system.html"><code>global-docs/ai/design-system.md</code></a> if the usage rules for AI change</li>
+      <li>If a new component category is added, update the design system README</li>
+    </ol>
+    <p><strong>AI prompt to use:</strong></p>
+    <pre><code>Read global-docs/ai/design-system.md and javcb-templates/design-system/README.md.
+I want to add [describe component or kit].
+Propose where it fits in the atomic design structure (atom/molecule/organism/template).
+Suggest the documentation format to use, consistent with existing entries.
+Do not build anything yet. Propose the plan first.</code></pre>
+    <p><strong>If updating from a purchased kit:</strong></p>
+    <pre><code>Read global-docs/ai/design-system.md.
+I have a new UI kit: [kit name and description].
+Extract atoms, molecules, and organisms from this kit.
+Document each using the format in design-system/atoms/ as reference.
+Flag anything that conflicts with existing components.</code></pre>
+    <p>Go deeper: <a href="ai/design-system.html"><code>global-docs/ai/design-system.md</code></a>, <code>javcb-templates/design-system/</code></p>
+
+    <hr>
+
+    <h2 id="how-do-i-start-a-new-project-from-scratch">How do I start a new project from scratch?</h2>
+    <p><strong>Steps:</strong></p>
+    <ol>
+      <li>Decide which org this belongs in (staging for WIP, ai for autonomous builds)</li>
+      <li>Clone <code>javcb-ai/ai-repo-starter</code> into the correct org and rename it</li>
+      <li>Update <code>AI-INSTRUCTIONS.md</code>: set org, status, and any repo-specific rules</li>
+      <li>Update <code>README.md</code>: fill in project name, purpose, and who it is for</li>
+      <li>Update <code>.env.example</code>: add all required credentials and variables</li>
+      <li>Create a feature branch: <code>feature/[project-name]-scaffold</code></li>
+      <li>Hand to AI with the prompt below</li>
+    </ol>
+    <p><strong>AI prompt to use:</strong></p>
+    <pre><code>Read AI-INSTRUCTIONS.md and all linked global-docs files before starting.
+This is a new project: [describe in plain English what it does].
+The repo has been scaffolded from ai-repo-starter.
+Start by confirming you have read the rules, then propose a build plan before writing any code.
+Wait for my approval before proceeding.</code></pre>
+    <p>Go deeper: <a href="processes/repo-setup-standard.html"><code>processes/repo-setup-standard.md</code></a>, <a href="processes/new-repo-checklist.html"><code>processes/new-repo-checklist.md</code></a></p>
+
+    <hr>
+
+    <h2 id="how-do-i-refactor-an-existing-repo-eg-a-monorepo">How do I refactor an existing repo (e.g. a monorepo)?</h2>
+    <p><strong>Steps:</strong></p>
+    <ol>
+      <li>Make sure all current code is committed and pushed</li>
+      <li>Create a branch: <code>refactor/modularize</code> or similar</li>
+      <li>Clone <code>ai-repo-starter</code> as a reference for target structure</li>
+      <li>Hand to AI with the prompt below</li>
+    </ol>
+    <p><strong>AI prompt to use:</strong></p>
+    <pre><code>Read AI-INSTRUCTIONS.md and all linked global-docs files before starting.
+I want to refactor this repo from a monorepo into a properly modular structure.
+Use javcb-ai/ai-repo-starter as the target structure reference.
+Do not change any working behavior.
+Step 1: propose a reorganization plan showing current structure vs target structure.
+Wait for my approval before moving any files.</code></pre>
+    <p>Go deeper: <a href="processes/modularization-playbook.html"><code>processes/modularization-playbook.md</code></a></p>
+
+    <hr>
+
+    <h2 id="how-do-i-run-a-maker-checker-review">How do I run a maker/checker review?</h2>
+    <p><strong>When to use:</strong></p>
+    <ul>
+      <li>A feature or project build is complete in staging or ai sandbox</li>
+      <li>Before promoting any repo from staging to prod</li>
+    </ul>
+    <p><strong>Maker prompt (Cursor or Claude Code — building):</strong></p>
+    <pre><code>Read AI-INSTRUCTIONS.md and all linked global-docs files.
+Build [describe the feature or project].
+Work on branch feature/[name]. Do not push to main.
+When done, update README review notes with what was built, what to test, and what is incomplete.</code></pre>
+    <p><strong>Checker prompt (Claude — reviewing):</strong></p>
+    <pre><code>Review the diff or the files I will share with you.
+Check for:
+
+bugs or missing error handling
+
+security issues (hardcoded credentials, unsafe defaults)
+
+violations of global-docs rules (see links in AI-INSTRUCTIONS.md)
+
+missing .env.example entries or README updates
+Do not rewrite anything. List issues only, with file and line references where possible.</code></pre>
+    <p>Go deeper: <a href="processes/maker-checker.html"><code>processes/maker-checker.md</code></a></p>
+
+    <hr>
+
+    <h2 id="how-do-i-promote-a-repo-from-staging-to-prod">How do I promote a repo from staging to prod?</h2>
+    <p><strong>Checklist before promoting:</strong></p>
+    <ul>
+      <li>Maker/checker review completed and issues resolved</li>
+      <li>README is complete and accurate</li>
+      <li>.env.example lists all required variables</li>
+      <li>No hardcoded credentials anywhere</li>
+      <li>Feature branch merged to main in staging repo</li>
+      <li>Repo follows standard structure from ai-repo-starter</li>
+      <li>Transfer repo to javcb-prod org via GitHub Settings → Transfer ownership</li>
+    </ul>
+    <p>Go deeper: <a href="processes/promote-staging-to-prod.html"><code>processes/promote-staging-to-prod.md</code></a></p>
+
+    <hr>
+
+    <h2 id="how-do-i-add-a-new-ai-tool">How do I add a new AI tool?</h2>
+    <p><strong>Steps:</strong></p>
+    <ol>
+      <li>Create a scoped access token for the tool (see <a href="processes/access-tokens.html"><code>processes/access-tokens.md</code></a>)</li>
+      <li>Give the tool only the token it needs (read-only for docs/templates, write for sandbox)</li>
+      <li>In each repo the tool will work in, confirm AI-INSTRUCTIONS.md is present and links to global-docs</li>
+      <li>Test with a small, low-risk task before using on real work</li>
+    </ol>
+    <p><strong>Onboarding prompt for any new AI tool:</strong></p>
+    <p>Before we start any work, read the following files:</p>
+    <p><code>AI-INSTRUCTIONS.md</code> (in this repo)</p>
+    <p>Global-docs:</p>
+    <ul>
+      <li><a href="ai/base-rules.html"><code>ai/base-rules.md</code></a></li>
+      <li><a href="ai/languages.html"><code>ai/languages.md</code></a></li>
+      <li><a href="ai/personas.html"><code>ai/personas.md</code></a></li>
+      <li><a href="ai/security.html"><code>ai/security.md</code></a></li>
+    </ul>
+    <p>Confirm you have read them by summarizing the key rules that apply to this repo. Then wait for my first task.</p>
+    <p>Go deeper: <a href="processes/access-tokens.html"><code>processes/access-tokens.md</code></a></p>
+
+    <hr>
+
+    <h2 id="how-do-i-use-the-design-system-in-a-new-ui-project">How do I use the design system in a new UI project?</h2>
+    <p><strong>AI prompt to use:</strong></p>
+    <pre><code>Read global-docs/ai/design-system.md before building any UI.
+Use only components documented in javcb-templates/design-system/.
+Reference components by their exact names (e.g. PrimaryButton atom, large variant).
+Do not create new components. If something is missing, flag it and I will decide.
+Apply Apple/Netflix-level design standards: clean, minimal, strong hierarchy.</code></pre>
+    <p>Go deeper: <a href="ai/design-system.html"><code>global-docs/ai/design-system.md</code></a></p>
+
+  </main>
+  <script src="assets/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>window.__GD__ = { base: "", pageId: "home" };</script>
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Home — global-docs</title>
+</head>
+<body>
+  <main id="gd-source" class="gd-prose">
+    <h1>global-docs</h1>
+    <p>This repository is the single source of truth for how my GitHub organizations, local machine, shared libraries, data platform integrations, AI tools, and development processes are structured and governed.</p>
+
+    <hr>
+
+    <h2>Why this repo exists</h2>
+    <p>I work across multiple roles (work projects, personal projects, UI/UX prototyping, data engineering) and use AI-assisted coding tools (Claude Code, Cursor, Copilot, and others). Without a central operating document, every tool and every project would have conflicting rules, scattered documentation, and no consistent standards.</p>
+    <p>This repo solves that by:</p>
+    <ul>
+      <li>defining the full GitHub universe (orgs, purposes, rules)</li>
+      <li>governing how AI tools behave across all repos</li>
+      <li>establishing reusable architecture patterns</li>
+      <li>documenting processes so nothing has to be figured out twice</li>
+    </ul>
+
+    <h2>Purpose</h2>
+    <p>This repo exists to:</p>
+    <ul>
+      <li>document how my GitHub user and organizations are structured</li>
+      <li>define shared architecture and reusable component strategy</li>
+      <li>define AI operating rules, personas, and security guardrails</li>
+      <li>define language boundaries by repo/org/project type</li>
+      <li>document repeatable processes for new repos, templates, staging, and modularization</li>
+    </ul>
+
+    <h2>Core principles</h2>
+    <ul>
+      <li>Build once, reuse across roles where possible.</li>
+      <li>Keep core libraries role-agnostic.</li>
+      <li>Keep credentials and environment-specific wiring out of shared libraries.</li>
+      <li>Prefer Python and SQL for production-grade systems.</li>
+      <li>Use TypeScript, JavaScript, and CSS mainly for UI/UX prototypes and designated frontend work.</li>
+      <li>Keep AI tools constrained, documented, and reviewable.</li>
+      <li>Optimize for systems I can understand, maintain, and debug myself.</li>
+    </ul>
+
+    <h2>How to use this repo</h2>
+    <ul>
+      <li>Read <a href="orgs/overview.html"><code>orgs/overview.md</code></a> for the GitHub map.</li>
+      <li>Read <a href="architecture/index.html">architecture</a> for reusable system design.</li>
+      <li>Read <a href="ai/index.html">ai</a> for AI operating rules and tool behavior.</li>
+      <li>Read <a href="processes/index.html">processes</a> for implementation playbooks.</li>
+      <li>Read <a href="standards/index.html">standards</a> for language- and platform-specific conventions.</li>
+    </ul>
+    <p>Prefer a fast cheatsheet? Start with <a href="faq.html">FAQ (Quick reference)</a>.</p>
+
+    <h2>Rule precedence</h2>
+    <p>When rules conflict, use this order:</p>
+    <ol>
+      <li>Security and credential handling always wins</li>
+      <li>Repo-specific AI instructions</li>
+      <li>Org-specific rules</li>
+      <li>Global AI rules</li>
+      <li>Language and style standards</li>
+    </ol>
+
+    <h2>Change policy — How to update this repo</h2>
+    <p>See <a href="processes/updating-docs.html"><code>processes/updating-docs.md</code></a> for the change policy.</p>
+    <p>Short version: edit the right file, keep it concise, update the index if you add a new file.</p>
+
+    <hr>
+
+    <h2>Master index</h2>
+
+    <h3 class="gd-index-sub">Start here</h3>
+    <table>
+      <thead>
+        <tr><th>Document</th><th>What it answers</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="orgs/overview.html"><code>orgs/overview.md</code></a></td><td>What orgs exist, what they are for, and how they relate</td></tr>
+        <tr><td><a href="architecture/system-overview.html"><code>architecture/system-overview.md</code></a></td><td>How everything fits together as a system</td></tr>
+        <tr><td><a href="processes/new-repo-checklist.html"><code>processes/new-repo-checklist.md</code></a></td><td>What to do before creating any new repo</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="gd-index-sub">GitHub organization map</h3>
+    <table>
+      <thead>
+        <tr><th>Document</th><th>Covers</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="orgs/overview.html"><code>orgs/overview.md</code></a></td><td>Full org map and design logic</td></tr>
+        <tr><td><a href="orgs/javcb-prod.html"><code>orgs/javcb-prod.md</code></a></td><td>Production-ready repos</td></tr>
+        <tr><td><a href="orgs/javcb-staging.html"><code>orgs/javcb-staging.md</code></a></td><td>Work in progress and active builds</td></tr>
+        <tr><td><a href="orgs/javcb-templates.html"><code>orgs/javcb-templates.md</code></a></td><td>Purchased kits and read-only templates</td></tr>
+        <tr><td><a href="orgs/javcb-archive.html"><code>orgs/javcb-archive.md</code></a></td><td>Retired projects</td></tr>
+        <tr><td><a href="orgs/javcb-ai.html"><code>orgs/javcb-ai.md</code></a></td><td>AI sandbox and autonomous builds</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="gd-index-sub">AI tool rules</h3>
+    <table>
+      <thead>
+        <tr><th>Document</th><th>Covers</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="ai/base-rules.html"><code>ai/base-rules.md</code></a></td><td>Core behavior expected from all AI tools</td></tr>
+        <tr><td><a href="ai/personas.html"><code>ai/personas.md</code></a></td><td>Roles AI tools should take per context</td></tr>
+        <tr><td><a href="ai/languages.html"><code>ai/languages.md</code></a></td><td>Allowed languages per org and context</td></tr>
+        <tr><td><a href="ai/security.html"><code>ai/security.md</code></a></td><td>Secrets, credentials, least privilege</td></tr>
+        <tr><td><a href="ai/workflow.html"><code>ai/workflow.md</code></a></td><td>How AI tools should approach changes</td></tr>
+        <tr><td><a href="ai/quality-bar.html"><code>ai/quality-bar.md</code></a></td><td>Code quality expectations</td></tr>
+        <tr><td><a href="ai/ui-ux-style.html"><code>ai/ui-ux-style.md</code></a></td><td>Design inspiration and UI standards</td></tr>
+        <tr><td><a href="ai/design-system.html"><code>ai/design-system.md</code></a></td><td>How to use the atomic design system</td></tr>
+        <tr><td><a href="ai/review-checklist.html"><code>ai/review-checklist.md</code></a></td><td>What to check before accepting AI output</td></tr>
+        <tr><td><a href="ai/future-ideas.html"><code>ai/future-ideas.md</code></a></td><td>Rough ideas not yet formalized</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="gd-index-sub">Architecture</h3>
+    <table>
+      <thead>
+        <tr><th>Document</th><th>Covers</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="architecture/core-vs-adapters.html"><code>architecture/core-vs-adapters.md</code></a></td><td>Reusable libraries vs role-specific wiring</td></tr>
+        <tr><td><a href="architecture/data-platforms.html"><code>architecture/data-platforms.md</code></a></td><td>Snowflake, Supabase, Excel, SharePoint strategy</td></tr>
+        <tr><td><a href="architecture/sql-strategy.html"><code>architecture/sql-strategy.md</code></a></td><td>Where SQL lives and how it is organized</td></tr>
+        <tr><td><a href="architecture/local-machine-layout.html"><code>architecture/local-machine-layout.md</code></a></td><td>Local folder structure mirroring GitHub</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="gd-index-sub">Processes</h3>
+    <table>
+      <thead>
+        <tr><th>Document</th><th>Covers</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="processes/maker-checker.html"><code>processes/maker-checker.md</code></a></td><td>AI maker + checker review before promotion</td></tr>
+        <tr><td><a href="processes/autonomous-build.html"><code>processes/autonomous-build.md</code></a></td><td>How to trigger any LLM for a full project build</td></tr>
+        <tr><td><a href="processes/repo-setup-standard.html"><code>processes/repo-setup-standard.md</code></a></td><td>Required structure for all repos</td></tr>
+        <tr><td><a href="processes/new-repo-checklist.html"><code>processes/new-repo-checklist.md</code></a></td><td>Pre-flight checklist for any new repo</td></tr>
+        <tr><td><a href="processes/access-tokens.html"><code>processes/access-tokens.md</code></a></td><td>How to set up and manage GitHub access tokens</td></tr>
+        <tr><td><a href="processes/updating-docs.html"><code>processes/updating-docs.md</code></a></td><td>How to maintain this repo</td></tr>
+        <tr><td><a href="processes/modularization-playbook.html"><code>processes/modularization-playbook.md</code></a></td><td>How to refactor a monorepo</td></tr>
+        <tr><td><a href="processes/promote-staging-to-prod.html"><code>processes/promote-staging-to-prod.md</code></a></td><td>Steps to promote a repo to production</td></tr>
+        <tr><td><a href="processes/template-intake.html"><code>processes/template-intake.md</code></a></td><td>How to add a purchased template to javcb-templates</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="gd-index-sub">Standards</h3>
+    <table>
+      <thead>
+        <tr><th>Document</th><th>Covers</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="standards/python.html"><code>standards/python.md</code></a></td><td>Python coding conventions</td></tr>
+        <tr><td><a href="standards/sql.html"><code>standards/sql.md</code></a></td><td>SQL conventions</td></tr>
+        <tr><td><a href="standards/javascript-typescript.html"><code>standards/javascript-typescript.md</code></a></td><td>JS/TS conventions</td></tr>
+        <tr><td><a href="standards/excel-automation.html"><code>standards/excel-automation.md</code></a></td><td>Excel and Power Query standards</td></tr>
+        <tr><td><a href="standards/configuration.html"><code>standards/configuration.md</code></a></td><td>Config and env variable standards</td></tr>
+        <tr><td><a href="standards/gitignore-template.html"><code>standards/gitignore-template.md</code></a></td><td>Standard .gitignore rules</td></tr>
+        <tr><td><a href="standards/env-example-template.html"><code>standards/env-example-template.md</code></a></td><td>Standard .env.example format</td></tr>
+        <tr><td><a href="standards/readme-template.html"><code>standards/readme-template.md</code></a></td><td>Standard README structure</td></tr>
+        <tr><td><a href="standards/commit-messages.html"><code>standards/commit-messages.md</code></a></td><td>Commit message conventions</td></tr>
+        <tr><td><a href="standards/branch-discipline.html"><code>standards/branch-discipline.md</code></a></td><td>Branch naming and workflow</td></tr>
+        <tr><td><a href="standards/naming.html"><code>standards/naming.md</code></a></td><td>File, folder, and variable naming rules</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+  <script src="assets/nav.js"></script>
+</body>
+</html>
