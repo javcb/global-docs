@@ -1,0 +1,1 @@
+TODO: time, access, tools, skill limits

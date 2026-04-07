@@ -8,15 +8,15 @@ Local folders should mirror GitHub locations closely enough to preserve a 1:1 me
 
 Use a single root such as:
 
-~/code/github/
+~/dev/00_github repos/
 
 ## Layout
 
-- ~/code/github/yourname/
-- ~/code/github/yourname-templates/
-- ~/code/github/yourname-staging/
-- ~/code/github/yourname-archive/
-- ~/code/github/javcb-ai/
+- ~/dev/00_github repos/javcb/
+- ~/dev/00_github repos/javcb-templates/
+- ~/dev/00_github repos/javcb-staging/
+- ~/dev/00_github repos/javcb-archive/
+- ~/dev/00_github repos/javcb-ai/
 
 ## Rules
 

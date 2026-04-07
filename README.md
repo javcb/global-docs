@@ -66,6 +66,11 @@ Short version: edit the right file, keep it concise, update the index if you add
 | `architecture/system-overview.md` | How everything fits together as a system |
 | `processes/new-repo-checklist.md` | What to do before creating any new repo |
 
+| `FAQ.md` | Quick reference cheatsheet for all common tasks |
+| `processes/link-checker-setup.md` | Automated link checking via GitHub Actions |
+| `standards/modularity.md` | Modularity and centralization rules |
+| `architecture/registry.md` | Canonical cross-repo asset locations |
+
 ### GitHub organization map
 | Document | Covers |
 |---|---|

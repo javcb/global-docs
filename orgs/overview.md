@@ -2,7 +2,13 @@
 
 This file explains the purpose of each GitHub location and how they relate to each other.
 
-## Main account: javcb-prod
+## Main GitHub user account (not an org)
+
+This is your personal GitHub login. It holds:
+- global-docs (this repo)
+- Any repos that belong directly to you, not to a specific org
+
+## Organization: javcb-prod
 
 Purpose:
 - production-ready repos

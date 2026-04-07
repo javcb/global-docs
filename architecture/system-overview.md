@@ -23,7 +23,7 @@ GitHub orgs (javcb-prod, javcb-staging, javcb-templates, javcb-archive, javcb-ai
 ↓ contain
 Repos (core libraries, apps, templates, experiments)
 ↓ mirror
-Local machine folders (~/code/github/[org-name]/[repo-name])
+Local machine folders (~/dev/00_github repos/[org-name]/[repo-name])
 
 ## Repo categories
 
