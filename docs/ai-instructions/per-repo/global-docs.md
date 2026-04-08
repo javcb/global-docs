@@ -22,3 +22,9 @@ this repo references nothing outside itself.
 4. Keep directory structure flat — maximum 2 levels deep.
 5. Every document must have a clear purpose statement
    in its first paragraph.
+6. All new .md files must be created inside the docs/
+   directory — never at repo root. MkDocs only serves
+   files inside docs_dir. Files at repo root are invisible
+   to the site builder.
+   Correct:   docs/architecture/new-doc.md
+   Incorrect: architecture/new-doc.md
