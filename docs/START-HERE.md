@@ -72,6 +72,9 @@ mkdocs build           # generates site/ folder for offline use
 mkdocs gh-deploy       # deploys to GitHub Pages (live at https://javcb.github.io/global-docs/)
 ```
 
+!!! warning "Before You Build"
+    Always run `python scripts/sync-docs.py` before `mkdocs build` or `mkdocs gh-deploy` — otherwise root-level files (skills, domains, GLOBAL-CONTEXT) will be missing from the built site.
+
 The sync script copies (not symlinks) root-level files into docs/ so MkDocs can find them.
 This keeps the build reliable on Windows and other systems while maintaining single source of truth at repo root.
 

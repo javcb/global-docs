@@ -121,6 +121,9 @@
 - ✅ [2026-04-08] Site URL configured in mkdocs.yml — https://javcb.github.io/global-docs/
 - ✅ [2026-04-08] .gitignore updated — excludes synced files from tracking
 - ✅ [2026-04-08] Live site deployed to GitHub Pages — zero 404 errors
+- ✅ [2026-04-08] Fixed MkDocs live site 404 errors (site_url, placeholder nav, broken links, Windows symlink issue)
+- ✅ [2026-04-08] MkDocs build workflow documented in START-HERE.md
+- ✅ [2026-04-08] Created scripts/sync-docs.py — syncs root files into docs/ before every build
 
 **Build workflow:** Always run `python scripts/sync-docs.py` before `mkdocs build` or `mkdocs gh-deploy`
 
@@ -130,6 +133,7 @@
 
 ## GitHub Actions
 - 🔲 Set up .github/workflows/deploy-docs.yml — auto-builds and deploys MkDocs to GitHub Pages on push to main
+  - **Requirement:** Must run `python scripts/sync-docs.py` BEFORE `mkdocs build` step
 - 🔲 Set up .github/workflows/docs-audit.yml — lightweight audit on push (missing files, TBD placeholders, GLOBAL-CONTEXT.md freshness)
 
 ## AI Operating System — First Use
