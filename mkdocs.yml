@@ -73,7 +73,7 @@ nav:
     - AI Rules & Guidelines:
       - AI Instructions Home: ai-instructions/README.md
       - Universal Rules: ai-instructions/universal-rules.md
-      - Per-Repo: global-docs:
+      - Per-Repo:
         - Global-Docs: ai-instructions/per-repo/global-docs.md
         - Design System: ai-instructions/per-repo/design-system.md
       - Quality Bar: ai/quality-bar.md
