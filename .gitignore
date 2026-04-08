@@ -1,2 +1,10 @@
 # MkDocs generated site
 site/
+
+# Synced documentation files (kept in sync with scripts/sync-docs.py)
+# Source files are tracked at repo root; these are copied into docs/ for MkDocs
+docs/GLOBAL-CONTEXT.md
+docs/autonomy-matrix.md
+docs/domains/
+docs/skills/
+docs/upstream/

@@ -116,6 +116,16 @@
 
 ---
 
+## MkDocs Build Process
+- ✅ [2026-04-08] Sync script created (scripts/sync-docs.py) — copies root files into docs/ for MkDocs
+- ✅ [2026-04-08] Site URL configured in mkdocs.yml — https://javcb.github.io/global-docs/
+- ✅ [2026-04-08] .gitignore updated — excludes synced files from tracking
+- ✅ [2026-04-08] Live site deployed to GitHub Pages — zero 404 errors
+
+**Build workflow:** Always run `python scripts/sync-docs.py` before `mkdocs build` or `mkdocs gh-deploy`
+
+---
+
 ## Next Phase
 
 ## GitHub Actions

@@ -62,6 +62,19 @@ Automatically handles execution, monitoring, and refinement.
 - **When life changes:** Update the relevant domain context file — that's it
 - No versioning hell — living documents policy applies
 
+**Building the site locally:**
+```bash
+# Sync root files into docs/ (required before build)
+python scripts/sync-docs.py
+
+# Build for offline use or GitHub Pages
+mkdocs build           # generates site/ folder for offline use
+mkdocs gh-deploy       # deploys to GitHub Pages (live at https://javcb.github.io/global-docs/)
+```
+
+The sync script copies (not symlinks) root-level files into docs/ so MkDocs can find them.
+This keeps the build reliable on Windows and other systems while maintaining single source of truth at repo root.
+
 ## How This Documentation Is Organized
 
 All documents in this hub follow the **Diátaxis framework**, which organizes documentation into four types:
