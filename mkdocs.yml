@@ -6,19 +6,50 @@ nav:
   - Meta:
     - Documentation Standard: META.md
   - Start Here:
-    - Getting Started: index.md
-    - Global Context: ../GLOBAL-CONTEXT.md
-    - Autonomy Matrix: ../autonomy-matrix.md
+    - Welcome: START-HERE.md
+    - Global Context: GLOBAL-CONTEXT.md
+    - Autonomy Matrix: autonomy-matrix.md
+  - Domains:
+    - Business Ventures: domains/business-ventures-context.md
+    - Professional Work: domains/professional-work-context.md
+    - Academic (EMBA): domains/academic-context.md
+    - Finance Advisory: domains/finance-advisory-context.md
+    - Business Advisory: domains/business-advisory-context.md
+    - Marketing Advisory: domains/marketing-advisory-context.md
+    - Parenting: domains/parenting-context.md
+    - Volunteer Operations: domains/volunteer-context.md
+    - Personal Processes: domains/personal-processes-context.md
   - Skills:
-    - Skill Registry: ../skills/SKILL-REGISTRY.md
-    - Skill Changelog: ../skills/SKILL-CHANGELOG.md
-    - Skill Template: ../skills/skill-template.md
+    - Skill Registry: skills/SKILL-REGISTRY.md
+    - Skill Changelog: skills/SKILL-CHANGELOG.md
+    - Skill Template: skills/skill-template.md
     - Execution Skills:
-      - Prompting Core: ../skills/execution/skill-prompting-core/v1.0/prompting-core.md
-      - Block Intake: ../skills/execution/skill-block-intake/v2.0/block-intake.md
+      - Prompting Core: skills/execution/skill-prompting-core/v1.0/prompting-core.md
+      - Block Intake: skills/execution/skill-block-intake/v2.0/block-intake.md
+      - Tutoring Framework: skills/execution/skill-tutoring-framework/v1.0/tutoring-framework.md
+      - MS365 Automation: skills/execution/skill-ms365-automation/v1.0/ms365-automation.md
+      - Research Synthesis: skills/execution/skill-research-synthesis/v1.0/research-synthesis.md
+      - Study Guide Creation: skills/execution/skill-study-guide-creation/v1.0/study-guide-creation.md
+      - Volunteer Operations: skills/execution/skill-volunteer-operations/v1.0/volunteer-operations.md
+      - Academic Writing: skills/execution/skill-academic-writing/v1.0/academic-writing.md
     - Advisory Skills:
-      - Audit Trigger: ../skills/advisory/skill-audit-trigger/v2.0/audit-trigger.md
+      - Audit Trigger: skills/advisory/skill-audit-trigger/v2.0/audit-trigger.md
+      - Business Assessment: skills/advisory/skill-business-assessment/v1.0/business-assessment.md
+      - Financial Assessment: skills/advisory/skill-financial-assessment/v1.0/financial-assessment.md
+      - Marketing Audit: skills/advisory/skill-marketing-audit/v1.0/marketing-audit.md
+    - Orchestration Skills:
+      - Project Kickoff: skills/orchestration/skill-project-kickoff/v1.0/project-kickoff.md
+      - Autonomous Project Build: skills/orchestration/skill-autonomous-project-build/v1.0/autonomous-project-build.md
+      - Standards-Wide Audit: skills/orchestration/skill-standards-wide-audit/v1.0/standards-wide-audit.md
   - How-To Guides:
+    - AI Operating System:
+      - Enforcement Layer: processes/enforcement-layer.md
+      - Approval Gate Protocol: processes/approval-gate-protocol.md
+      - Error Escalation: processes/error-escalation.md
+      - Skill Compatibility Matrix: processes/skill-compatibility-matrix.md
+      - Skill Lifecycle: processes/skill-lifecycle.md
+      - Quarterly Review Checklist: processes/quarterly-review-checklist.md
+      - Open Items: processes/open-items.md
     - Processes & Checklists:
       - New Repo Checklist: processes/new-repo-checklist.md
       - Repo Setup Standard: processes/repo-setup-standard.md
@@ -53,6 +84,8 @@ nav:
       - FAQ: FAQ.md
       - Open Items: OPEN-ITEMS.md
       - Updating Guide: UPDATING.md
+    - Dependencies & Upstream:
+      - Upstream Framework Tracking: upstream/README.md
     - GitHub Organizations:
       - Overview: orgs/overview.md
       - javcb: orgs/javcb.md

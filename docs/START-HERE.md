@@ -139,10 +139,10 @@ Use these when you want to understand the *why* behind the *what*.
 - [Core vs Adapters](architecture/core-vs-adapters.md) — System architecture patterns
 
 ### I want to use the AI Operating System for a project
-1. Read: **[GLOBAL-CONTEXT.md](../GLOBAL-CONTEXT.md)** — Load the system context
-2. Read: **[autonomy-matrix.md](../autonomy-matrix.md)** — Understand domain constraints
-3. Use: **[skill-project-kickoff](../skills/orchestration/skill-project-kickoff/v1.0/project-kickoff.md)** — Validate the project
-4. Use: **[skill-autonomous-project-build](../skills/orchestration/skill-autonomous-project-build/v1.0/autonomous-project-build.md)** — Execute end-to-end
+1. Read: **[GLOBAL-CONTEXT.md](GLOBAL-CONTEXT.md)** — Load the system context
+2. Read: **[autonomy-matrix.md](autonomy-matrix.md)** — Understand domain constraints
+3. Use: **[skill-project-kickoff](skills/orchestration/skill-project-kickoff/v1.0/project-kickoff.md)** — Validate the project
+4. Use: **[skill-autonomous-project-build](skills/orchestration/skill-autonomous-project-build/v1.0/autonomous-project-build.md)** — Execute end-to-end
 5. Reference: **[docs/processes/enforcement-layer.md](processes/enforcement-layer.md)** — Understand pre-flight checks and gates
 
 ## Documentation Standards
@@ -222,10 +222,10 @@ Every document must:
 **Step 4:** Come back here and dive into whatever interests you
 
 ### Returning After a Break?
-**Step 1:** Read [GLOBAL-CONTEXT.md](../GLOBAL-CONTEXT.md) to reload the operating system (2 min)  
+**Step 1:** Read [GLOBAL-CONTEXT.md](GLOBAL-CONTEXT.md) to reload the operating system (2 min)  
 **Step 2:** Check [Open Items](processes/open-items.md) for what needs attention  
 **Step 3:** Check [Priorities](context/priorities.md) for what's being worked on now  
-**Step 4:** If using the AI system: read [autonomy-matrix.md](../autonomy-matrix.md) to confirm domain constraints  
+**Step 4:** If using the AI system: read [autonomy-matrix.md](autonomy-matrix.md) to confirm domain constraints  
 **Step 5:** Browse the How-To Guides if you need to complete a task
 
 ### Need Help Right Now?
