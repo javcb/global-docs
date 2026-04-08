@@ -44,7 +44,7 @@ Helps structure arguments, organize ideas, outline papers, provide feedback on d
 - **Requirements:** What does the assignment ask for?
 
 ### Optional Inputs
-- **Format:** Paper format (APA, Chicago, [TBD — confirm with program], etc.)
+- **Format:** Paper format (default: APA 7th Edition; verify with program syllabus for any program-specific requirements)
 - **Length:** Word/page count or scope
 - **Your ideas:** What you're thinking about (outline, rough draft, questions)
 

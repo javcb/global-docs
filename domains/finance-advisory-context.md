@@ -227,7 +227,7 @@ This domain is mostly research and analysis. Execution is organizing findings fo
 ## Practice Readiness Notes
 
 **If transitioning to client-facing practice:**
-- Regulatory requirements (licensing, compliance, fiduciary duty): **[TBD — to be filled in when transitioning]**
+- **Regulatory requirements:** Current use is personal financial analysis for your own ventures (not regulated advisory activity). **If offering client-facing advisory work**, legal review required in El Salvador to determine: licensing requirements, scope restrictions, disclosure requirements, compliance obligations. Client-facing work cannot launch without this legal review.
 - Establish client onboarding and consent process
 - Create standard deliverable templates and disclaimers
 - Define scope of advice (personal financial planning, investment advisory, tax planning, etc.)

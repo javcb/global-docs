@@ -87,8 +87,14 @@ EMBA coursework, research, assignments, and academic planning. Balancing academi
 - All external ideas properly attributed
 - Primary sources when possible
 - Recent sources for current topics
-- Consistent citation style per assignment (program standard: **[TBD — to be filled in]**)
+- **Citation standard: APA 7th Edition (default — verify with program syllabus for any program-specific override)**
 - Full citations (author, date, source, URL with access date)
+
+**APA 7th Edition Quick Reference:**
+- **In-text citation:** (Author, Year) or Author (Year) for narrative
+- **Journal article reference:** Author, A. A., & Author, B. B. (Year). Title of article. *Title of Journal, Volume*(Issue), page range. https://doi.org/xxxxx
+- **Book reference:** Author, A. A. (Year). *Title of book*. Publisher.
+- **Note:** When your EMBA program confirms its citation standard, override this default accordingly.
 
 **Assignment quality:**
 - Understanding the assignment requirements
