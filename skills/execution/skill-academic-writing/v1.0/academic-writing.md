@@ -120,7 +120,7 @@ Helps structure arguments, organize ideas, outline papers, provide feedback on d
 
 3. Plan citations:
    - Where will you cite? (every major claim from sources)
-   - What format? [TBD — confirm with program]
+   - What format? APA 7th Edition (default — verify with program syllabus for any program-specific override)
 
 **Output:** Complete outline ready for writing
 
@@ -173,7 +173,7 @@ Helps structure arguments, organize ideas, outline papers, provide feedback on d
    - Does each paragraph serve the thesis?
 
 2. Verify citations:
-   - Are all sources cited? [TBD — confirm format]
+   - Are all sources cited? APA 7th Edition (default — verify with program syllabus for any program-specific override)
    - Is citation format consistent?
    - Are all claims without citations marked as your own analysis?
    - Is bibliography complete and proper?
@@ -196,7 +196,7 @@ Helps structure arguments, organize ideas, outline papers, provide feedback on d
 - **Outlining:** Structure ideas logically
 - **Structural feedback:** Is the argument clear and supported?
 - **Clarity:** Is this sentence/paragraph clear?
-- **Citation help:** Are sources properly cited? [TBD — confirm format]
+- **Citation help:** Are sources properly cited? APA 7th Edition (default — verify with program syllabus for any program-specific override)
 - **Proofreading:** Grammar, spelling, formatting
 - **Logic check:** Does the argument hold up?
 
@@ -249,7 +249,7 @@ Helps structure arguments, organize ideas, outline papers, provide feedback on d
 ## Related Docs
 
 - **domains/academic-context.md** — Academic writing and integrity standards
-- **Citation standard guide:** [TBD — confirm with program]
+- **Citation standard guide:** APA 7th Edition (default — verify with program syllabus for any program-specific override)
 
 ---
 
