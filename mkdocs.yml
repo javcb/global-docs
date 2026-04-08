@@ -7,6 +7,17 @@ nav:
     - Documentation Standard: META.md
   - Start Here:
     - Getting Started: index.md
+    - Global Context: ../GLOBAL-CONTEXT.md
+    - Autonomy Matrix: ../autonomy-matrix.md
+  - Skills:
+    - Skill Registry: ../skills/SKILL-REGISTRY.md
+    - Skill Changelog: ../skills/SKILL-CHANGELOG.md
+    - Skill Template: ../skills/skill-template.md
+    - Execution Skills:
+      - Prompting Core: ../skills/execution/skill-prompting-core/v1.0/prompting-core.md
+      - Block Intake: ../skills/execution/skill-block-intake/v2.0/block-intake.md
+    - Advisory Skills:
+      - Audit Trigger: ../skills/advisory/skill-audit-trigger/v2.0/audit-trigger.md
   - How-To Guides:
     - Processes & Checklists:
       - New Repo Checklist: processes/new-repo-checklist.md
@@ -27,9 +38,8 @@ nav:
       - Add Documentation: processes/add-documentation.md
       - Updating Docs: processes/updating-docs.md
       - Audit Prompt: audit-prompt.md
-    - Design System:
-      - Block Intake Prompt: ../prompts/block-intake.md
-      - Audit Trigger Prompt: ../prompts/audit-trigger.md
+    - Design System Integration:
+      - See Skills > Block Intake and Audit Trigger sections above
     - Workflows:
       - Assess Before Building: workflows/assess-before-building.md
       - Release Notes Monitoring: workflows/release-notes-monitoring.md
@@ -58,6 +68,7 @@ nav:
       - Design System: architecture/design-system.md
       - SQL Strategy: architecture/sql-strategy.md
       - Local Machine Layout: architecture/local-machine-layout.md
+      - Skill Architecture: architecture/skill-architecture.md
     - Standards & Conventions:
       - Naming: standards/naming.md
       - JavaScript/TypeScript: standards/javascript-typescript.md
