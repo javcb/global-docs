@@ -12,8 +12,55 @@ This is the canonical source for:
 - **GitHub organization structure** and how repositories relate to each other
 - **Operational processes** for building, shipping, and maintaining software
 - **Architecture principles** that guide system design
+- **AI Operating System Foundation** — autonomous project execution framework with 15 production skills, 9 domain contexts, and full enforcement layer
 
 Other repositories reference this hub — this hub references nothing outside itself. It's the single source of truth.
+
+---
+
+## 🆕 AI Operating System Foundation (Built April 8, 2026)
+
+**What was replaced:** Fragmented context files and scattered prompts folder → **40-file integrated AI operating system**
+
+**What was built (5 phases, 1 session):**
+1. **Foundation** (5 files) — GLOBAL-CONTEXT.md, autonomy matrix, skill registry
+2. **Domain Contexts** (9 files) — business-ventures, professional-work, parenting, volunteer, academic, finance-advisory, marketing-advisory, business-advisory, personal-processes
+3. **Execution Skills** (8 files) — research synthesis, study guides, academic writing, automation, tutoring, operations, block intake, prompting
+4. **Advisory Skills** (4 files) — business assessment, financial assessment, marketing audit, audit trigger
+5. **Orchestration & Enforcement** (14 files) — project kickoff, autonomous builds, cross-repo audits, enforcement layer (pre-flight checks, approval gates, error escalation, skill compatibility), maintenance processes
+
+**How to use it right now:**
+
+Start any AI session with the system:
+```
+Read docs/GLOBAL-CONTEXT.md to load the operating system.
+This initializes domain autonomy, hard rules, and decision framework.
+```
+
+Start a research project:
+```
+Use skill-research-synthesis to compile sources.
+Then skill-academic-writing to structure findings into papers.
+```
+
+Start any project with full autonomy support:
+```
+Run skill-project-kickoff to validate the project specification.
+Then skill-autonomous-project-build to execute end-to-end.
+Automatically handles execution, monitoring, and refinement.
+```
+
+**What still needs to be done:**
+- See [docs/processes/open-items.md](processes/open-items.md) for complete tracking
+- **Critical:** Finance advisory compliance review before professional use
+- **Critical:** EMBA program citation standard confirmation
+- Estimated time to resolve TBDs: 1-2 hours
+- All other work tracked in quarterly cadence
+
+**Maintenance reminders:**
+- **Quarterly reviews:** July 8, October 8, January 8, April 8
+- **When life changes:** Update the relevant domain context file — that's it
+- No versioning hell — living documents policy applies
 
 ## How This Documentation Is Organized
 
@@ -90,6 +137,13 @@ Use these when you want to understand the *why* behind the *what*.
 - [Design System Architecture](design-system/architecture.md) — Why the system is built in three layers
 - [Operational Model](processes/operational-model.md) — How decisions are made
 - [Core vs Adapters](architecture/core-vs-adapters.md) — System architecture patterns
+
+### I want to use the AI Operating System for a project
+1. Read: **[GLOBAL-CONTEXT.md](../GLOBAL-CONTEXT.md)** — Load the system context
+2. Read: **[autonomy-matrix.md](../autonomy-matrix.md)** — Understand domain constraints
+3. Use: **[skill-project-kickoff](../skills/orchestration/skill-project-kickoff/v1.0/project-kickoff.md)** — Validate the project
+4. Use: **[skill-autonomous-project-build](../skills/orchestration/skill-autonomous-project-build/v1.0/autonomous-project-build.md)** — Execute end-to-end
+5. Reference: **[docs/processes/enforcement-layer.md](processes/enforcement-layer.md)** — Understand pre-flight checks and gates
 
 ## Documentation Standards
 
@@ -168,10 +222,11 @@ Every document must:
 **Step 4:** Come back here and dive into whatever interests you
 
 ### Returning After a Break?
-**Step 1:** Check [Priorities](context/priorities.md) for what's being worked on now  
-**Step 2:** Check [Open Items](OPEN-ITEMS.md) for what needs attention  
-**Step 3:** Browse the How-To Guides if you need to complete a task  
-**Step 4:** Read [Setup History](processes/setup-history.md) if you want context on recent changes
+**Step 1:** Read [GLOBAL-CONTEXT.md](../GLOBAL-CONTEXT.md) to reload the operating system (2 min)  
+**Step 2:** Check [Open Items](processes/open-items.md) for what needs attention  
+**Step 3:** Check [Priorities](context/priorities.md) for what's being worked on now  
+**Step 4:** If using the AI system: read [autonomy-matrix.md](../autonomy-matrix.md) to confirm domain constraints  
+**Step 5:** Browse the How-To Guides if you need to complete a task
 
 ### Need Help Right Now?
 - **Question about naming/standards?** → [FAQ](FAQ.md)
