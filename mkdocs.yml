@@ -1,5 +1,6 @@
 site_name: global-docs
 site_description: Personal documentation hub for GitHub orgs, AI rules, architecture, and processes
+site_url: https://javcb.github.io/global-docs/
 docs_dir: docs
 
 nav:
@@ -69,8 +70,6 @@ nav:
       - Add Documentation: processes/add-documentation.md
       - Updating Docs: processes/updating-docs.md
       - Audit Prompt: audit-prompt.md
-    - Design System Integration:
-      - See Skills > Block Intake and Audit Trigger sections above
     - Workflows:
       - Assess Before Building: workflows/assess-before-building.md
       - Release Notes Monitoring: workflows/release-notes-monitoring.md
