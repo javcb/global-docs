@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Quick reference FAQ
 
 This is your fast-access cheatsheet. For full details, follow the "Go deeper" links.

@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # AI Instructions — Hub
 
 ## Purpose

@@ -1,3 +1,5 @@
+<!-- type: explanation -->
+
 # AI tool roles and when to use each
 
 ## Core principle

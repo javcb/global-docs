@@ -1,3 +1,5 @@
+<!-- type: explanation -->
+
 # Setup history and decisions
 
 ## Changelog

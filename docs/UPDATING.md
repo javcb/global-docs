@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # How to update global-docs
 
 This page is the **single source** for when and how to change global-docs, run documentation health audits, and avoid stale documentation.

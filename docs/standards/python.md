@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Python standards
 
 - prefer simple modules and clear function names

@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Global AI rules
 
 ## General behavior

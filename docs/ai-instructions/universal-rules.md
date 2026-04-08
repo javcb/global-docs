@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Universal AI Rules
 
 These rules apply to every repo in this system.

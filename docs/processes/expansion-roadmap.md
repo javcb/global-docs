@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Expansion roadmap
 
 ## Principle

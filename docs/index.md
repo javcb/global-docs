@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # global-docs
 
 This repository is the single source of truth for how my GitHub organizations, local machine, shared libraries, data platform integrations, AI tools, and development processes are structured and governed.

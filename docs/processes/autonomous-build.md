@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Autonomous build process
 
 ## Design principle

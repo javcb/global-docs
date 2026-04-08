@@ -1,3 +1,5 @@
+<!-- type: explanation -->
+
 # Hub-and-Spoke Architecture
 
 ## What It Is

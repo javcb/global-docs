@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # AI workflow rules
 
 ## Before coding

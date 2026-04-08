@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Cross-repo registry
 
 This is the single canonical reference for where key assets live across orgs and repos.

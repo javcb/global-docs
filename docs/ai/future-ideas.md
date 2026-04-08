@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Future ideas and rough rules
 
 Use this file to capture fuzzy ideas before they are formalized.

@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Organization overview
 
 This file explains the purpose of each GitHub location and how they relate to each other.

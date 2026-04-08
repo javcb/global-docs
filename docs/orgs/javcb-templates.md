@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Org: javcb-templates
 
 ## Purpose

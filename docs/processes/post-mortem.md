@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Post-mortem process
 
 ## Purpose
@@ -53,3 +55,7 @@ Severity: High / Medium / Low
 - Every post-mortem must result in at least one global-docs file being updated
 - Add a changelog entry to processes/setup-history.md referencing the post-mortem
 - Add the global-docs update as a completed item in OPEN-ITEMS.md
+
+## Prompt
+
+Help me write a post-mortem using the format in this guide. What happened? What was the root cause? What process or rule failed to catch it? What fix was applied? Most importantly: which global-docs file should be updated to prevent this from happening again? A post-mortem without a global-docs update is just venting.

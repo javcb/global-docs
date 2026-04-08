@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # AI review checklist
 
 Before accepting AI-generated work, verify:

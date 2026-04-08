@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Configuration standards
 
 - configuration should be externalized

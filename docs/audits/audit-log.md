@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Master Audit Log
 
 All audit runs across all repos are logged here.

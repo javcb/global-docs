@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Core libraries vs adapters
 
 ## Goal

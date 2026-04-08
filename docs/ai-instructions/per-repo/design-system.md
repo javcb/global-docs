@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # AI Instructions Supplement — design-system
 
 Read universal-rules.md before this file.

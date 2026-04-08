@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Universal Checklist — Accessibility
 
 Reference from repo-local audit-process.md files.

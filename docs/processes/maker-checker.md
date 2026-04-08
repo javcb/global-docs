@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Maker/checker process
 
 ## Goal
@@ -24,3 +26,7 @@ Produce reviewed, durable code before anything moves to production.
 - Never promote directly from ai org to prod without checker review
 - Checker reviews diffs, not full files, for precision
 - README must be updated before promotion
+
+## Prompt
+
+Review this feature diff using the maker/checker process: find bugs, missing edge cases, security issues, and violations of global-docs rules. Flag only—do not rewrite. What issues need to be addressed before promotion?

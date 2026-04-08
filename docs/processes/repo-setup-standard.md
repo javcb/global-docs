@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Repo setup standard
 
 ## Starter template
@@ -30,3 +32,7 @@ Use the same standard:
 | sql/ | If SQL used | SQL scripts |
 | tests/ | Yes (even if minimal) | Sanity checks |
 | docs/ | Optional | Extended documentation |
+
+## Prompt
+
+I'm setting up a new repository (or refactoring an existing one). Help me follow the repo setup standard: use ai-repo-starter as a template, ensure all required files (README, AI-INSTRUCTIONS, .env.example, .gitignore, src/, tests/) are in place, and follow the starter structure before beginning any business logic.

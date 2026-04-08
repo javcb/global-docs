@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Universal Checklist — Code Quality
 
 Reference from repo-local audit-process.md files.

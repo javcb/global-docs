@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # AI Instructions Supplement — global-docs
 
 Read universal-rules.md before this file.

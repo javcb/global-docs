@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Local machine layout
 
 ## Goal

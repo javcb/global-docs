@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Standard .gitignore
 
 Every repo must include a .gitignore with at minimum:

@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # AI instructions for global-docs
 
 ## Purpose of this repo
@@ -58,6 +60,50 @@ The file will exist but will be invisible to the site and search if omitted.
 Never create documentation .md files at the repo root or in root-level subdirectories.
 The only permitted root-level .md file is `README.md`, which serves as a GitHub landing
 page pointing to the docs site at https://javcb.github.io/global-docs/.
+
+## Documentation structure: Diátaxis framework
+
+This repo follows the **Diátaxis documentation framework** (see [docs/META.md](META.md) for full rules).
+
+**Every document must declare its type at the top:**
+```html
+<!-- type: tutorial | how-to | reference | explanation -->
+```
+
+**The four types (never mix in one document):**
+
+| Type | Purpose | Reader State | Format | Contains | Does NOT contain |
+|------|---------|--------------|--------|----------|------------------|
+| **Tutorial** | Orientation, learning | Getting started or re-orienting | Guided experience, narrative, warm | Context, narrative, "read this next" links | Reference specs, decision rationale |
+| **How-To** | Accomplish a specific task | Knows what to do, needs steps | Numbered steps, imperative ("Run X") | Prerequisites, steps, outcome, AI prompt | Conceptual explanation, background |
+| **Reference** | Factual lookup | Working, needs a specific fact | Terse, consistent structure | Specs, rules, definitions, examples | Instructions, "why" explanations, guides |
+| **Explanation** | Build understanding of why | Wants context, not doing a task now | Narrative, analytical | Rationale, context, history, alternatives | Step-by-step instructions, reference specs |
+
+**Rules for contributors (AI and human):**
+
+1. Every new document must declare its type in a comment: `<!-- type: ... -->`
+2. Never add instructions to a reference doc
+3. Never add conceptual background to a how-to guide — link to the explanation doc instead
+4. Every how-to guide that has an executable AI prompt must include it at the bottom under a `## Prompt` heading
+5. Documents are organized by **type**, not by directory structure (see mkdocs.yml nav)
+6. Cross-reference between documents: tutorials link to how-tos, how-tos link to references and explanations, etc.
+
+**Organization in mkdocs.yml:**
+- **Meta** — Documentation standards (META.md)
+- **Start Here** — Tutorial entry point (START-HERE.md)
+- **How-To Guides** — Organized by task category
+- **Reference** — Organized by topic (standards, architecture, org docs, etc.)
+- **Explanation** — Deep dives and conceptual materials
+
+**When creating a new document:**
+1. Choose your type: tutorial, how-to, reference, or explanation
+2. Add the type comment at the very top: `<!-- type: your-type -->`
+3. Place the file in the appropriate subdirectory under `docs/` (directory doesn't enforce type)
+4. Update mkdocs.yml nav entry under the correct section (organized by type, not directory)
+5. For how-to guides: include a `## Prompt` section if it describes an AI-executable task
+6. For reference docs: use consistent structure and avoid narrative
+7. For explanations: include rationale and alternatives considered
+8. For tutorials: include "what's next" guidance and warm, encouraging tone
 
 ## This repo structure
 

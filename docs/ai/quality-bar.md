@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Quality bar
 
 - Code should be understandable by a technically literate non-specialist owner.

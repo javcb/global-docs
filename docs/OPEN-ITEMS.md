@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Open items
 
 This is the living backlog for global-docs.

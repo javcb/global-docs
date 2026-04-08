@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Global-docs audit prompt
 
 ## Note on running this audit

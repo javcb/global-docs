@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Commit message standards
 
 ## Format

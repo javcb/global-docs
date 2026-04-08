@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # global-docs
 
 Personal documentation hub for GitHub organizations, AI rules, architecture, and processes.

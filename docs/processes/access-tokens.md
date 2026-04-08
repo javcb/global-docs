@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Access token strategy
 
 Tokens are always created from your personal GitHub account settings.

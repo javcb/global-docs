@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Data platform strategy
 
 ## Supported platforms

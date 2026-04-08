@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # UI behavior standards
 
 ## Purpose

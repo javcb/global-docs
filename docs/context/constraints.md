@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Constraints
 
 Status: draft — to be expanded

@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Branch discipline
 
 ## Rule

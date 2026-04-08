@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Assess Before Building
 
 ## Purpose
@@ -70,3 +72,7 @@ Awaiting your decision before proceeding.
 - Refactoring existing implementations
 - Documentation updates
 - Configuration changes to existing tools
+
+## Prompt
+
+Before I build a new feature/component/library, help me assess if a solution already exists. I'll describe what I need. Follow the assessment steps: Is it solved by our existing stack? Are there free open-source options? Any paid solutions? Only then recommend building. Report your findings in the output format so I can decide whether to use, evaluate, or build.

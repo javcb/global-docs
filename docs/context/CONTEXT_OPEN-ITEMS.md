@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 Personal-ops and full context for AI
 You're right that having AI tools understand who you are, how you think, and what you're trying to accomplish produces much better results. And you're right that it should live in one place.
 

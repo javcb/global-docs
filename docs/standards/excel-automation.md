@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Excel automation standards
 
 - keep reusable Excel operations centralized

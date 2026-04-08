@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Updating docs
 
 When a recurring rule, preference, or architecture pattern emerges:

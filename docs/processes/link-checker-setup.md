@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Automated link checker setup
 
 ## Purpose

@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Session Close-Out Protocol
 
 ## Purpose
@@ -84,3 +86,7 @@ auto-navigation. This means:
 - Files created during session not yet reflected in README
 - Another developer (or AI) would be confused about
   current state from docs alone
+
+## Prompt
+
+Help me close out this work session following the close-out protocol. Walk me through: updating the checklist with completed items and today's date, updating the audit log if applicable, running the repo audit to verify quality, checking for cross-repo impacts, and ensuring all changes are committed with a clear message. After this, the next session can start fresh.

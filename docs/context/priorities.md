@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Current priorities
 
 Status: draft — to be updated regularly

@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Design system architecture
 
 Status: not yet built.

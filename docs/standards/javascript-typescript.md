@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # JavaScript / TypeScript standards
 
 - use mainly for UI/UX prototypes and designated frontend work

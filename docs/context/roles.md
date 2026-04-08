@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Roles
 
 Status: draft — to be expanded

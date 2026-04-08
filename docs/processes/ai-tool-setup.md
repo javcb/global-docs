@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # AI tool setup
 
 ## Principle

@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # AI personas
 
 ## Senior engineer (default)

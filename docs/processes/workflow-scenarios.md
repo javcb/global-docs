@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Workflow scenarios
 
 This document covers the most common project workflows so AI tools

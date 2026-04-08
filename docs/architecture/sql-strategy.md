@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # SQL strategy
 
 ## Principle

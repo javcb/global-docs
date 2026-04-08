@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Language and technology boundaries
 
 ## Global default

@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # .env.example standard
 
 Every repo that requires credentials or environment-specific config must include a `.env.example` file.

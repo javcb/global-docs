@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # README standard
 
 Every repo must have a README.md at the root.

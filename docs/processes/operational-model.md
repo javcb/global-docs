@@ -1,3 +1,5 @@
+<!-- type: explanation -->
+
 # Operational model
 
 ## Purpose

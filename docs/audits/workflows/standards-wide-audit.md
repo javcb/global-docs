@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Standards-Wide Audit
 
 ## Purpose

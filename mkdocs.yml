@@ -2,6 +2,116 @@ site_name: global-docs
 site_description: Personal documentation hub for GitHub orgs, AI rules, architecture, and processes
 docs_dir: docs
 
+nav:
+  - Meta:
+    - Documentation Standard: META.md
+  - Start Here:
+    - Getting Started: index.md
+  - How-To Guides:
+    - Processes & Checklists:
+      - New Repo Checklist: processes/new-repo-checklist.md
+      - Repo Setup Standard: processes/repo-setup-standard.md
+      - Template Intake: processes/template-intake.md
+      - Post-Mortem: processes/post-mortem.md
+      - Maker-Checker: processes/maker-checker.md
+      - Promote Staging to Prod: processes/promote-staging-to-prod.md
+    - Setup & Configuration:
+      - AI Tool Setup: processes/ai-tool-setup.md
+      - Link Checker Setup: processes/link-checker-setup.md
+      - Access Tokens: processes/access-tokens.md
+    - Development & Building:
+      - Autonomous Build: processes/autonomous-build.md
+      - Modularization Playbook: processes/modularization-playbook.md
+      - Workflow Scenarios: processes/workflow-scenarios.md
+    - Documentation:
+      - Updating Docs: processes/updating-docs.md
+      - Audit Prompt: audit-prompt.md
+    - Design System:
+      - Block Intake Prompt: ../prompts/block-intake.md
+      - Audit Trigger Prompt: ../prompts/audit-trigger.md
+    - Workflows:
+      - Assess Before Building: workflows/assess-before-building.md
+      - Release Notes Monitoring: workflows/release-notes-monitoring.md
+      - Close-Out Protocol: workflows/close-out-protocol.md
+    - Templates & Standards:
+      - README Template: standards/readme-template.md
+      - Env Example Template: standards/env-example-template.md
+      - Gitignore Template: standards/gitignore-template.md
+  - Reference:
+    - Quick Links:
+      - FAQ: FAQ.md
+      - Open Items: OPEN-ITEMS.md
+      - Updating Guide: UPDATING.md
+    - GitHub Organizations:
+      - Overview: orgs/overview.md
+      - javcb: orgs/javcb.md
+      - javcb-ai: orgs/javcb-ai.md
+      - javcb-templates: orgs/javcb-templates.md
+      - javcb-staging: orgs/javcb-staging.md
+      - javcb-prod: orgs/javcb-prod.md
+      - javcb-archive: orgs/javcb-archive.md
+    - Architecture Reference:
+      - System Overview: architecture/system-overview.md
+      - Data Platforms: architecture/data-platforms.md
+      - Registry: architecture/registry.md
+      - Design System: architecture/design-system.md
+      - SQL Strategy: architecture/sql-strategy.md
+      - Local Machine Layout: architecture/local-machine-layout.md
+    - Standards & Conventions:
+      - Naming: standards/naming.md
+      - JavaScript/TypeScript: standards/javascript-typescript.md
+      - Python: standards/python.md
+      - SQL: standards/sql.md
+      - Modularity: standards/modularity.md
+      - Commit Messages: standards/commit-messages.md
+      - Branch Discipline: standards/branch-discipline.md
+      - Configuration: standards/configuration.md
+      - Prompt Format: standards/prompt-format.md
+      - UI Behavior: standards/ui-behavior.md
+      - Excel Automation: standards/excel-automation.md
+    - AI Rules & Guidelines:
+      - AI Instructions Home: ai-instructions/README.md
+      - Universal Rules: ai-instructions/universal-rules.md
+      - Per-Repo: global-docs:
+        - Global-Docs: ai-instructions/per-repo/global-docs.md
+        - Design System: ai-instructions/per-repo/design-system.md
+      - Quality Bar: ai/quality-bar.md
+      - Personas: ai/personas.md
+      - Base Rules: ai/base-rules.md
+      - Security: ai/security.md
+      - Languages: ai/languages.md
+      - Workflow: ai/workflow.md
+      - Review Checklist: ai/review-checklist.md
+      - UI/UX Style: ai/ui-ux-style.md
+      - Design System Guidelines: ai/design-system.md
+      - Future Ideas: ai/future-ideas.md
+    - Context:
+      - About Me: context/about-me.md
+      - Roles: context/roles.md
+      - Constraints: context/constraints.md
+      - Priorities: context/priorities.md
+      - Open Items: context/CONTEXT_OPEN-ITEMS.md
+    - Audits:
+      - Audits Home: audits/README.md
+      - Audit Log: audits/audit-log.md
+      - Standards-Wide Audit: audits/workflows/standards-wide-audit.md
+      - Checklists:
+        - Code Quality: audits/universal-checklists/code-quality.md
+        - Accessibility: audits/universal-checklists/accessibility.md
+        - Documentation: audits/universal-checklists/documentation.md
+        - Configuration: audits/universal-checklists/configuration.md
+  - Explanation:
+    - Architecture & Design:
+      - Ecosystem Overview: architecture/ecosystem-overview.md
+      - Hub-and-Spoke Model: architecture/hub-and-spoke-model.md
+      - Core vs Adapters: architecture/core-vs-adapters.md
+      - Design System Architecture: design-system/architecture.md
+    - Processes & Operations:
+      - Operational Model: processes/operational-model.md
+      - Setup History: processes/setup-history.md
+      - AI Tool Roles: processes/ai-tool-roles.md
+      - Expansion Roadmap: processes/expansion-roadmap.md
+
 theme:
   name: material
   palette:

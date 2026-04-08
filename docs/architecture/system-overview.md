@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # System overview
 
 ## The big picture

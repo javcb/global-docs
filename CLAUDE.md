@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Claude AI Session Instructions — global-docs
 
 ## What This Repo Is

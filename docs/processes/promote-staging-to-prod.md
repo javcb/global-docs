@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Promote staging to prod
 
 ## When to promote
@@ -72,3 +74,7 @@ No exceptions without a documented and approved reason.
    - In GitHub Desktop: right-click repo → Remove
    - Choose to delete local folder
    - Re-clone from javcb-prod location if still needed locally
+
+## Prompt
+
+Help me promote this repo from javcb-staging to javcb-prod. Work through the definition-of-done checklist with me: code quality (error handling, no debug artifacts, no TODOs), documentation (README accuracy, .env.example, AI-INSTRUCTIONS), testing, review status, and security (no hardcoded secrets, .gitignore coverage). Once confirmed, I'll transfer ownership on GitHub.

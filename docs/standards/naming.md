@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Naming conventions
 
 ## Repos

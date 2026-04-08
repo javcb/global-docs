@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # AI security rules
 
 ## Secrets and credentials

@@ -1,3 +1,5 @@
+<!-- type: explanation -->
+
 # Ecosystem Overview
 
 ## Purpose

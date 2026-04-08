@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # UI/UX style guidance
 
 ## Inspiration

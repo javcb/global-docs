@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Design system usage for AI tools
 
 ## Where the design system lives

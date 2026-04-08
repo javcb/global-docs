@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Universal Checklist — Documentation
 
 Reference from repo-local audit-process.md files.

@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Prompt format standard
 
 ## Purpose

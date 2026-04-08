@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Modularity and centralization standards
 
 ## Core principle

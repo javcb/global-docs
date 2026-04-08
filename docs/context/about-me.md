@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # About me
 
 Status: draft — to be expanded

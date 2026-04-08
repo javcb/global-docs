@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # SQL standards
 
 - save important SQL as .sql files

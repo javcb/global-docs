@@ -1,3 +1,5 @@
+<!-- type: how-to -->
+
 # Release Notes Monitoring
 
 ## Purpose

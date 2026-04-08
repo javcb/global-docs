@@ -1,3 +1,5 @@
+<!-- type: reference -->
+
 # Global Docs — Build Checklist
 
 ## How to Use This File
