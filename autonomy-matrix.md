@@ -8,15 +8,15 @@ Per-domain autonomy levels defining when AI can auto-execute vs. when it must pa
 
 ## Quick Reference
 
-| Domain | Default Autonomy | Key Pause Points | Status |
-|---|---|---|---|
-| **professional-work** | Execute with Approval | Structural changes, public publishing, external comms | ACTIVE |
-| **business-ventures** | Advisory (Human Decides) | All financial decisions, legal docs, external comms | PLANNED |
-| **parenting** | Advisory (Human Decides) | Safety decisions, external comms, major commitments | PLANNED |
-| **volunteer** | Advisory (Human Decides) | Public representation, external comms | PLANNED |
-| **academic** | Advisory (Human Decides) | Submission decisions, integrity questions | PLANNED |
-| **personal-processes** | Execute (after confirmation) | Major process changes, external data sharing | PLANNED |
-| **advisory** | Execute (reporting) | N/A (advisory only) | PLANNED |
+| Domain | Default Autonomy | Key Pause Points | Enforcement Method | Status |
+|---|---|---|---|---|
+| **professional-work** | Execute with Approval | Structural changes, public publishing, external comms | Soft gate (request approval) | ACTIVE |
+| **business-ventures** | Advisory (Human Decides) | All financial decisions, legal docs, external comms | Output flag (report only) | PLANNED |
+| **parenting** | Advisory (Human Decides) | Safety decisions, external comms, major commitments | Output flag (report only) | PLANNED |
+| **volunteer** | Advisory (Human Decides) | Public representation, external comms | Output flag (report only) | PLANNED |
+| **academic** | Advisory (Human Decides) | Submission decisions, integrity questions | Hard gate (demand confirmation) | PLANNED |
+| **personal-processes** | Execute (after confirmation) | Major process changes, external data sharing | Pre-flight check (enforce constraints) | PLANNED |
+| **advisory** | Execute (reporting) | N/A (advisory only) | None (report-only) | PLANNED |
 
 ---
 
@@ -45,6 +45,11 @@ Per-domain autonomy levels defining when AI can auto-execute vs. when it must pa
 | Publish component to npm | Pause and ask | Public artifact, external, irreversible. |
 | Delete a design system file | Pause and ask | Destructive, hard rule violation. Never auto-delete. |
 | Audit design system compliance | Execute | Advisory skill, reports only. No approval needed for report. |
+
+**Enforcement Method: Soft Gate**
+- Execution with Approval tasks: Request approval on approach before proceeding
+- Pause and Ask tasks: Hard gate (stop completely, wait for explicit yes)
+- Hard rule violations: Pre-flight check blocks execution immediately
 
 **Hard Rules (Always Apply):**
 - Never expose credentials
@@ -80,6 +85,11 @@ Per-domain autonomy levels defining when AI can auto-execute vs. when it must pa
 | Update business model canvas | Execute (after approval) | Procedural, but strategic. Get approval on direction first. |
 | Evaluate a business opportunity | Execute | Advisory, human decides next steps. |
 
+**Enforcement Method: Output Flag**
+- Advisory tasks: Execute and report findings; user decides action
+- Pause and Ask tasks: Hard gate (stop, demand explicit confirmation)
+- Financial operations: Pre-flight check blocks immediately (prohibited action)
+
 **Hard Rules (Always Apply):**
 - All hard rules from GLOBAL-CONTEXT.md
 - Never execute financial transactions
@@ -111,6 +121,11 @@ Per-domain autonomy levels defining when AI can auto-execute vs. when it must pa
 | Create parenting documents | Execute (after approval) | Procedural, but family-sensitive. Get approval. |
 | Respond to family emails | Pause and ask | Represents user/family, must confirm. |
 
+**Enforcement Method: Output Flag**
+- Advisory tasks: Execute and report findings; user decides action
+- Pause and Ask tasks: Hard gate (stop, demand explicit confirmation)
+- Safety decisions: Pre-flight check blocks immediately (never autonomous)
+
 **Hard Rules (Always Apply):**
 - All hard rules from GLOBAL-CONTEXT.md
 - Never make safety decisions
@@ -140,6 +155,11 @@ Per-domain autonomy levels defining when AI can auto-execute vs. when it must pa
 | Contact volunteer organization | Pause and ask | External comm, represents user. |
 | Create volunteer schedule | Execute (after approval) | Procedural, but time commitment. Get approval. |
 | Represent cause publicly | Never | External, represents user/values. User decides. |
+
+**Enforcement Method: Output Flag**
+- Advisory tasks: Execute and report findings; user decides action
+- Pause and Ask tasks: Hard gate (stop, demand explicit confirmation)
+- Public representation: Pre-flight check blocks immediately (never autonomous)
 
 **Hard Rules (Always Apply):**
 - All hard rules from GLOBAL-CONTEXT.md
@@ -171,6 +191,12 @@ Per-domain autonomy levels defining when AI can auto-execute vs. when it must pa
 | Represent research findings | Execute (after approval) | Procedural, but accuracy critical. Get approval. |
 | Make claim about research | Pause and ask | Intellectual integrity, user owns claims. |
 
+**Enforcement Method: Hard Gate**
+- Advisory tasks: Execute and report findings; user decides action
+- Pause and Ask tasks: Hard gate (stop, demand explicit confirmation)
+- Integrity violations: Pre-flight check blocks immediately (never autonomous)
+- Submissions/claims: Hard gate (require explicit user confirmation)
+
 **Hard Rules (Always Apply):**
 - All hard rules from GLOBAL-CONTEXT.md
 - Never assert that user wrote something they didn't
@@ -199,6 +225,12 @@ Per-domain autonomy levels defining when AI can auto-execute vs. when it must pa
 | Export personal data | Pause and ask | Privacy, data security concern. |
 | Share personal system publicly | Pause and ask | Privacy exposure risk. |
 | Automate personal workflow | Execute (after approval) | Procedural, but affects daily life. Get approval. |
+
+**Enforcement Method: Pre-Flight Check**
+- Execute tasks: Pre-flight check validates within personal autonomy bounds
+- Execute with Approval tasks: Soft gate (request approval on approach)
+- Pause and Ask tasks: Hard gate (stop, demand explicit confirmation)
+- Privacy-sensitive: Pre-flight check blocks data export/sharing
 
 **Hard Rules (Always Apply):**
 - All hard rules from GLOBAL-CONTEXT.md
@@ -229,6 +261,12 @@ Per-domain autonomy levels defining when AI can auto-execute vs. when it must pa
 | Recommend refactoring | Execute | Report-only, no changes. |
 | Flag security issues | Execute | Report-only, no changes. |
 | Implement recommended fix | Pause and ask | This is now execution, not advisory. Use execution skill. |
+
+**Enforcement Method: None (Report-Only)**
+- All advisory tasks: Execute and deliver report
+- No approval gates needed for report generation
+- User reviews findings and decides next steps
+- Implementation of recommendations: Switch to execution domain autonomy level
 
 ---
 
