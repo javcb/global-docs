@@ -87,6 +87,7 @@ This repo follows the **Diátaxis documentation framework** (see [docs/META.md](
 4. Every how-to guide that has an executable AI prompt must include it at the bottom under a `## Prompt` heading
 5. Documents are organized by **type**, not by directory structure (see mkdocs.yml nav)
 6. Cross-reference between documents: tutorials link to how-tos, how-tos link to references and explanations, etc.
+7. **When asked to document anything new, always read [docs/processes/add-documentation.md](../processes/add-documentation.md) first and follow the decision tree to determine which Diátaxis type(s) to produce.** This ensures new documentation follows the right pattern from the start.
 
 **Organization in mkdocs.yml:**
 - **Meta** — Documentation standards (META.md)

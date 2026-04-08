@@ -24,6 +24,7 @@ nav:
       - Modularization Playbook: processes/modularization-playbook.md
       - Workflow Scenarios: processes/workflow-scenarios.md
     - Documentation:
+      - Add Documentation: processes/add-documentation.md
       - Updating Docs: processes/updating-docs.md
       - Audit Prompt: audit-prompt.md
     - Design System:
@@ -111,6 +112,12 @@ nav:
       - Setup History: processes/setup-history.md
       - AI Tool Roles: processes/ai-tool-roles.md
       - Expansion Roadmap: processes/expansion-roadmap.md
+  - System Maintenance:
+    - Documentation Templates:
+      - How-To Template: templates/how-to.md
+      - Reference Template: templates/reference.md
+      - Explanation Template: templates/explanation.md
+      - Tutorial Template: templates/tutorial.md
 
 theme:
   name: material
