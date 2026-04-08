@@ -1,1 +1,1746 @@
-<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Personal documentation hub for GitHub orgs, AI rules, architecture, and processes"><link href=FAQ/ rel=next><link rel=icon href=assets/images/favicon.png><meta name=generator content="mkdocs-1.6.1, mkdocs-material-9.7.6"><title>global-docs</title><link rel=stylesheet href=assets/stylesheets/main.484c7ddc.min.css><link rel=stylesheet href=assets/stylesheets/palette.ab4e12ef.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style><link rel=stylesheet href=docs/assets/extra.css><script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=custom data-md-color-accent=custom> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#global-docs class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class="md-header md-header--shadow md-header--lifted" data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=. title=global-docs class="md-header__button md-logo" aria-label=global-docs data-md-component=logo> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> global-docs </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Home </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media data-md-color-scheme=default data-md-color-primary=custom data-md-color-accent=custom aria-hidden=true type=radio name=__palette id=__palette_0> </form> <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> </button> </nav> <div class=md-search__suggest data-md-component=search-suggest></div> </form> <div class=md-search__output> <div class=md-search__scrollwrap tabindex=0 data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> </nav> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class=md-grid> <ul class=md-tabs__list> <li class="md-tabs__item md-tabs__item--active"> <a href=. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=FAQ/ class=md-tabs__link> Quick reference </a> </li> <li class=md-tabs__item> <a href=orgs/overview/ class=md-tabs__link> Orgs </a> </li> <li class=md-tabs__item> <a href=ai/base-rules/ class=md-tabs__link> AI rules </a> </li> <li class=md-tabs__item> <a href=architecture/system-overview/ class=md-tabs__link> Architecture </a> </li> <li class=md-tabs__item> <a href=processes/workflow-scenarios/ class=md-tabs__link> Processes </a> </li> <li class=md-tabs__item> <a href=standards/python/ class=md-tabs__link> Standards </a> </li> <li class=md-tabs__item> <a href=context/about-me/ class=md-tabs__link> Context </a> </li> <li class=md-tabs__item> <a href=audit-prompt/ class=md-tabs__link> System maintenance </a> </li> </ul> </div> </nav> </header> <div class=md-container data-md-component=container> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=. title=global-docs class="md-nav__button md-logo" aria-label=global-docs data-md-component=logo> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg> </a> global-docs </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> <span class=md-ellipsis> Home </span> <span class="md-nav__icon md-icon"></span> </label> <a href=. class="md-nav__link md-nav__link--active"> <span class=md-ellipsis> Home </span> </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#why-this-repo-exists class=md-nav__link> <span class=md-ellipsis> Why this repo exists </span> </a> </li> <li class=md-nav__item> <a href=#purpose class=md-nav__link> <span class=md-ellipsis> Purpose </span> </a> </li> <li class=md-nav__item> <a href=#core-principles class=md-nav__link> <span class=md-ellipsis> Core principles </span> </a> </li> <li class=md-nav__item> <a href=#how-to-use-this-repo class=md-nav__link> <span class=md-ellipsis> How to use this repo </span> </a> </li> <li class=md-nav__item> <a href=#rule-precedence class=md-nav__link> <span class=md-ellipsis> Rule precedence </span> </a> </li> <li class=md-nav__item> <a href=#change-policy-how-to-update-this-repo class=md-nav__link> <span class=md-ellipsis> Change policy - How to update this repo </span> </a> </li> <li class=md-nav__item> <a href=#master-index class=md-nav__link> <span class=md-ellipsis> Master index </span> </a> <nav class=md-nav aria-label="Master index"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#start-here class=md-nav__link> <span class=md-ellipsis> Start here </span> </a> </li> <li class=md-nav__item> <a href=#github-organization-map class=md-nav__link> <span class=md-ellipsis> GitHub organization map </span> </a> </li> <li class=md-nav__item> <a href=#ai-tool-rules class=md-nav__link> <span class=md-ellipsis> AI tool rules </span> </a> </li> <li class=md-nav__item> <a href=#architecture class=md-nav__link> <span class=md-ellipsis> Architecture </span> </a> </li> <li class=md-nav__item> <a href=#processes class=md-nav__link> <span class=md-ellipsis> Processes </span> </a> </li> <li class=md-nav__item> <a href=#standards class=md-nav__link> <span class=md-ellipsis> Standards </span> </a> </li> <li class=md-nav__item> <a href=#context class=md-nav__link> <span class=md-ellipsis> Context </span> </a> </li> <li class=md-nav__item> <a href=#tools-and-utilities class=md-nav__link> <span class=md-ellipsis> Tools and utilities </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_2> <label class=md-nav__link for=__nav_2 id=__nav_2_label tabindex=0> <span class=md-ellipsis> Quick reference </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_2_label aria-expanded=false> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> Quick reference </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=FAQ/ class=md-nav__link> <span class=md-ellipsis> FAQ </span> </a> </li> <li class=md-nav__item> <a href=UPDATING/ class=md-nav__link> <span class=md-ellipsis> How to update </span> </a> </li> <li class=md-nav__item> <a href=OPEN-ITEMS/ class=md-nav__link> <span class=md-ellipsis> Open items </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_3> <label class=md-nav__link for=__nav_3 id=__nav_3_label tabindex=0> <span class=md-ellipsis> Orgs </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_3_label aria-expanded=false> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Orgs </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=orgs/overview/ class=md-nav__link> <span class=md-ellipsis> Overview </span> </a> </li> <li class=md-nav__item> <a href=orgs/javcb/ class=md-nav__link> <span class=md-ellipsis> Main account </span> </a> </li> <li class=md-nav__item> <a href=orgs/javcb-prod/ class=md-nav__link> <span class=md-ellipsis> javcb-prod </span> </a> </li> <li class=md-nav__item> <a href=orgs/javcb-staging/ class=md-nav__link> <span class=md-ellipsis> javcb-staging </span> </a> </li> <li class=md-nav__item> <a href=orgs/javcb-templates/ class=md-nav__link> <span class=md-ellipsis> javcb-templates </span> </a> </li> <li class=md-nav__item> <a href=orgs/javcb-archive/ class=md-nav__link> <span class=md-ellipsis> javcb-archive </span> </a> </li> <li class=md-nav__item> <a href=orgs/javcb-ai/ class=md-nav__link> <span class=md-ellipsis> javcb-ai </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_4> <label class=md-nav__link for=__nav_4 id=__nav_4_label tabindex=0> <span class=md-ellipsis> AI rules </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_4_label aria-expanded=false> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> AI rules </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=ai/base-rules/ class=md-nav__link> <span class=md-ellipsis> Base rules </span> </a> </li> <li class=md-nav__item> <a href=ai/personas/ class=md-nav__link> <span class=md-ellipsis> Personas </span> </a> </li> <li class=md-nav__item> <a href=ai/languages/ class=md-nav__link> <span class=md-ellipsis> Languages </span> </a> </li> <li class=md-nav__item> <a href=ai/security/ class=md-nav__link> <span class=md-ellipsis> Security </span> </a> </li> <li class=md-nav__item> <a href=ai/workflow/ class=md-nav__link> <span class=md-ellipsis> Workflow </span> </a> </li> <li class=md-nav__item> <a href=ai/quality-bar/ class=md-nav__link> <span class=md-ellipsis> Quality bar </span> </a> </li> <li class=md-nav__item> <a href=ai/ui-ux-style/ class=md-nav__link> <span class=md-ellipsis> UI/UX style </span> </a> </li> <li class=md-nav__item> <a href=ai/design-system/ class=md-nav__link> <span class=md-ellipsis> Design system </span> </a> </li> <li class=md-nav__item> <a href=ai/review-checklist/ class=md-nav__link> <span class=md-ellipsis> Review checklist </span> </a> </li> <li class=md-nav__item> <a href=ai/future-ideas/ class=md-nav__link> <span class=md-ellipsis> Future ideas </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_5> <label class=md-nav__link for=__nav_5 id=__nav_5_label tabindex=0> <span class=md-ellipsis> Architecture </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_5_label aria-expanded=false> <label class=md-nav__title for=__nav_5> <span class="md-nav__icon md-icon"></span> Architecture </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=architecture/system-overview/ class=md-nav__link> <span class=md-ellipsis> System overview </span> </a> </li> <li class=md-nav__item> <a href=architecture/registry/ class=md-nav__link> <span class=md-ellipsis> Registry </span> </a> </li> <li class=md-nav__item> <a href=architecture/core-vs-adapters/ class=md-nav__link> <span class=md-ellipsis> Core vs adapters </span> </a> </li> <li class=md-nav__item> <a href=architecture/data-platforms/ class=md-nav__link> <span class=md-ellipsis> Data platforms </span> </a> </li> <li class=md-nav__item> <a href=architecture/sql-strategy/ class=md-nav__link> <span class=md-ellipsis> SQL strategy </span> </a> </li> <li class=md-nav__item> <a href=architecture/local-machine-layout/ class=md-nav__link> <span class=md-ellipsis> Local machine layout </span> </a> </li> <li class=md-nav__item> <a href=architecture/design-system/ class=md-nav__link> <span class=md-ellipsis> Design system </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_6> <label class=md-nav__link for=__nav_6 id=__nav_6_label tabindex=0> <span class=md-ellipsis> Processes </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_6_label aria-expanded=false> <label class=md-nav__title for=__nav_6> <span class="md-nav__icon md-icon"></span> Processes </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=processes/workflow-scenarios/ class=md-nav__link> <span class=md-ellipsis> Workflow scenarios </span> </a> </li> <li class=md-nav__item> <a href=processes/maker-checker/ class=md-nav__link> <span class=md-ellipsis> Maker checker </span> </a> </li> <li class=md-nav__item> <a href=processes/autonomous-build/ class=md-nav__link> <span class=md-ellipsis> Autonomous build </span> </a> </li> <li class=md-nav__item> <a href=processes/repo-setup-standard/ class=md-nav__link> <span class=md-ellipsis> Repo setup standard </span> </a> </li> <li class=md-nav__item> <a href=processes/new-repo-checklist/ class=md-nav__link> <span class=md-ellipsis> New repo checklist </span> </a> </li> <li class=md-nav__item> <a href=processes/modularization-playbook/ class=md-nav__link> <span class=md-ellipsis> Modularization playbook </span> </a> </li> <li class=md-nav__item> <a href=processes/promote-staging-to-prod/ class=md-nav__link> <span class=md-ellipsis> Promote to prod </span> </a> </li> <li class=md-nav__item> <a href=processes/operational-model/ class=md-nav__link> <span class=md-ellipsis> Operational model </span> </a> </li> <li class=md-nav__item> <a href=processes/ai-tool-roles/ class=md-nav__link> <span class=md-ellipsis> AI tool roles </span> </a> </li> <li class=md-nav__item> <a href=processes/ai-tool-setup/ class=md-nav__link> <span class=md-ellipsis> AI tool setup </span> </a> </li> <li class=md-nav__item> <a href=processes/access-tokens/ class=md-nav__link> <span class=md-ellipsis> Access tokens </span> </a> </li> <li class=md-nav__item> <a href=processes/template-intake/ class=md-nav__link> <span class=md-ellipsis> Template intake </span> </a> </li> <li class=md-nav__item> <a href=processes/post-mortem/ class=md-nav__link> <span class=md-ellipsis> Post-mortem </span> </a> </li> <li class=md-nav__item> <a href=processes/expansion-roadmap/ class=md-nav__link> <span class=md-ellipsis> Expansion roadmap </span> </a> </li> <li class=md-nav__item> <a href=processes/setup-history/ class=md-nav__link> <span class=md-ellipsis> Setup history </span> </a> </li> <li class=md-nav__item> <a href=processes/updating-docs/ class=md-nav__link> <span class=md-ellipsis> Updating docs </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_7> <label class=md-nav__link for=__nav_7 id=__nav_7_label tabindex=0> <span class=md-ellipsis> Standards </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_7_label aria-expanded=false> <label class=md-nav__title for=__nav_7> <span class="md-nav__icon md-icon"></span> Standards </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=standards/python/ class=md-nav__link> <span class=md-ellipsis> Python </span> </a> </li> <li class=md-nav__item> <a href=standards/sql/ class=md-nav__link> <span class=md-ellipsis> SQL </span> </a> </li> <li class=md-nav__item> <a href=standards/javascript-typescript/ class=md-nav__link> <span class=md-ellipsis> JavaScript/TypeScript </span> </a> </li> <li class=md-nav__item> <a href=standards/excel-automation/ class=md-nav__link> <span class=md-ellipsis> Excel automation </span> </a> </li> <li class=md-nav__item> <a href=standards/configuration/ class=md-nav__link> <span class=md-ellipsis> Configuration </span> </a> </li> <li class=md-nav__item> <a href=standards/naming/ class=md-nav__link> <span class=md-ellipsis> Naming </span> </a> </li> <li class=md-nav__item> <a href=standards/modularity/ class=md-nav__link> <span class=md-ellipsis> Modularity </span> </a> </li> <li class=md-nav__item> <a href=standards/branch-discipline/ class=md-nav__link> <span class=md-ellipsis> Branch discipline </span> </a> </li> <li class=md-nav__item> <a href=standards/commit-messages/ class=md-nav__link> <span class=md-ellipsis> Commit messages </span> </a> </li> <li class=md-nav__item> <a href=standards/gitignore-template/ class=md-nav__link> <span class=md-ellipsis> Gitignore template </span> </a> </li> <li class=md-nav__item> <a href=standards/env-example-template/ class=md-nav__link> <span class=md-ellipsis> Env example template </span> </a> </li> <li class=md-nav__item> <a href=standards/readme-template/ class=md-nav__link> <span class=md-ellipsis> Readme template </span> </a> </li> <li class=md-nav__item> <a href=standards/prompt-format/ class=md-nav__link> <span class=md-ellipsis> Prompt format </span> </a> </li> <li class=md-nav__item> <a href=standards/ui-behavior/ class=md-nav__link> <span class=md-ellipsis> UI behavior </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_8> <label class=md-nav__link for=__nav_8 id=__nav_8_label tabindex=0> <span class=md-ellipsis> Context </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_8_label aria-expanded=false> <label class=md-nav__title for=__nav_8> <span class="md-nav__icon md-icon"></span> Context </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=context/about-me/ class=md-nav__link> <span class=md-ellipsis> About me </span> </a> </li> <li class=md-nav__item> <a href=context/roles/ class=md-nav__link> <span class=md-ellipsis> Roles </span> </a> </li> <li class=md-nav__item> <a href=context/priorities/ class=md-nav__link> <span class=md-ellipsis> Priorities </span> </a> </li> <li class=md-nav__item> <a href=context/constraints/ class=md-nav__link> <span class=md-ellipsis> Constraints </span> </a> </li> <li class=md-nav__item> <a href=context/CONTEXT_OPEN-ITEMS/ class=md-nav__link> <span class=md-ellipsis> Open items </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_9> <label class=md-nav__link for=__nav_9 id=__nav_9_label tabindex=0> <span class=md-ellipsis> System maintenance </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_9_label aria-expanded=false> <label class=md-nav__title for=__nav_9> <span class="md-nav__icon md-icon"></span> System maintenance </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=audit-prompt/ class=md-nav__link> <span class=md-ellipsis> Audit prompt </span> </a> </li> <li class=md-nav__item> <a href=AI-INSTRUCTIONS/ class=md-nav__link> <span class=md-ellipsis> AI instructions </span> </a> </li> <li class=md-nav__item> <a href=processes/link-checker-setup/ class=md-nav__link> <span class=md-ellipsis> Link checker setup </span> </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#why-this-repo-exists class=md-nav__link> <span class=md-ellipsis> Why this repo exists </span> </a> </li> <li class=md-nav__item> <a href=#purpose class=md-nav__link> <span class=md-ellipsis> Purpose </span> </a> </li> <li class=md-nav__item> <a href=#core-principles class=md-nav__link> <span class=md-ellipsis> Core principles </span> </a> </li> <li class=md-nav__item> <a href=#how-to-use-this-repo class=md-nav__link> <span class=md-ellipsis> How to use this repo </span> </a> </li> <li class=md-nav__item> <a href=#rule-precedence class=md-nav__link> <span class=md-ellipsis> Rule precedence </span> </a> </li> <li class=md-nav__item> <a href=#change-policy-how-to-update-this-repo class=md-nav__link> <span class=md-ellipsis> Change policy - How to update this repo </span> </a> </li> <li class=md-nav__item> <a href=#master-index class=md-nav__link> <span class=md-ellipsis> Master index </span> </a> <nav class=md-nav aria-label="Master index"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#start-here class=md-nav__link> <span class=md-ellipsis> Start here </span> </a> </li> <li class=md-nav__item> <a href=#github-organization-map class=md-nav__link> <span class=md-ellipsis> GitHub organization map </span> </a> </li> <li class=md-nav__item> <a href=#ai-tool-rules class=md-nav__link> <span class=md-ellipsis> AI tool rules </span> </a> </li> <li class=md-nav__item> <a href=#architecture class=md-nav__link> <span class=md-ellipsis> Architecture </span> </a> </li> <li class=md-nav__item> <a href=#processes class=md-nav__link> <span class=md-ellipsis> Processes </span> </a> </li> <li class=md-nav__item> <a href=#standards class=md-nav__link> <span class=md-ellipsis> Standards </span> </a> </li> <li class=md-nav__item> <a href=#context class=md-nav__link> <span class=md-ellipsis> Context </span> </a> </li> <li class=md-nav__item> <a href=#tools-and-utilities class=md-nav__link> <span class=md-ellipsis> Tools and utilities </span> </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <h1 id=global-docs>global-docs</h1> <p>This repository is the single source of truth for how my GitHub organizations, local machine, shared libraries, data platform integrations, AI tools, and development processes are structured and governed.</p> <div class=maintenance-note> This is a Level 1 orientation document. Start here, then follow links to the section you need. </div> <hr> <h2 id=why-this-repo-exists>Why this repo exists</h2> <p>I work across multiple roles (work projects, personal projects, UI/UX prototyping, data engineering) and use AI-assisted coding tools (Claude Code, Cursor, Copilot, and others). Without a central operating document, every tool and every project would have conflicting rules, scattered documentation, and no consistent standards.</p> <p>This repo solves that by: - defining the full GitHub universe (orgs, purposes, rules) - governing how AI tools behave across all repos - establishing reusable architecture patterns - documenting processes so nothing has to be figured out twice</p> <h2 id=purpose>Purpose</h2> <p>This repo exists to: - document how my GitHub user and organizations are structured - define shared architecture and reusable component strategy - define AI operating rules, personas, and security guardrails - define language boundaries by repo/org/project type - document repeatable processes for new repos, templates, staging, and modularization</p> <h2 id=core-principles>Core principles</h2> <ul> <li>Build once, reuse across roles where possible.</li> <li>Keep core libraries role-agnostic.</li> <li>Keep credentials and environment-specific wiring out of shared libraries.</li> <li>Prefer Python and SQL for production-grade systems.</li> <li>Use TypeScript, JavaScript, and CSS mainly for UI/UX prototypes and designated frontend work.</li> <li>Keep AI tools constrained, documented, and reviewable.</li> <li>Optimize for systems I can understand, maintain, and debug myself.</li> </ul> <h2 id=how-to-use-this-repo>How to use this repo</h2> <ul> <li>Read <a href=orgs/overview/ >orgs/overview.md</a> for the GitHub map.</li> <li>Read <a href=architecture/system-overview/ >architecture/system-overview.md</a> for reusable system design.</li> <li>Read <a href=ai/base-rules/ >ai/base-rules.md</a> for AI operating rules and tool behavior.</li> <li>Read <a href=processes/new-repo-checklist/ >processes/new-repo-checklist.md</a> and other playbooks in <a href=processes/ >processes/</a>.</li> <li>Read <a href=standards/ >standards/</a> for language- and platform-specific conventions.</li> </ul> <h2 id=rule-precedence>Rule precedence</h2> <p>When rules conflict, use this order: 1. Security and credential handling always wins 2. Repo-specific AI instructions 3. Org-specific rules 4. Global AI rules 5. Language and style standards</p> <p>For operational boundaries (what is safe to automate, schema change rules, etc.), see <a href=processes/operational-model/ >processes/operational-model.md</a>.</p> <h2 id=change-policy-how-to-update-this-repo>Change policy - How to update this repo</h2> <p>See <a href=processes/updating-docs/ >processes/updating-docs.md</a> for the change policy. Also see <a href=UPDATING/ >UPDATING.md</a> for detailed update procedures. Short version: edit the right file, keep it concise, update README.md and mkdocs.yml if you add a new file.</p> <hr> <h2 id=master-index>Master index</h2> <h3 id=start-here>Start here</h3> <table> <thead> <tr> <th>Document</th> <th>What it answers</th> </tr> </thead> <tbody> <tr> <td><code>orgs/overview.md</code></td> <td>What orgs exist, what they are for, and how they relate</td> </tr> <tr> <td><code>architecture/system-overview.md</code></td> <td>How everything fits together as a system</td> </tr> <tr> <td><code>processes/new-repo-checklist.md</code></td> <td>What to do before creating any new repo</td> </tr> <tr> <td><code>FAQ.md</code></td> <td>Quick reference cheatsheet for all common tasks</td> </tr> <tr> <td><code>processes/link-checker-setup.md</code></td> <td>Automated link checking via GitHub Actions</td> </tr> <tr> <td><code>standards/modularity.md</code></td> <td>Modularity and centralization rules</td> </tr> <tr> <td><code>architecture/registry.md</code></td> <td>Canonical cross-repo asset locations</td> </tr> </tbody> </table> <h3 id=github-organization-map>GitHub organization map</h3> <table> <thead> <tr> <th>Document</th> <th>Covers</th> </tr> </thead> <tbody> <tr> <td><code>orgs/overview.md</code></td> <td>Full org map and design logic</td> </tr> <tr> <td><code>orgs/javcb-prod.md</code></td> <td>Production-ready repos</td> </tr> <tr> <td><code>orgs/javcb-staging.md</code></td> <td>Work in progress and active builds</td> </tr> <tr> <td><code>orgs/javcb-templates.md</code></td> <td>Purchased kits and read-only templates</td> </tr> <tr> <td><code>orgs/javcb-archive.md</code></td> <td>Retired projects</td> </tr> <tr> <td><code>orgs/javcb-ai.md</code></td> <td>AI sandbox and autonomous builds</td> </tr> </tbody> </table> <h3 id=ai-tool-rules>AI tool rules</h3> <table> <thead> <tr> <th>Document</th> <th>Covers</th> </tr> </thead> <tbody> <tr> <td><code>ai/base-rules.md</code></td> <td>Core behavior expected from all AI tools</td> </tr> <tr> <td><code>ai/personas.md</code></td> <td>Roles AI tools should take per context</td> </tr> <tr> <td><code>ai/languages.md</code></td> <td>Allowed languages per org and context</td> </tr> <tr> <td><code>ai/security.md</code></td> <td>Secrets, credentials, least privilege</td> </tr> <tr> <td><code>ai/workflow.md</code></td> <td>How AI tools should approach changes</td> </tr> <tr> <td><code>ai/quality-bar.md</code></td> <td>Code quality expectations</td> </tr> <tr> <td><code>ai/ui-ux-style.md</code></td> <td>Design inspiration and UI standards</td> </tr> <tr> <td><code>ai/design-system.md</code></td> <td>How to use the atomic design system</td> </tr> <tr> <td><code>ai/review-checklist.md</code></td> <td>What to check before accepting AI output</td> </tr> <tr> <td><code>ai/future-ideas.md</code></td> <td>Rough ideas not yet formalized</td> </tr> </tbody> </table> <h3 id=architecture>Architecture</h3> <table> <thead> <tr> <th>Document</th> <th>Covers</th> </tr> </thead> <tbody> <tr> <td><code>architecture/core-vs-adapters.md</code></td> <td>Reusable libraries vs role-specific wiring</td> </tr> <tr> <td><code>architecture/data-platforms.md</code></td> <td>Snowflake, Supabase, Excel, SharePoint strategy</td> </tr> <tr> <td><code>architecture/sql-strategy.md</code></td> <td>Where SQL lives and how it is organized</td> </tr> <tr> <td><code>architecture/local-machine-layout.md</code></td> <td>Local folder structure mirroring GitHub</td> </tr> <tr> <td><code>architecture/design-system.md</code></td> <td>Design system status and AI usage rules (placeholder)</td> </tr> </tbody> </table> <h3 id=processes>Processes</h3> <table> <thead> <tr> <th>Document</th> <th>Covers</th> </tr> </thead> <tbody> <tr> <td><code>processes/maker-checker.md</code></td> <td>AI maker + checker review before promotion</td> </tr> <tr> <td><code>processes/autonomous-build.md</code></td> <td>How to trigger any LLM for a full project build</td> </tr> <tr> <td><code>processes/ai-tool-roles.md</code></td> <td>When and how to use Cursor vs Claude Code vs Copilot</td> </tr> <tr> <td><code>processes/ai-tool-setup.md</code></td> <td>How to set up Cursor, Claude Code, and new AI tools</td> </tr> <tr> <td><code>processes/repo-setup-standard.md</code></td> <td>Required structure for all repos</td> </tr> <tr> <td><code>processes/new-repo-checklist.md</code></td> <td>Pre-flight checklist for any new repo</td> </tr> <tr> <td><code>processes/access-tokens.md</code></td> <td>How to set up and manage GitHub access tokens</td> </tr> <tr> <td><code>processes/updating-docs.md</code></td> <td>How to maintain this repo</td> </tr> <tr> <td><code>processes/modularization-playbook.md</code></td> <td>How to refactor a monorepo</td> </tr> <tr> <td><code>processes/promote-staging-to-prod.md</code></td> <td>Steps to promote a repo to production</td> </tr> <tr> <td><code>processes/post-mortem.md</code></td> <td>When and how to document failures and update rules to prevent recurrence</td> </tr> <tr> <td><code>processes/template-intake.md</code></td> <td>How to add a purchased template to javcb-templates</td> </tr> <tr> <td><code>processes/operational-model.md</code></td> <td>What is safe to automate, schema rules, rollback, ADRs</td> </tr> <tr> <td><code>processes/workflow-scenarios.md</code></td> <td>Step-by-step paths for common project types (prototype, prod, refactor)</td> </tr> <tr> <td><code>processes/setup-history.md</code></td> <td>Log of major decisions and setup history</td> </tr> <tr> <td><code>processes/expansion-roadmap.md</code></td> <td>Future documentation domains beyond engineering</td> </tr> <tr> <td><code>processes/link-checker-setup.md</code></td> <td>Automated link checking via GitHub Actions</td> </tr> </tbody> </table> <h3 id=standards>Standards</h3> <table> <thead> <tr> <th>Document</th> <th>Covers</th> </tr> </thead> <tbody> <tr> <td><code>standards/python.md</code></td> <td>Python coding conventions</td> </tr> <tr> <td><code>standards/sql.md</code></td> <td>SQL conventions</td> </tr> <tr> <td><code>standards/javascript-typescript.md</code></td> <td>JS/TS conventions</td> </tr> <tr> <td><code>standards/excel-automation.md</code></td> <td>Excel and Power Query standards</td> </tr> <tr> <td><code>standards/configuration.md</code></td> <td>Config and env variable standards</td> </tr> <tr> <td><code>standards/gitignore-template.md</code></td> <td>Standard .gitignore rules</td> </tr> <tr> <td><code>standards/env-example-template.md</code></td> <td>Standard .env.example format</td> </tr> <tr> <td><code>standards/readme-template.md</code></td> <td>Standard README structure</td> </tr> <tr> <td><code>standards/commit-messages.md</code></td> <td>Commit message conventions</td> </tr> <tr> <td><code>standards/branch-discipline.md</code></td> <td>Branch naming and workflow</td> </tr> <tr> <td><code>standards/naming.md</code></td> <td>File, folder, and variable naming rules</td> </tr> <tr> <td><code>standards/prompt-format.md</code></td> <td>How to format reusable prompts for copy-paste use</td> </tr> <tr> <td><code>standards/ui-behavior.md</code></td> <td>UI behavior standards for sites and apps (state, nav, scroll, zoom, responsive)</td> </tr> </tbody> </table> <h3 id=context>Context</h3> <table> <thead> <tr> <th>Document</th> <th>Covers</th> </tr> </thead> <tbody> <tr> <td><code>context/about-me.md</code></td> <td>Owner background and working style (draft)</td> </tr> <tr> <td><code>context/roles.md</code></td> <td>Roles the owner operates in (draft)</td> </tr> <tr> <td><code>context/priorities.md</code></td> <td>Current priorities (draft)</td> </tr> <tr> <td><code>context/constraints.md</code></td> <td>Time, tools, and skill constraints (draft)</td> </tr> </tbody> </table> <h3 id=tools-and-utilities>Tools and utilities</h3> <table> <thead> <tr> <th>Document</th> <th>Covers</th> </tr> </thead> <tbody> <tr> <td><code>audit-prompt.md</code></td> <td>LLM-agnostic prompt to run a full documentation health audit</td> </tr> <tr> <td><code>UPDATING.md</code></td> <td>How to keep global-docs current and run audits</td> </tr> <tr> <td><code>AI-INSTRUCTIONS.md</code></td> <td>Entry point orientation file for AI tools</td> </tr> <tr> <td><code>OPEN-ITEMS.md</code></td> <td>Living backlog reviewed and updated during every audit</td> </tr> </tbody> </table> <hr> </article> </div> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg> Back to top </button> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script> <script src=assets/javascripts/bundle.79ae519e.min.js></script> </body> </html>
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal documentation hub for GitHub orgs, AI rules, architecture, and processes">
+      
+      
+      
+      
+      
+        <link rel="next" href="architecture/hub-and-spoke-model/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>global-docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="docs/assets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#global-docs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="global-docs" class="md-header__button md-logo" aria-label="global-docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            global-docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              global-docs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="global-docs" class="md-nav__button md-logo" aria-label="global-docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    global-docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    global-docs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    global-docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-repo-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this repo exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use this repo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rule-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule precedence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-policy-how-to-update-this-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change policy - How to update this repo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master index
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Master index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start here
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-organization-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub organization map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-tool-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI tool rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-and-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools and utilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture/hub-and-spoke-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub-and-Spoke Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture/ecosystem-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="ai-instructions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ai instructions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ai instructions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai-instructions/universal-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal AI Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Per repo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Per repo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai-instructions/per-repo/design-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Instructions Supplement — design-system
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai-instructions/per-repo/global-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Instructions Supplement — global-docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="audits/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audits
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Audits
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="audits/audit-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Audit Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal checklists
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Universal checklists
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="audits/universal-checklists/accessibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal Checklist — Accessibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="audits/universal-checklists/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal Checklist — Code Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="audits/universal-checklists/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal Checklist — Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="audits/universal-checklists/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal Checklist — Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="audits/workflows/standards-wide-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards-Wide Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="workflows/close-out-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Close-Out Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="global-docs">global-docs<a class="headerlink" href="#global-docs" title="Permanent link">&para;</a></h1>
+<p>This repository is the single source of truth for how my GitHub organizations, local machine, shared libraries, data platform integrations, AI tools, and development processes are structured and governed.</p>
+<div class="maintenance-note">
+This is a Level 1 orientation document. Start here, then follow links to the section you need.
+</div>
+
+<hr />
+<h2 id="why-this-repo-exists">Why this repo exists<a class="headerlink" href="#why-this-repo-exists" title="Permanent link">&para;</a></h2>
+<p>I work across multiple roles (work projects, personal projects, UI/UX prototyping, data engineering) and use AI-assisted coding tools (Claude Code, Cursor, Copilot, and others). Without a central operating document, every tool and every project would have conflicting rules, scattered documentation, and no consistent standards.</p>
+<p>This repo solves that by:
+- defining the full GitHub universe (orgs, purposes, rules)
+- governing how AI tools behave across all repos
+- establishing reusable architecture patterns
+- documenting processes so nothing has to be figured out twice</p>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
+<p>This repo exists to:
+- document how my GitHub user and organizations are structured
+- define shared architecture and reusable component strategy
+- define AI operating rules, personas, and security guardrails
+- define language boundaries by repo/org/project type
+- document repeatable processes for new repos, templates, staging, and modularization</p>
+<h2 id="core-principles">Core principles<a class="headerlink" href="#core-principles" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Build once, reuse across roles where possible.</li>
+<li>Keep core libraries role-agnostic.</li>
+<li>Keep credentials and environment-specific wiring out of shared libraries.</li>
+<li>Prefer Python and SQL for production-grade systems.</li>
+<li>Use TypeScript, JavaScript, and CSS mainly for UI/UX prototypes and designated frontend work.</li>
+<li>Keep AI tools constrained, documented, and reviewable.</li>
+<li>Optimize for systems I can understand, maintain, and debug myself.</li>
+</ul>
+<h2 id="how-to-use-this-repo">How to use this repo<a class="headerlink" href="#how-to-use-this-repo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Read <a href="orgs/overview/">orgs/overview.md</a> for the GitHub map.</li>
+<li>Read <a href="architecture/system-overview/">architecture/system-overview.md</a> for reusable system design.</li>
+<li>Read <a href="ai/base-rules/">ai/base-rules.md</a> for AI operating rules and tool behavior.</li>
+<li>Read <a href="processes/new-repo-checklist/">processes/new-repo-checklist.md</a> and other playbooks in <a href="processes/">processes/</a>.</li>
+<li>Read <a href="standards/">standards/</a> for language- and platform-specific conventions.</li>
+</ul>
+<h2 id="rule-precedence">Rule precedence<a class="headerlink" href="#rule-precedence" title="Permanent link">&para;</a></h2>
+<p>When rules conflict, use this order:
+1. Security and credential handling always wins
+2. Repo-specific AI instructions
+3. Org-specific rules
+4. Global AI rules
+5. Language and style standards</p>
+<p>For operational boundaries (what is safe to automate, schema change rules, etc.),
+see <a href="processes/operational-model/">processes/operational-model.md</a>.</p>
+<h2 id="change-policy-how-to-update-this-repo">Change policy - How to update this repo<a class="headerlink" href="#change-policy-how-to-update-this-repo" title="Permanent link">&para;</a></h2>
+<p>See <a href="processes/updating-docs/">processes/updating-docs.md</a> for the change policy.
+Also see <a href="UPDATING/">UPDATING.md</a> for detailed update procedures.
+Short version: edit the right file, keep it concise, update README.md and mkdocs.yml if you add a new file.</p>
+<hr />
+<h2 id="master-index">Master index<a class="headerlink" href="#master-index" title="Permanent link">&para;</a></h2>
+<h3 id="start-here">Start here<a class="headerlink" href="#start-here" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>What it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>orgs/overview.md</code></td>
+<td>What orgs exist, what they are for, and how they relate</td>
+</tr>
+<tr>
+<td><code>architecture/system-overview.md</code></td>
+<td>How everything fits together as a system</td>
+</tr>
+<tr>
+<td><code>processes/new-repo-checklist.md</code></td>
+<td>What to do before creating any new repo</td>
+</tr>
+<tr>
+<td><code>FAQ.md</code></td>
+<td>Quick reference cheatsheet for all common tasks</td>
+</tr>
+<tr>
+<td><code>processes/link-checker-setup.md</code></td>
+<td>Automated link checking via GitHub Actions</td>
+</tr>
+<tr>
+<td><code>standards/modularity.md</code></td>
+<td>Modularity and centralization rules</td>
+</tr>
+<tr>
+<td><code>architecture/registry.md</code></td>
+<td>Canonical cross-repo asset locations</td>
+</tr>
+</tbody>
+</table>
+<h3 id="github-organization-map">GitHub organization map<a class="headerlink" href="#github-organization-map" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>orgs/overview.md</code></td>
+<td>Full org map and design logic</td>
+</tr>
+<tr>
+<td><code>orgs/javcb-prod.md</code></td>
+<td>Production-ready repos</td>
+</tr>
+<tr>
+<td><code>orgs/javcb-staging.md</code></td>
+<td>Work in progress and active builds</td>
+</tr>
+<tr>
+<td><code>orgs/javcb-templates.md</code></td>
+<td>Purchased kits and read-only templates</td>
+</tr>
+<tr>
+<td><code>orgs/javcb-archive.md</code></td>
+<td>Retired projects</td>
+</tr>
+<tr>
+<td><code>orgs/javcb-ai.md</code></td>
+<td>AI sandbox and autonomous builds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai-tool-rules">AI tool rules<a class="headerlink" href="#ai-tool-rules" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai/base-rules.md</code></td>
+<td>Core behavior expected from all AI tools</td>
+</tr>
+<tr>
+<td><code>ai/personas.md</code></td>
+<td>Roles AI tools should take per context</td>
+</tr>
+<tr>
+<td><code>ai/languages.md</code></td>
+<td>Allowed languages per org and context</td>
+</tr>
+<tr>
+<td><code>ai/security.md</code></td>
+<td>Secrets, credentials, least privilege</td>
+</tr>
+<tr>
+<td><code>ai/workflow.md</code></td>
+<td>How AI tools should approach changes</td>
+</tr>
+<tr>
+<td><code>ai/quality-bar.md</code></td>
+<td>Code quality expectations</td>
+</tr>
+<tr>
+<td><code>ai/ui-ux-style.md</code></td>
+<td>Design inspiration and UI standards</td>
+</tr>
+<tr>
+<td><code>ai/design-system.md</code></td>
+<td>How to use the atomic design system</td>
+</tr>
+<tr>
+<td><code>ai/review-checklist.md</code></td>
+<td>What to check before accepting AI output</td>
+</tr>
+<tr>
+<td><code>ai/future-ideas.md</code></td>
+<td>Rough ideas not yet formalized</td>
+</tr>
+</tbody>
+</table>
+<h3 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>architecture/core-vs-adapters.md</code></td>
+<td>Reusable libraries vs role-specific wiring</td>
+</tr>
+<tr>
+<td><code>architecture/data-platforms.md</code></td>
+<td>Snowflake, Supabase, Excel, SharePoint strategy</td>
+</tr>
+<tr>
+<td><code>architecture/sql-strategy.md</code></td>
+<td>Where SQL lives and how it is organized</td>
+</tr>
+<tr>
+<td><code>architecture/local-machine-layout.md</code></td>
+<td>Local folder structure mirroring GitHub</td>
+</tr>
+<tr>
+<td><code>architecture/design-system.md</code></td>
+<td>Design system status and AI usage rules (placeholder)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="processes">Processes<a class="headerlink" href="#processes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>processes/maker-checker.md</code></td>
+<td>AI maker + checker review before promotion</td>
+</tr>
+<tr>
+<td><code>processes/autonomous-build.md</code></td>
+<td>How to trigger any LLM for a full project build</td>
+</tr>
+<tr>
+<td><code>processes/ai-tool-roles.md</code></td>
+<td>When and how to use Cursor vs Claude Code vs Copilot</td>
+</tr>
+<tr>
+<td><code>processes/ai-tool-setup.md</code></td>
+<td>How to set up Cursor, Claude Code, and new AI tools</td>
+</tr>
+<tr>
+<td><code>processes/repo-setup-standard.md</code></td>
+<td>Required structure for all repos</td>
+</tr>
+<tr>
+<td><code>processes/new-repo-checklist.md</code></td>
+<td>Pre-flight checklist for any new repo</td>
+</tr>
+<tr>
+<td><code>processes/access-tokens.md</code></td>
+<td>How to set up and manage GitHub access tokens</td>
+</tr>
+<tr>
+<td><code>processes/updating-docs.md</code></td>
+<td>How to maintain this repo</td>
+</tr>
+<tr>
+<td><code>processes/modularization-playbook.md</code></td>
+<td>How to refactor a monorepo</td>
+</tr>
+<tr>
+<td><code>processes/promote-staging-to-prod.md</code></td>
+<td>Steps to promote a repo to production</td>
+</tr>
+<tr>
+<td><code>processes/post-mortem.md</code></td>
+<td>When and how to document failures and update rules to prevent recurrence</td>
+</tr>
+<tr>
+<td><code>processes/template-intake.md</code></td>
+<td>How to add a purchased template to javcb-templates</td>
+</tr>
+<tr>
+<td><code>processes/operational-model.md</code></td>
+<td>What is safe to automate, schema rules, rollback, ADRs</td>
+</tr>
+<tr>
+<td><code>processes/workflow-scenarios.md</code></td>
+<td>Step-by-step paths for common project types (prototype, prod, refactor)</td>
+</tr>
+<tr>
+<td><code>processes/setup-history.md</code></td>
+<td>Log of major decisions and setup history</td>
+</tr>
+<tr>
+<td><code>processes/expansion-roadmap.md</code></td>
+<td>Future documentation domains beyond engineering</td>
+</tr>
+<tr>
+<td><code>processes/link-checker-setup.md</code></td>
+<td>Automated link checking via GitHub Actions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="standards">Standards<a class="headerlink" href="#standards" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>standards/python.md</code></td>
+<td>Python coding conventions</td>
+</tr>
+<tr>
+<td><code>standards/sql.md</code></td>
+<td>SQL conventions</td>
+</tr>
+<tr>
+<td><code>standards/javascript-typescript.md</code></td>
+<td>JS/TS conventions</td>
+</tr>
+<tr>
+<td><code>standards/excel-automation.md</code></td>
+<td>Excel and Power Query standards</td>
+</tr>
+<tr>
+<td><code>standards/configuration.md</code></td>
+<td>Config and env variable standards</td>
+</tr>
+<tr>
+<td><code>standards/gitignore-template.md</code></td>
+<td>Standard .gitignore rules</td>
+</tr>
+<tr>
+<td><code>standards/env-example-template.md</code></td>
+<td>Standard .env.example format</td>
+</tr>
+<tr>
+<td><code>standards/readme-template.md</code></td>
+<td>Standard README structure</td>
+</tr>
+<tr>
+<td><code>standards/commit-messages.md</code></td>
+<td>Commit message conventions</td>
+</tr>
+<tr>
+<td><code>standards/branch-discipline.md</code></td>
+<td>Branch naming and workflow</td>
+</tr>
+<tr>
+<td><code>standards/naming.md</code></td>
+<td>File, folder, and variable naming rules</td>
+</tr>
+<tr>
+<td><code>standards/prompt-format.md</code></td>
+<td>How to format reusable prompts for copy-paste use</td>
+</tr>
+<tr>
+<td><code>standards/ui-behavior.md</code></td>
+<td>UI behavior standards for sites and apps (state, nav, scroll, zoom, responsive)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>context/about-me.md</code></td>
+<td>Owner background and working style (draft)</td>
+</tr>
+<tr>
+<td><code>context/roles.md</code></td>
+<td>Roles the owner operates in (draft)</td>
+</tr>
+<tr>
+<td><code>context/priorities.md</code></td>
+<td>Current priorities (draft)</td>
+</tr>
+<tr>
+<td><code>context/constraints.md</code></td>
+<td>Time, tools, and skill constraints (draft)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tools-and-utilities">Tools and utilities<a class="headerlink" href="#tools-and-utilities" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>audit-prompt.md</code></td>
+<td>LLM-agnostic prompt to run a full documentation health audit</td>
+</tr>
+<tr>
+<td><code>UPDATING.md</code></td>
+<td>How to keep global-docs current and run audits</td>
+</tr>
+<tr>
+<td><code>AI-INSTRUCTIONS.md</code></td>
+<td>Entry point orientation file for AI tools</td>
+</tr>
+<tr>
+<td><code>OPEN-ITEMS.md</code></td>
+<td>Living backlog reviewed and updated during every audit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

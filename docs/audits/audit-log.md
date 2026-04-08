@@ -10,3 +10,4 @@ This is the single source of truth for audit history.
 | 2026-04-07 | design-system | Pre-Layer-2 | Claude Code + Cursor | 11 | ✅ All 11 | First dual-tool audit. Cursor caught 3 a11y issues Claude missed. |
 | 2026-04-07 | global-docs | Hub setup | Claude Code | 0 | ✅ N/A | Initial audit of hub-and-spoke architecture. All 12 files created successfully. All cross-repo references validated. |
 | 2026-04-08 | global-docs | Architecture expansion | Claude Code | 0 | ✅ None | Added ecosystem-overview.md and standards-wide-audit.md. |
+| 2026-04-08 | global-docs | MkDocs resilience fix | Claude Code | 1 (fragile nav) | ✅ Fixed | Switched to awesome-pages auto-nav. mkdocs.yml now has no manual nav section. |

@@ -51,6 +51,26 @@ Commit message format:
     global-docs setup: add hub-and-spoke architecture docs
     design-system L1: complete all 25 primitives
 
+## Note on MkDocs and GitHub Pages
+
+global-docs uses mkdocs-awesome-pages-plugin for
+auto-navigation. This means:
+
+✅ Adding a new .md file to docs/ makes it appear
+   on the site automatically after the next deploy.
+   No changes to mkdocs.yml are ever needed for new files.
+
+✅ To control section ORDER within a directory,
+   edit the .pages file in that directory.
+   These are the only manual maintenance files.
+
+✅ GitHub Actions deploys automatically on every push
+   to main. After pushing, allow 1-2 minutes for the
+   live site to update at https://javcb.github.io/global-docs/
+
+❌ Never add a nav: section back to mkdocs.yml.
+   That reintroduces the manual registration problem.
+
 ## What Good Close-Out Looks Like
 - CHECKLIST.md reflects current reality
 - audit-log.md has an entry for any audit run

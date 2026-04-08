@@ -24,6 +24,8 @@
     planned libraries noted (architecture/ecosystem-overview.md)
 - ✅ [2026-04-08] Standards-wide audit workflow created
     (audits/workflows/standards-wide-audit.md)
+- ✅ [2026-04-08] MkDocs upgraded to auto-navigation
+    (awesome-pages plugin — no more manual nav updates)
 
 ---
 
