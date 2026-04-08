@@ -66,3 +66,13 @@ points that reference global-docs for detail.
   4. Create [repo]/docs/audit-process.md referencing
      universal checklists + adding repo-specific checks
   5. Run first audit and log to global-docs/audits/audit-log.md
+
+---
+
+## Related Documents
+- Full ecosystem map (standards vs. libraries):
+  architecture/ecosystem-overview.md
+- Standards-wide cross-repo audit:
+  audits/workflows/standards-wide-audit.md
+- Individual repo onboarding checklist: (this document,
+  see "Onboarding a New Repo" section above)

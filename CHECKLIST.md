@@ -19,6 +19,11 @@
     (audits/audit-log.md)
 - ✅ [2026-04-07] Session close-out protocol created
     (workflows/close-out-protocol.md)
+- ✅ [2026-04-08] Ecosystem overview documented —
+    standards vs. library repos distinction, full map,
+    planned libraries noted (architecture/ecosystem-overview.md)
+- ✅ [2026-04-08] Standards-wide audit workflow created
+    (audits/workflows/standards-wide-audit.md)
 
 ---
 
