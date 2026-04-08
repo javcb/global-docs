@@ -50,6 +50,10 @@ MS365 work, design systems, code repositories, technical documentation, professi
 - Storybook (component documentation)
 - Asana (project tracking)
 - VS Code / Cursor (development)
+- Power Automate (workflow automation)
+- Power BI (data visualization and analytics)
+- SharePoint (content and collaboration)
+- Excel (data modeling and analysis)
 
 **Secondary:**
 - Figma (design references)

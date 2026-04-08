@@ -227,7 +227,7 @@ This domain is mostly research and analysis. Execution is organizing findings fo
 ## Practice Readiness Notes
 
 **If transitioning to client-facing practice:**
-- Clarify regulatory requirements (licensing, compliance, fiduciary duty)
+- Regulatory requirements (licensing, compliance, fiduciary duty): **[TBD — to be filled in when transitioning]**
 - Establish client onboarding and consent process
 - Create standard deliverable templates and disclaimers
 - Define scope of advice (personal financial planning, investment advisory, tax planning, etc.)

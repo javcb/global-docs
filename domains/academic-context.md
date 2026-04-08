@@ -87,7 +87,7 @@ EMBA coursework, research, assignments, and academic planning. Balancing academi
 - All external ideas properly attributed
 - Primary sources when possible
 - Recent sources for current topics
-- Consistent citation style per assignment
+- Consistent citation style per assignment (program standard: **[TBD — to be filled in]**)
 - Full citations (author, date, source, URL with access date)
 
 **Assignment quality:**

@@ -75,6 +75,7 @@ Personal organization, workflows, productivity systems, and life management.
 
 **Privacy and data:**
 - Never export sensitive personal data without approval
+- Sensitive data includes: family member information, finances, health records, credentials
 - Personal information protected and organized securely
 - Access controls respected
 - Privacy concerns flagged when implementing systems

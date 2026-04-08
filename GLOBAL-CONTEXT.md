@@ -94,6 +94,20 @@ Prioritized: **Simple & maintainable** → **Well-documented** → **Thoroughly 
 
 ---
 
+## Living Document Policy
+
+This system is intentionally flexible. All files reflect current state, not permanent decisions.
+
+- Domains are added, archived, or split as life and roles change
+- Skills are versioned — update the version, log the change, keep moving
+- Autonomy calibration is adjusted per domain as trust and context evolve
+- GLOBAL-CONTEXT.md is reviewed quarterly — treat its contents as current best approximation, not fixed rules
+- When in doubt whether something is still accurate, flag it rather than assuming it is
+
+If a domain context file, skill, or standard conflicts with lived reality, the lived reality wins — update the file.
+
+---
+
 ## Domain Context Files
 
 For domain-specific identity, constraints, tools, and autonomy calibration, read:
