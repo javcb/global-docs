@@ -62,3 +62,46 @@ This is mandatory, not optional.
 ## Release Notes
 When upgrading any dependency or starting a new project, follow [workflows/release-notes-monitoring.md](docs/workflows/release-notes-monitoring.md)
 to check for breaking changes first.
+
+---
+
+## Commands
+
+Javier issues one-line commands. When you see a command below, load `docs/commands.md` for the full spec, load `docs/prompt-execution-modes.md` for mode rules, then execute completely.
+
+### Quick Reference
+
+| Command | Default Mode | Primary Workflow |
+|---------|-------------|-----------------|
+| `recreate template [name]` | Autonomous | fidelity-mode.md + reproduction-prompt.md |
+| `create website [name] in repo [repo]` | Auto/Gated | workflows/project-lifecycle.md |
+| `audit design system` | Autonomous | DESIGN-SYSTEM-CHECKLIST.md |
+| `audit repo [name]` | Autonomous | DESIGN-SYSTEM-CHECKLIST.md |
+| `analyze competitors for [x] in [y]` | Autonomous | workflows/competitive-analysis.md |
+| `harvest pattern [x] from [y]` | Autonomous | workflows/pattern-harvest.md |
+| `add template source [name]` | GATED | workflows/template-intake-process.md |
+| `update tokens [description]` | GATED | token update workflow |
+| `old ds migrate` | Autonomous | report only, no changes |
+
+### Execution Rules
+- Always read `docs/commands.md` before executing any command
+- Always read `docs/prompt-execution-modes.md` to confirm mode behavior
+- Mode can be overridden by appending "under [mode] mode" to command
+- If command is ambiguous, ask ONE clarifying question — nothing else
+- If a workflow file referenced in commands.md is missing, report it — do not improvise
+
+**Full Specs:**
+- Commands: `docs/commands.md`
+- Modes: `docs/prompt-execution-modes.md`
+
+---
+
+## Execution Mode
+
+Every task runs in either **AUTONOMOUS** or **GATED** mode.
+
+**Full Specs:** `docs/prompt-execution-modes.md`
+
+**When in doubt:**
+- Sandbox / docs / analysis / components = **AUTONOMOUS**
+- Tokens / ui/ primitives / CLAUDE.md / production = **GATED**
