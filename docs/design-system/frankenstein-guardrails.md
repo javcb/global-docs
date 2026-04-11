@@ -576,8 +576,69 @@ Use this checklist in every build session:
 
 ---
 
+## Visual Fidelity Anti-Patterns
+
+### 🚩 "Wireframe Mode"
+**Problem:** Structure present, decorative layer absent. Page is technically correct but looks undesigned.  
+**Missing:** section backgrounds, gradients, card depth, glow effects, shadows.  
+**Detection:** every section has identical background color.  
+**Fix:** Inventory and implement decorative layer from fidelity-mode.md § Step 4.
+
+### 🚩 "Design System Override Mode"
+**Problem:** Global tokens changed to match one template. Now every project uses this template's colors.  
+**Prevention:** ALL source-specific overrides go in `theme-override.css` only. Never touch `tokens.css`.  
+**Fix:** Revert any global token changes. Move to theme-override.
+
+### 🚩 "Self-Grading Inflation"
+**Problem:** Claude reports 9/10 visual fidelity without visual comparison.  
+**Prevention:** Fidelity score must cite specific screenshot paths. Any score not backed by screenshot evidence is invalid.  
+**Fix:** Run visual QA, compare with source, provide evidence.
+
+### 🚩 "Component Bypass"
+**Problem:** Manually recreating an animated component (shimmer button, border beam, blur fade) instead of using the existing one.  
+**Prevention:** Shop-first check is mandatory before any build step.  
+**Fix:** Delete custom version, import from `src/components/magic/`.
+
+### 🚩 "Default Font Drift"
+**Problem:** Recreation ships with DS default fonts instead of source fonts.  
+**Detection:** Font family in rendered output doesn't match source.  
+**Prevention:** Typography extraction is a required pre-build step.  
+**Fix:** Import source font, override `--font-display` and `--font-body` in theme-override.css.
+
+### 🚩 "Left-Align Everything"
+**Problem:** All text left-aligned regardless of source alignment.  
+**Common in:** hero sections, pricing, CTA blocks.  
+**Prevention:** Typography extraction includes alignment patterns.  
+**Fix:** Apply `text-center` or `text-right` where source uses it.
+
+### 🚩 "Edge Bleed"
+**Problem:** Content touches viewport edges at mobile breakpoint.  
+**Detection:** Check at 375px — any text or card flush to edge?  
+**Prevention:** Padding rule in fidelity-mode.md § Step 3 applied to every section.  
+**Fix:** Add padding-inline to all section containers.
+
+---
+
+## Visual Completeness Checklist
+
+**Before marking any recreation complete, verify:**
+
+- [ ] Page has source-matched color palette (not DS defaults)
+- [ ] Fonts match source family and weights
+- [ ] Every section has explicit horizontal padding — nothing bleeds
+- [ ] Section backgrounds are varied (not all identical bg-background)
+- [ ] Hero section has depth treatment (gradient, glow, or visual element)
+- [ ] Cards have appropriate shadow/border/depth
+- [ ] Magic components used for all animated elements (not rebuilt)
+- [ ] Responsive check at 375px, 768px, 1280px complete
+- [ ] No empty content regions where source has visual content
+- [ ] Fidelity scores backed by screenshot evidence
+
+---
+
 ## Further Reading
 
+- **Fidelity Mode:** `../../docs/fidelity-mode.md`
 - **Token System:** `token-system-complete.md`
 - **Component Conventions:** `design-system-shadcn-tailwind/docs/component-conventions.md`
 - **Accessibility:** `accessibility-and-mobile.md`
