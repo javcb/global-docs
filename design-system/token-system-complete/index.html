@@ -1,0 +1,7158 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal documentation hub for GitHub orgs, AI rules, architecture, and processes">
+      
+      
+      
+        <link rel="canonical" href="https://javcb.github.io/global-docs/design-system/token-system-complete/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Token system complete - global-docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../docs/assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#complete-token-system-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="global-docs" class="md-header__button md-logo" aria-label="global-docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            global-docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Token system complete
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="global-docs" class="md-nav__button md-logo" aria-label="global-docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    global-docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meta
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meta
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../START-HERE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GLOBAL-CONTEXT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autonomy-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domains
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Domains
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/business-ventures-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Ventures
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/professional-work-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Professional Work
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/academic-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Academic (EMBA)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/finance-advisory-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finance Advisory
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/business-advisory-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Advisory
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/marketing-advisory-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing Advisory
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/parenting-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parenting
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/volunteer-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volunteer Operations
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/personal-processes-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personal Processes
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--deprecated"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/SKILL-REGISTRY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/SKILL-CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/skill-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Execution Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/execution/skill-prompting-core/v1.0/prompting-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompting Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/execution/skill-block-intake/v2.0/block-intake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Block Intake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/execution/skill-tutoring-framework/v1.0/tutoring-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutoring Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/execution/skill-ms365-automation/v1.0/ms365-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MS365 Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/execution/skill-research-synthesis/v1.0/research-synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/execution/skill-study-guide-creation/v1.0/study-guide-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Guide Creation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/execution/skill-volunteer-operations/v1.0/volunteer-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volunteer Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/execution/skill-academic-writing/v1.0/academic-writing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Academic Writing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advisory Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advisory Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/advisory/skill-audit-trigger/v2.0/audit-trigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Trigger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/advisory/skill-business-assessment/v1.0/business-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/advisory/skill-financial-assessment/v1.0/financial-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financial Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/advisory/skill-marketing-audit/v1.0/marketing-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestration Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Orchestration Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/orchestration/skill-project-kickoff/v1.0/project-kickoff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Kickoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/orchestration/skill-autonomous-project-build/v1.0/autonomous-project-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous Project Build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/orchestration/skill-standards-wide-audit/v1.0/standards-wide-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards-Wide Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How-To Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Operating System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Operating System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/enforcement-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enforcement Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/approval-gate-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Approval Gate Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/error-escalation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Escalation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/skill-compatibility-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Compatibility Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/skill-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/quarterly-review-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quarterly Review Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/open-items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Processes & Checklists
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Processes & Checklists
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/new-repo-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Repo Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/repo-setup-standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repo Setup Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/template-intake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Template Intake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/post-mortem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-Mortem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/maker-checker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maker-Checker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/promote-staging-to-prod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Promote Staging to Prod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup & Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup & Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/ai-tool-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Tool Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/link-checker-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Link Checker Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/access-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Tokens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development & Building
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development & Building
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/autonomous-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous Build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/modularization-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modularization Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/workflow-scenarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow Scenarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/add-documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/updating-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../audit-prompt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/assess-before-building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assess Before Building
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/release-notes-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release Notes Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/close-out-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Close-Out Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates & Standards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates & Standards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/readme-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/env-example-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Env Example Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/gitignore-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gitignore Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Links
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quick Links
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OPEN-ITEMS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UPDATING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updating Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../upstream/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependencies & Upstream
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dependencies & Upstream
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Organizations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GitHub Organizations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orgs/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orgs/javcb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    javcb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orgs/javcb-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    javcb-ai
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orgs/javcb-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    javcb-templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orgs/javcb-staging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    javcb-staging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orgs/javcb-prod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    javcb-prod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orgs/javcb-archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    javcb-archive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/system-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/design-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/sql-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/local-machine-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Machine Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/skill-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards & Conventions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards & Conventions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/naming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/javascript-typescript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript/TypeScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/modularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modularity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/commit-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commit Messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/branch-discipline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branch Discipline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/prompt-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/ui-behavior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Behavior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/excel-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ai-instructions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Rules & Guidelines
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Rules & Guidelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-instructions/universal-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Universal Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6_3" id="__nav_6_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Per-Repo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Per-Repo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-instructions/per-repo/global-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global-Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-instructions/per-repo/design-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/quality-bar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Bar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/base-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/languages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/review-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Review Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/ui-ux-style/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI/UX Style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/design-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design System Guidelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/future-ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Future Ideas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Context
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/about-me/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/priorities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Priorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/CONTEXT_OPEN-ITEMS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../audits/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audits
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Audits
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../audits/audit-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../audits/workflows/standards-wide-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards-Wide Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_8_4" id="__nav_6_8_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklists
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Checklists
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../audits/universal-checklists/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../audits/universal-checklists/accessibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../audits/universal-checklists/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../audits/universal-checklists/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explanation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Explanation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture & Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture & Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/ecosystem-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/hub-and-spoke-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub-and-Spoke Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/core-vs-adapters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core vs Adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Processes & Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Processes & Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/operational-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/setup-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/ai-tool-roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Tool Roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expansion Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Maintenance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Maintenance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/how-to/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/explanation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explanation Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- type: reference -->
+
+<h1 id="complete-token-system-reference">Complete Token System Reference<a class="headerlink" href="#complete-token-system-reference" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The design system's <strong>single source of truth</strong> for all design decisions lives here:</p>
+<div class="highlight"><pre><span></span><code>design-system-shadcn-tailwind/src/styles/tokens.css
+</code></pre></div>
+<p>This file contains every color, spacing measurement, border radius, shadow, typography rule, and animation timing used in the entire system. Change a token once, and it updates everywhere.</p>
+<p>Two supporting files extend tokens:
+- <strong>shadcn-bridge.css</strong> — Maps custom color tokens to shadcn's CSS variable naming convention
+- <strong>animation-tokens.css</strong> — Animation durations, easing curves, spring configurations</p>
+<hr />
+<h2 id="token-system-architecture">Token System Architecture<a class="headerlink" href="#token-system-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="how-tokens-flow">How Tokens Flow<a class="headerlink" href="#how-tokens-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>tokens.css (source of truth)
+   ↓
+   ├── @theme { --color-primary: #2563eb; ... }
+   ├── @theme { --spacing-xs: 0.25rem; ... }
+   ├── @theme { --radius-md: 0.375rem; ... }
+   └── @theme { --shadow-sm: 0 1px 2px rgba(0,0,0,0.05); ... }
+   ↓
+Tailwind CSS (generates utility classes)
+   ├── bg-primary (background-color: var(--color-primary))
+   ├── p-md (padding: var(--spacing-md))
+   ├── rounded-md (border-radius: var(--radius-md))
+   └── shadow-sm (box-shadow: var(--shadow-sm))
+   ↓
+Your components (use utilities)
+   &lt;div className=&quot;bg-primary p-md rounded-md shadow-sm&quot;&gt;
+</code></pre></div>
+<h3 id="file-organization">File Organization<a class="headerlink" href="#file-organization" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>src/styles/
+├── tokens.css              ← Source of truth
+├── shadcn-bridge.css       ← Radix/shadcn variable mapping
+├── animation-tokens.css    ← Animation configurations
+└── globals.css             ← Framework setup, imports all above
+</code></pre></div>
+<hr />
+<h2 id="semantic-color-tokens">Semantic Color Tokens<a class="headerlink" href="#semantic-color-tokens" title="Permanent link">&para;</a></h2>
+<p>All colors are named by <strong>meaning</strong>, not by <strong>appearance</strong>. Instead of <code>--color-blue-600</code>, use <code>--color-primary</code> (what it means) and <code>--color-error</code> (what it means).</p>
+<h3 id="color-token-reference">Color Token Reference<a class="headerlink" href="#color-token-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>CSS Variable</th>
+<th>Use Case</th>
+<th>Example</th>
+<th>Light</th>
+<th>Dark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary</strong></td>
+<td><code>--color-primary</code></td>
+<td>Brand color, interactive elements, primary actions</td>
+<td>Link, primary button, active state</td>
+<td><code>#2563eb</code></td>
+<td><code>#3b82f6</code></td>
+</tr>
+<tr>
+<td><strong>Primary Foreground</strong></td>
+<td><code>--color-text-primary</code></td>
+<td>Text on primary background</td>
+<td>Button text</td>
+<td><code>#ffffff</code></td>
+<td><code>#000000</code></td>
+</tr>
+<tr>
+<td><strong>Secondary</strong></td>
+<td><code>--color-secondary</code></td>
+<td>Secondary actions, alternative emphasis</td>
+<td>Secondary button</td>
+<td><code>#f3f4f6</code></td>
+<td><code>#374151</code></td>
+</tr>
+<tr>
+<td><strong>Secondary Foreground</strong></td>
+<td><code>--color-text-secondary</code></td>
+<td>Text on secondary background</td>
+<td>Secondary button text</td>
+<td><code>#111827</code></td>
+<td><code>#f9fafb</code></td>
+</tr>
+<tr>
+<td><strong>Background</strong></td>
+<td><code>--color-bg</code></td>
+<td>App/page background</td>
+<td>Body background</td>
+<td><code>#ffffff</code></td>
+<td><code>#0f172a</code></td>
+</tr>
+<tr>
+<td><strong>Foreground</strong></td>
+<td><code>--color-text</code></td>
+<td>Primary text color</td>
+<td>Paragraph text, body copy</td>
+<td><code>#111827</code></td>
+<td><code>#f1f5f9</code></td>
+</tr>
+<tr>
+<td><strong>Muted</strong></td>
+<td><code>--color-surface</code></td>
+<td>Card, panel, section backgrounds</td>
+<td>Card background, input field</td>
+<td><code>#f9fafb</code></td>
+<td><code>#1e293b</code></td>
+</tr>
+<tr>
+<td><strong>Muted Foreground</strong></td>
+<td><code>--color-text-muted</code></td>
+<td>Secondary text, labels, hints</td>
+<td>Label text, placeholder, caption</td>
+<td><code>#6b7280</code></td>
+<td><code>#cbd5e1</code></td>
+</tr>
+<tr>
+<td><strong>Border</strong></td>
+<td><code>--color-border</code></td>
+<td>Dividers, input borders, subtle lines</td>
+<td>Input border, horizontal rule</td>
+<td><code>#e5e7eb</code></td>
+<td><code>#334155</code></td>
+</tr>
+<tr>
+<td><strong>Accent</strong></td>
+<td><code>--color-accent</code></td>
+<td>Highlights, special emphasis</td>
+<td>Highlight background, badge</td>
+<td><code>#f59e0b</code></td>
+<td><code>#fbbf24</code></td>
+</tr>
+<tr>
+<td><strong>Accent Foreground</strong></td>
+<td><code>--color-text-accent</code></td>
+<td>Text on accent</td>
+<td>Badge text</td>
+<td><code>#000000</code></td>
+<td><code>#000000</code></td>
+</tr>
+<tr>
+<td><strong>Destructive</strong></td>
+<td><code>--color-error</code></td>
+<td>Errors, delete actions, warnings</td>
+<td>Error message, delete button</td>
+<td><code>#dc2626</code></td>
+<td><code>#ef4444</code></td>
+</tr>
+<tr>
+<td><strong>Destructive Foreground</strong></td>
+<td><code>--color-text-error</code></td>
+<td>Text on destructive</td>
+<td>Error button text</td>
+<td><code>#ffffff</code></td>
+<td><code>#000000</code></td>
+</tr>
+<tr>
+<td><strong>Success</strong></td>
+<td><code>--color-success</code></td>
+<td>Success states, confirmations</td>
+<td>Success message, checkmark</td>
+<td><code>#16a34a</code></td>
+<td><code>#22c55e</code></td>
+</tr>
+<tr>
+<td><strong>Success Foreground</strong></td>
+<td><code>--color-text-success</code></td>
+<td>Text on success</td>
+<td>Success button text</td>
+<td><code>#ffffff</code></td>
+<td><code>#000000</code></td>
+</tr>
+<tr>
+<td><strong>Warning</strong></td>
+<td><code>--color-warning</code></td>
+<td>Warnings, cautions</td>
+<td>Warning message, alert</td>
+<td><code>#ea580c</code></td>
+<td><code>#fb923c</code></td>
+</tr>
+<tr>
+<td><strong>Warning Foreground</strong></td>
+<td><code>--color-text-warning</code></td>
+<td>Text on warning</td>
+<td>Warning button text</td>
+<td><code>#ffffff</code></td>
+<td><code>#000000</code></td>
+</tr>
+<tr>
+<td><strong>Info</strong></td>
+<td><code>--color-info</code></td>
+<td>Information, hints</td>
+<td>Info badge, info message</td>
+<td><code>#0ea5e9</code></td>
+<td><code>#06b6d4</code></td>
+</tr>
+<tr>
+<td><strong>Info Foreground</strong></td>
+<td><code>--color-text-info</code></td>
+<td>Text on info</td>
+<td>Info text</td>
+<td><code>#ffffff</code></td>
+<td><code>#000000</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="using-color-tokens-in-components">Using Color Tokens in Components<a class="headerlink" href="#using-color-tokens-in-components" title="Permanent link">&para;</a></h3>
+<p><strong>✅ Correct: Use Tailwind semantic classes</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;bg-primary text-primary-foreground&quot;</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-foreground&quot;</span><span class="p">&gt;</span><span class="nx">Heading</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-muted-foreground&quot;</span><span class="p">&gt;</span><span class="nx">Secondary</span><span class="w"> </span><span class="nx">text</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>✅ Correct: Use CSS variables for inline styles</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--color-primary)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--color-text-primary)&#39;</span>
+<span class="p">}}&gt;</span>
+<span class="w">  </span><span class="nx">Content</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>❌ Wrong: Hardcoded colors</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#2563eb&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#fff&#39;</span><span class="w"> </span><span class="p">}}&gt;</span><span class="w">  </span><span class="c1">// ❌</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;bg-blue-600 text-white&quot;</span><span class="p">&gt;</span><span class="w">  </span><span class="c1">// ❌</span>
+</code></pre></div></p>
+<h3 id="dark-mode-color-mapping">Dark Mode Color Mapping<a class="headerlink" href="#dark-mode-color-mapping" title="Permanent link">&para;</a></h3>
+<p>Dark mode uses <code>[data-theme="dark-default"]</code> selector. Colors automatically invert:</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* In tokens.css */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">--color-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#2563eb</span><span class="p">;</span><span class="w">      </span><span class="c">/* Light mode */</span>
+<span class="w">  </span><span class="nv">--color-text</span><span class="p">:</span><span class="w"> </span><span class="mh">#111827</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&quot;dark-default&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">--color-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#3b82f6</span><span class="p">;</span><span class="w">      </span><span class="c">/* Dark mode (lighter version) */</span>
+<span class="w">  </span><span class="nv">--color-text</span><span class="p">:</span><span class="w"> </span><span class="mh">#f1f5f9</span><span class="p">;</span><span class="w">         </span><span class="c">/* Light text for dark bg */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Testing dark mode:</strong>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>storybook
+<span class="c1"># Toggle theme switcher (top-right corner) to test</span>
+</code></pre></div></p>
+<hr />
+<h2 id="spacing-tokens">Spacing Tokens<a class="headerlink" href="#spacing-tokens" title="Permanent link">&para;</a></h2>
+<p>Spacing is based on a <strong>scale</strong> (4px increment system). This ensures consistent sizing.</p>
+<h3 id="spacing-scale">Spacing Scale<a class="headerlink" href="#spacing-scale" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--spacing-0</code></td>
+<td>0</td>
+<td>Reset, no space</td>
+<td><code>margin: 0</code></td>
+</tr>
+<tr>
+<td><code>--spacing-px</code></td>
+<td>1px</td>
+<td>Thin borders, lines</td>
+<td>Border width</td>
+</tr>
+<tr>
+<td><code>--spacing-xs</code></td>
+<td>0.25rem (4px)</td>
+<td>Tiny gaps</td>
+<td>Icon spacing, badge padding</td>
+</tr>
+<tr>
+<td><code>--spacing-sm</code></td>
+<td>0.5rem (8px)</td>
+<td>Small gaps</td>
+<td>Button padding, input spacing</td>
+</tr>
+<tr>
+<td><code>--spacing-md</code></td>
+<td>1rem (16px)</td>
+<td>Default gap</td>
+<td>Card padding, section spacing</td>
+</tr>
+<tr>
+<td><code>--spacing-lg</code></td>
+<td>1.5rem (24px)</td>
+<td>Large gap</td>
+<td>Container padding, heading margin</td>
+</tr>
+<tr>
+<td><code>--spacing-xl</code></td>
+<td>2rem (32px)</td>
+<td>Extra large gap</td>
+<td>Section padding</td>
+</tr>
+<tr>
+<td><code>--spacing-2xl</code></td>
+<td>3rem (48px)</td>
+<td>Hero spacing</td>
+<td>Page section gap</td>
+</tr>
+<tr>
+<td><code>--spacing-3xl</code></td>
+<td>4rem (64px)</td>
+<td>Large layout spacing</td>
+<td>Hero margin, full-page gap</td>
+</tr>
+<tr>
+<td><code>--spacing-4xl</code></td>
+<td>6rem (96px)</td>
+<td>Extra large layout</td>
+<td>Header to content gap</td>
+</tr>
+</tbody>
+</table>
+<h3 id="using-spacing-tokens">Using Spacing Tokens<a class="headerlink" href="#using-spacing-tokens" title="Permanent link">&para;</a></h3>
+<p><strong>✅ Correct: Use Tailwind spacing classes</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;p-md m-lg&quot;</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;mb-sm&quot;</span><span class="p">&gt;</span><span class="nx">Heading</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;mb-md&quot;</span><span class="p">&gt;</span><span class="nx">Paragraph</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>✅ Correct: Use CSS variables</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--spacing-md)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">marginBottom</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--spacing-lg)&#39;</span>
+<span class="p">}}&gt;</span>
+<span class="w">  </span><span class="nx">Content</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>❌ Wrong: Hardcoded values</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;p-[16px] mb-[24px]&quot;</span><span class="p">&gt;</span><span class="w">  </span><span class="c1">// ❌ Arbitrary values</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;16px&#39;</span><span class="w"> </span><span class="p">}}&gt;</span><span class="w">      </span><span class="c1">// ❌ Hardcoded</span>
+</code></pre></div></p>
+<h3 id="tailwind-spacing-classes">Tailwind Spacing Classes<a class="headerlink" href="#tailwind-spacing-classes" title="Permanent link">&para;</a></h3>
+<p>Tailwind generates utilities for all spacing tokens:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Padding --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-xs&quot;</span><span class="p">&gt;</span>  padding: var(--spacing-xs)
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-sm&quot;</span><span class="p">&gt;</span>  padding: var(--spacing-sm)
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;p-md&quot;</span><span class="p">&gt;</span>  padding: var(--spacing-md)
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;px-lg&quot;</span><span class="p">&gt;</span> padding-left/right: var(--spacing-lg)
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;py-xl&quot;</span><span class="p">&gt;</span> padding-top/bottom: var(--spacing-xl)
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;pt-2xl&quot;</span><span class="p">&gt;</span> padding-top: var(--spacing-2xl)
+
+<span class="cm">&lt;!-- Margin --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-xs&quot;</span><span class="p">&gt;</span>  margin: var(--spacing-xs)
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-sm&quot;</span><span class="p">&gt;</span> margin-top: var(--spacing-sm)
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mb-md&quot;</span><span class="p">&gt;</span> margin-bottom: var(--spacing-md)
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mx-lg&quot;</span><span class="p">&gt;</span> margin-left/right: var(--spacing-lg)
+
+<span class="cm">&lt;!-- Gap (flex/grid) --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;gap-md&quot;</span><span class="p">&gt;</span> gap: var(--spacing-md)
+</code></pre></div>
+<hr />
+<h2 id="typography-tokens">Typography Tokens<a class="headerlink" href="#typography-tokens" title="Permanent link">&para;</a></h2>
+<p>Typography tokens control font families, sizes, weights, and line heights.</p>
+<h3 id="font-family-tokens">Font Family Tokens<a class="headerlink" href="#font-family-tokens" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--font-sans</code></td>
+<td>System font stack</td>
+<td>Body text, UI</td>
+<td>Paragraphs, buttons</td>
+</tr>
+<tr>
+<td><code>--font-mono</code></td>
+<td><code>ui-monospace</code>, Menlo, etc.</td>
+<td>Code, technical text</td>
+<td>Code blocks, timestamps</td>
+</tr>
+</tbody>
+</table>
+<h3 id="font-size-tokens">Font Size Tokens<a class="headerlink" href="#font-size-tokens" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value (rem/px)</th>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--text-xs</code></td>
+<td>0.75rem / 12px</td>
+<td>Small labels, captions</td>
+<td>Form label, helper text</td>
+</tr>
+<tr>
+<td><code>--text-sm</code></td>
+<td>0.875rem / 14px</td>
+<td>Body copy, input text</td>
+<td>Paragraph, input placeholder</td>
+</tr>
+<tr>
+<td><code>--text-base</code></td>
+<td>1rem / 16px</td>
+<td>Standard body text</td>
+<td>Normal paragraph, button</td>
+</tr>
+<tr>
+<td><code>--text-lg</code></td>
+<td>1.125rem / 18px</td>
+<td>Larger body text</td>
+<td>Lead paragraph</td>
+</tr>
+<tr>
+<td><code>--text-xl</code></td>
+<td>1.25rem / 20px</td>
+<td>Subheading</td>
+<td>Section subtitle</td>
+</tr>
+<tr>
+<td><code>--text-2xl</code></td>
+<td>1.5rem / 24px</td>
+<td>Heading level 3</td>
+<td>Card title</td>
+</tr>
+<tr>
+<td><code>--text-3xl</code></td>
+<td>1.875rem / 30px</td>
+<td>Heading level 2</td>
+<td>Section heading</td>
+</tr>
+<tr>
+<td><code>--text-4xl</code></td>
+<td>2.25rem / 36px</td>
+<td>Heading level 1</td>
+<td>Page title</td>
+</tr>
+<tr>
+<td><code>--text-5xl</code></td>
+<td>3rem / 48px</td>
+<td>Extra large heading</td>
+<td>Hero title</td>
+</tr>
+<tr>
+<td><code>--text-6xl</code></td>
+<td>3.75rem / 60px</td>
+<td>Massive heading</td>
+<td>Landing page hero</td>
+</tr>
+</tbody>
+</table>
+<h3 id="font-weight-tokens">Font Weight Tokens<a class="headerlink" href="#font-weight-tokens" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--font-light</code></td>
+<td>300</td>
+<td>De-emphasized text</td>
+<td>Hint, secondary info</td>
+</tr>
+<tr>
+<td><code>--font-normal</code></td>
+<td>400</td>
+<td>Body text</td>
+<td>Standard paragraphs</td>
+</tr>
+<tr>
+<td><code>--font-medium</code></td>
+<td>500</td>
+<td>Emphasis, labels</td>
+<td>Form labels, badges</td>
+</tr>
+<tr>
+<td><code>--font-semibold</code></td>
+<td>600</td>
+<td>Strong emphasis, headings</td>
+<td>Subheadings, bold text</td>
+</tr>
+<tr>
+<td><code>--font-bold</code></td>
+<td>700</td>
+<td>Strong headings</td>
+<td>Headings, important titles</td>
+</tr>
+</tbody>
+</table>
+<h3 id="line-height-tokens">Line Height Tokens<a class="headerlink" href="#line-height-tokens" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--leading-tight</code></td>
+<td>1.25</td>
+<td>Headlines (compact)</td>
+<td>Headings</td>
+</tr>
+<tr>
+<td><code>--leading-snug</code></td>
+<td>1.375</td>
+<td>Headings (slightly loose)</td>
+<td>Subheadings</td>
+</tr>
+<tr>
+<td><code>--leading-normal</code></td>
+<td>1.5</td>
+<td>Body text (readable)</td>
+<td>Paragraphs, standard text</td>
+</tr>
+<tr>
+<td><code>--leading-relaxed</code></td>
+<td>1.625</td>
+<td>Large body text (very readable)</td>
+<td>Long-form content</td>
+</tr>
+<tr>
+<td><code>--leading-loose</code></td>
+<td>2</td>
+<td>Extra space (accessibility)</td>
+<td>Code blocks, poetry</td>
+</tr>
+</tbody>
+</table>
+<h3 id="using-typography-tokens">Using Typography Tokens<a class="headerlink" href="#using-typography-tokens" title="Permanent link">&para;</a></h3>
+<p><strong>✅ Correct: Use Tailwind utilities</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-4xl font-bold leading-snug&quot;</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="nx">Heading</span>
+<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-base font-normal leading-normal&quot;</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="nx">Body</span><span class="w"> </span><span class="nx">paragraph</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">proper</span><span class="w"> </span><span class="nx">line</span><span class="w"> </span><span class="nx">height</span><span class="p">.</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>✅ Correct: Use CSS variables</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">  </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--text-4xl)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fontWeight</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--font-bold)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">lineHeight</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--leading-snug)&#39;</span>
+<span class="p">}}&gt;</span>
+<span class="w">  </span><span class="nx">Heading</span>
+<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>❌ Wrong: Hardcoded values</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-[36px] font-bold&quot;</span><span class="p">&gt;</span><span class="w">  </span><span class="c1">// ❌ Arbitrary size</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;16px&#39;</span><span class="w"> </span><span class="p">}}&gt;</span><span class="w">         </span><span class="c1">// ❌ Hardcoded</span>
+</code></pre></div></p>
+<hr />
+<h2 id="border-radius-tokens">Border Radius Tokens<a class="headerlink" href="#border-radius-tokens" title="Permanent link">&para;</a></h2>
+<p>Radius tokens control corner roundness for a consistent look.</p>
+<h3 id="radius-scale">Radius Scale<a class="headerlink" href="#radius-scale" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value (rem/px)</th>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--radius-none</code></td>
+<td>0</td>
+<td>Sharp corners</td>
+<td>Cards without radius</td>
+</tr>
+<tr>
+<td><code>--radius-sm</code></td>
+<td>0.125rem / 2px</td>
+<td>Subtle rounding</td>
+<td>Small UI elements</td>
+</tr>
+<tr>
+<td><code>--radius-md</code></td>
+<td>0.375rem / 6px</td>
+<td>Default rounding</td>
+<td>Buttons, inputs, cards</td>
+</tr>
+<tr>
+<td><code>--radius-lg</code></td>
+<td>0.5rem / 8px</td>
+<td>Larger rounding</td>
+<td>Modal dialogs, large cards</td>
+</tr>
+<tr>
+<td><code>--radius-xl</code></td>
+<td>0.75rem / 12px</td>
+<td>Extra rounding</td>
+<td>Buttons with more personality</td>
+</tr>
+<tr>
+<td><code>--radius-2xl</code></td>
+<td>1rem / 16px</td>
+<td>Very rounded</td>
+<td>Prominent cards, badges</td>
+</tr>
+<tr>
+<td><code>--radius-full</code></td>
+<td>9999px</td>
+<td>Fully round</td>
+<td>Circular avatars, pills</td>
+</tr>
+</tbody>
+</table>
+<h3 id="using-radius-tokens">Using Radius Tokens<a class="headerlink" href="#using-radius-tokens" title="Permanent link">&para;</a></h3>
+<p><strong>✅ Correct: Use Tailwind utilities</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;rounded-md&quot;</span><span class="p">&gt;</span><span class="w">        </span><span class="p">{</span><span class="cm">/* radius-md */</span><span class="p">}</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;rounded-lg&quot;</span><span class="p">&gt;</span><span class="w">           </span><span class="p">{</span><span class="cm">/* radius-lg */</span><span class="p">}</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;rounded-full&quot;</span><span class="p">&gt;</span><span class="w">         </span><span class="p">{</span><span class="cm">/* circular */</span><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>✅ Correct: Use CSS variables</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">borderRadius</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--radius-md)&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+<span class="w">  </span><span class="nx">Content</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>❌ Wrong: Hardcoded values</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;rounded-[6px]&quot;</span><span class="p">&gt;</span><span class="w">        </span><span class="c1">// ❌ Arbitrary</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">borderRadius</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;6px&#39;</span><span class="w"> </span><span class="p">}}&gt;</span><span class="w">  </span><span class="c1">// ❌ Hardcoded</span>
+</code></pre></div></p>
+<hr />
+<h2 id="shadow-tokens">Shadow Tokens<a class="headerlink" href="#shadow-tokens" title="Permanent link">&para;</a></h2>
+<p>Shadows create depth and hierarchy. Tokens provide a consistent elevation scale.</p>
+<h3 id="shadow-scale">Shadow Scale<a class="headerlink" href="#shadow-scale" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Use Case</th>
+<th>CSS Value</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--shadow-none</code></td>
+<td>Flat surfaces</td>
+<td>none</td>
+<td>No shadow</td>
+</tr>
+<tr>
+<td><code>--shadow-sm</code></td>
+<td>Subtle elevation</td>
+<td><code>0 1px 2px rgba(0,0,0,0.05)</code></td>
+<td>Hover state, subtle lift</td>
+</tr>
+<tr>
+<td><code>--shadow-md</code></td>
+<td>Default elevation</td>
+<td><code>0 4px 6px rgba(0,0,0,0.1)</code></td>
+<td>Cards, dropdowns</td>
+</tr>
+<tr>
+<td><code>--shadow-lg</code></td>
+<td>Strong elevation</td>
+<td><code>0 10px 15px rgba(0,0,0,0.1)</code></td>
+<td>Modals, prominently raised</td>
+</tr>
+<tr>
+<td><code>--shadow-xl</code></td>
+<td>Maximum elevation</td>
+<td><code>0 20px 25px rgba(0,0,0,0.1)</code></td>
+<td>Full-page modals, overlays</td>
+</tr>
+<tr>
+<td><code>--shadow-inner</code></td>
+<td>Inset shadow</td>
+<td><code>inset 0 2px 4px rgba(0,0,0,0.05)</code></td>
+<td>Pressed state, depth inward</td>
+</tr>
+</tbody>
+</table>
+<h3 id="using-shadow-tokens">Using Shadow Tokens<a class="headerlink" href="#using-shadow-tokens" title="Permanent link">&para;</a></h3>
+<p><strong>✅ Correct: Use Tailwind utilities</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;shadow-md&quot;</span><span class="p">&gt;</span><span class="w">       </span><span class="p">{</span><span class="cm">/* default card shadow */</span><span class="p">}</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;shadow-lg&quot;</span><span class="p">&gt;</span><span class="w">       </span><span class="p">{</span><span class="cm">/* larger elevation */</span><span class="p">}</span>
+<span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;shadow-sm hover:shadow-md&quot;</span><span class="p">&gt;</span><span class="w">  </span><span class="p">{</span><span class="cm">/* hover effect */</span><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>✅ Correct: Use CSS variables</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">boxShadow</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--shadow-lg)&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+<span class="w">  </span><span class="nx">Content</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>❌ Wrong: Hardcoded values</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;shadow-[0_4px_6px_rgba(0,0,0,0.1)]&quot;</span><span class="p">&gt;</span><span class="w">  </span><span class="c1">// ❌ Arbitrary</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">boxShadow</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;0 4px 6px rgba(0,0,0,0.1)&#39;</span><span class="w"> </span><span class="p">}}&gt;</span><span class="w">  </span><span class="c1">// ❌ Hardcoded</span>
+</code></pre></div></p>
+<hr />
+<h2 id="animation-tokens">Animation Tokens<a class="headerlink" href="#animation-tokens" title="Permanent link">&para;</a></h2>
+<p>Animation tokens control timing, easing, and spring physics for consistent motion.</p>
+<h3 id="duration-tokens">Duration Tokens<a class="headerlink" href="#duration-tokens" title="Permanent link">&para;</a></h3>
+<p>Durations specify how long an animation takes.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--duration-instant</code></td>
+<td>0ms</td>
+<td>Disabled animations (prefers-reduced-motion)</td>
+<td>When user has motion preference</td>
+</tr>
+<tr>
+<td><code>--duration-fast</code></td>
+<td>150ms</td>
+<td>Quick feedback, hover effects</td>
+<td>Button hover, tooltip appear</td>
+</tr>
+<tr>
+<td><code>--duration-normal</code></td>
+<td>300ms</td>
+<td>Standard animations</td>
+<td>Fade in, slide in, dialog open</td>
+</tr>
+<tr>
+<td><code>--duration-slow</code></td>
+<td>500ms</td>
+<td>Noticeable transitions</td>
+<td>Page transitions, large content reveals</td>
+</tr>
+<tr>
+<td><code>--duration-lazy</code></td>
+<td>1000ms</td>
+<td>Entrance animations, storytelling</td>
+<td>Hero section reveal, title animation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="easing-tokens">Easing Tokens<a class="headerlink" href="#easing-tokens" title="Permanent link">&para;</a></h3>
+<p>Easing curves control acceleration and deceleration.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Cubic Bezier Value</th>
+<th>Feel</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--ease-linear</code></td>
+<td><code>cubic-bezier(0, 0, 1, 1)</code></td>
+<td>Constant speed</td>
+<td>Progress bars, mechanical</td>
+</tr>
+<tr>
+<td><code>--ease-in</code></td>
+<td><code>cubic-bezier(0.4, 0, 1, 1)</code></td>
+<td>Accelerating exit</td>
+<td>Objects leaving screen</td>
+</tr>
+<tr>
+<td><code>--ease-out</code></td>
+<td><code>cubic-bezier(0, 0, 0.2, 1)</code></td>
+<td>Decelerating entrance</td>
+<td>Objects entering screen</td>
+</tr>
+<tr>
+<td><code>--ease-in-out</code></td>
+<td><code>cubic-bezier(0.4, 0, 0.2, 1)</code></td>
+<td>Symmetric</td>
+<td>Natural motion, morphs</td>
+</tr>
+<tr>
+<td><code>--ease-bounce</code></td>
+<td><code>cubic-bezier(0.68, -0.55, 0.265, 1.55)</code></td>
+<td>Bouncy</td>
+<td>Playful entrances, attention</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spring-configuration-tokens">Spring Configuration Tokens<a class="headerlink" href="#spring-configuration-tokens" title="Permanent link">&para;</a></h3>
+<p>Spring configs provide physics-based animations using framer-motion.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Three preset springs</span>
+<span class="o">--</span><span class="nx">spring</span><span class="o">-</span><span class="nx">smooth</span><span class="w">   </span><span class="c1">// stiffness: 100,  damping: 15  → gentle flow</span>
+<span class="o">--</span><span class="nx">spring</span><span class="o">-</span><span class="nx">bounce</span><span class="w">   </span><span class="c1">// stiffness: 200,  damping: 10  → lively bounce</span>
+<span class="o">--</span><span class="nx">spring</span><span class="o">-</span><span class="nx">stiff</span><span class="w">    </span><span class="c1">// stiffness: 300,  damping: 30  → snappy, quick</span>
+</code></pre></div>
+<p><strong>Using in framer-motion:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">motion</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;framer-motion&quot;</span>
+
+<span class="c1">// Using duration + easing</span>
+<span class="o">&lt;</span><span class="nx">motion</span><span class="p">.</span><span class="nx">div</span>
+<span class="w">  </span><span class="nx">animate</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">opacity</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">  </span><span class="nx">transition</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">    </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--duration-normal)&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">ease</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--ease-out)&#39;</span>
+<span class="w">  </span><span class="p">}}</span>
+<span class="err">/&gt;</span>
+
+<span class="c1">// Using spring</span>
+<span class="o">&lt;</span><span class="nx">motion</span><span class="p">.</span><span class="nx">div</span>
+<span class="w">  </span><span class="nx">animate</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">  </span><span class="nx">transition</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">    </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;spring&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">stiffness</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">damping</span><span class="o">:</span><span class="w"> </span><span class="kt">15</span>
+<span class="w">  </span><span class="p">}}</span>
+<span class="err">/&gt;</span>
+</code></pre></div></p>
+<h3 id="animation-variants">Animation Variants<a class="headerlink" href="#animation-variants" title="Permanent link">&para;</a></h3>
+<p>The design system exports 15+ animation variants in <code>src/lib/animation.ts</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Entrance animations</span>
+<span class="nx">fadeIn</span><span class="p">,</span><span class="w"> </span><span class="nx">fadeInUp</span><span class="p">,</span><span class="w"> </span><span class="nx">fadeInDown</span><span class="p">,</span><span class="w"> </span><span class="nx">fadeInLeft</span><span class="p">,</span><span class="w"> </span><span class="nx">fadeInRight</span>
+<span class="nx">scaleIn</span><span class="p">,</span><span class="w"> </span><span class="nx">scaleInBounce</span>
+<span class="nx">slideInLeft</span><span class="p">,</span><span class="w"> </span><span class="nx">slideInRight</span><span class="p">,</span><span class="w"> </span><span class="nx">slideInUp</span><span class="p">,</span><span class="w"> </span><span class="nx">slideInDown</span>
+<span class="nx">rotateIn</span><span class="p">,</span><span class="w"> </span><span class="nx">blurReveal</span>
+
+<span class="c1">// Container patterns</span>
+<span class="nx">staggerContainer</span><span class="p">,</span><span class="w"> </span><span class="nx">staggerItem</span>
+
+<span class="c1">// Scroll animations</span>
+<span class="nx">scrollReveal</span>
+</code></pre></div>
+<p><strong>Usage:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">fadeInUp</span><span class="p">,</span><span class="w"> </span><span class="nx">staggerContainer</span><span class="p">,</span><span class="w"> </span><span class="nx">staggerItem</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/lib/animation&quot;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">motion</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;framer-motion&quot;</span>
+
+<span class="c1">// Single element</span>
+<span class="o">&lt;</span><span class="nx">motion</span><span class="p">.</span><span class="nx">div</span>
+<span class="w">  </span><span class="nx">initial</span><span class="o">=</span><span class="s2">&quot;hidden&quot;</span>
+<span class="w">  </span><span class="nx">animate</span><span class="o">=</span><span class="s2">&quot;visible&quot;</span>
+<span class="w">  </span><span class="nx">variants</span><span class="o">=</span><span class="p">{</span><span class="nx">fadeInUp</span><span class="p">}</span>
+<span class="err">/&gt;</span>
+
+<span class="c1">// Staggered list</span>
+<span class="o">&lt;</span><span class="nx">motion</span><span class="p">.</span><span class="nx">div</span><span class="w"> </span><span class="nx">variants</span><span class="o">=</span><span class="p">{</span><span class="nx">staggerContainer</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="p">{</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">motion</span><span class="p">.</span><span class="nx">div</span><span class="w"> </span><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="w"> </span><span class="nx">variants</span><span class="o">=</span><span class="p">{</span><span class="nx">staggerItem</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/motion.div&gt;</span>
+<span class="w">  </span><span class="p">))}</span>
+<span class="o">&lt;</span><span class="err">/motion.div&gt;</span>
+</code></pre></div></p>
+<hr />
+<h2 id="prefers-reduced-motion-handling">Prefers-Reduced-Motion Handling<a class="headerlink" href="#prefers-reduced-motion-handling" title="Permanent link">&para;</a></h2>
+<p>Users with "Prefer Reduced Motion" enabled should not see animations. The system handles this automatically:</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* In animation-tokens.css */</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">prefers-reduced-motion</span><span class="o">:</span><span class="w"> </span><span class="nt">reduce</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">--duration-instant</span><span class="o">:</span><span class="w"> </span><span class="nt">0ms</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">--duration-fast</span><span class="o">:</span><span class="w"> </span><span class="nt">0ms</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">--duration-normal</span><span class="o">:</span><span class="w"> </span><span class="nt">0ms</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">--duration-slow</span><span class="o">:</span><span class="w"> </span><span class="nt">0ms</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">--duration-lazy</span><span class="o">:</span><span class="w"> </span><span class="nt">0ms</span><span class="o">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Result:</strong> Animations instantly complete when user has motion preference enabled.</p>
+<p><strong>Testing:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Storybook story exists for testing</span>
+npm<span class="w"> </span>run<span class="w"> </span>storybook
+<span class="c1"># Look for &quot;WithReducedMotion&quot; variant in animation component stories</span>
+</code></pre></div></p>
+<hr />
+<h2 id="how-to-add-new-tokens">How to Add New Tokens<a class="headerlink" href="#how-to-add-new-tokens" title="Permanent link">&para;</a></h2>
+<p>When you need a new token, add it to the appropriate section in <code>tokens.css</code>:</p>
+<h3 id="adding-a-color-token">Adding a Color Token<a class="headerlink" href="#adding-a-color-token" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">/* In tokens.css, in the @theme block */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="err">@theme</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="c">/* Existing colors... */</span>
+<span class="w">    </span><span class="nv">--color-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#2563eb</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c">/* New token: */</span>
+<span class="w">    </span><span class="nv">--color-brand-dark</span><span class="p">:</span><span class="w"> </span><span class="mh">#1e40af</span><span class="p">;</span><span class="w">  </span><span class="c">/* Add your token */</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="err">}</span>
+
+<span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&quot;dark-default&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="err">@theme</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="c">/* Dark mode version */</span>
+<span class="w">    </span><span class="nv">--color-brand-dark</span><span class="p">:</span><span class="w"> </span><span class="mh">#3b82f6</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div>
+<p><strong>Then use:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Tailwind (if using default semantic naming)</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;bg-brand-dark&quot;</span><span class="p">&gt;</span><span class="w">  </span><span class="c1">// Tailwind auto-generates this</span>
+
+<span class="c1">// CSS variable (always works)</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--color-brand-dark)&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+</code></pre></div></p>
+<h3 id="adding-a-spacing-token">Adding a Spacing Token<a class="headerlink" href="#adding-a-spacing-token" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">/* In tokens.css */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="err">@theme</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="nv">--spacing-5xl</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">rem</span><span class="p">;</span><span class="w">  </span><span class="c">/* 128px */</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div>
+<p><strong>Then use:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;p-5xl&quot;</span><span class="p">&gt;</span><span class="w">  </span><span class="p">{</span><span class="cm">/* padding: var(--spacing-5xl) */</span><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="adding-a-duration-token">Adding a Duration Token<a class="headerlink" href="#adding-a-duration-token" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">/* In animation-tokens.css */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">--duration-xslow</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="kt">ms</span><span class="p">;</span><span class="w">  </span><span class="c">/* very slow animations */</span>
+<span class="p">}</span>
+
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">prefers-reduced-motion</span><span class="o">:</span><span class="w"> </span><span class="nt">reduce</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">--duration-xslow</span><span class="o">:</span><span class="w"> </span><span class="nt">0ms</span><span class="o">;</span><span class="w">  </span><span class="c">/* Respect motion preference */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Then use:</strong>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">motion</span><span class="p">.</span><span class="nx">div</span><span class="w"> </span><span class="nx">transition</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--duration-xslow)&#39;</span><span class="w"> </span><span class="p">}}</span><span class="o">&gt;</span>
+</code></pre></div></p>
+<h3 id="token-naming-conventions">Token Naming Conventions<a class="headerlink" href="#token-naming-conventions" title="Permanent link">&para;</a></h3>
+<p><strong>✅ Good token names (semantic, descriptive):</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">--color-primary</span>
+<span class="nt">--color-error</span>
+<span class="nt">--spacing-md</span>
+<span class="nt">--radius-lg</span>
+<span class="nt">--duration-slow</span>
+<span class="nt">--ease-in-out</span>
+</code></pre></div></p>
+<p><strong>❌ Bad token names (literal, unclear):</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">--color-blue-600</span><span class="w">      </span><span class="c">/* What does blue mean? */</span>
+<span class="nt">--spacing-14px</span><span class="w">        </span><span class="c">/* Just use 14px then? */</span>
+<span class="nt">--duration-fast-quick</span><span class="w"> </span><span class="c">/* Which one? */</span>
+</code></pre></div></p>
+<hr />
+<h2 id="token-audit-and-compliance">Token Audit and Compliance<a class="headerlink" href="#token-audit-and-compliance" title="Permanent link">&para;</a></h2>
+<p>Before committing, always run the token audit prompt to verify compliance:</p>
+<div class="highlight"><pre><span></span><code>Path: design-system-shadcn-tailwind/docs/token-audit-prompt.md
+</code></pre></div>
+<p><strong>What it checks:</strong>
+- ✅ No hardcoded hex colors (use tokens)
+- ✅ No concrete Tailwind classes (use semantic tokens)
+- ✅ No hardcoded spacing (use spacing tokens)
+- ✅ All animation durations use CSS variables
+- ✅ forwardRef + displayName on DOM-wrapping components
+- ✅ Proper imports (no barrel imports from shadcn)</p>
+<p><strong>How to run:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Copy the prompt from above file</span>
+<span class="c1"># Paste into Claude Code</span>
+<span class="c1"># It will scan your components and flag violations</span>
+</code></pre></div></p>
+<hr />
+<h2 id="changing-tokens-globally">Changing Tokens Globally<a class="headerlink" href="#changing-tokens-globally" title="Permanent link">&para;</a></h2>
+<p>To change a token across the entire system:</p>
+<ol>
+<li>
+<p><strong>Edit tokens.css</strong>
+   <div class="highlight"><pre><span></span><code><span class="nt">--color-primary</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">your-new-color</span><span class="o">;</span><span class="w">  </span><span class="c">/* Update value */</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Rebuild</strong>
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Review in Storybook</strong>
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>storybook
+<span class="c1"># Check all affected components</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Test in browser</strong></p>
+</li>
+<li>Desktop view (1280px)</li>
+<li>Mobile view (375px)</li>
+<li>Dark mode (toggle theme)</li>
+<li>
+<p>Contrast (WCAG AA)</p>
+</li>
+<li>
+<p><strong>Commit</strong>
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update primary color token to #your-new-color&quot;</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>That's it.</strong> Every component using <code>--color-primary</code> automatically updates.</p>
+<hr />
+<h2 id="complete-token-reference-table">Complete Token Reference Table<a class="headerlink" href="#complete-token-reference-table" title="Permanent link">&para;</a></h2>
+<h3 id="all-token-categories">All Token Categories<a class="headerlink" href="#all-token-categories" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>File</th>
+<th>Examples</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Colors</strong></td>
+<td>tokens.css</td>
+<td>primary, secondary, error, success, warning, info</td>
+<td>18 tokens</td>
+</tr>
+<tr>
+<td><strong>Spacing</strong></td>
+<td>tokens.css</td>
+<td>xs, sm, md, lg, xl, 2xl, 3xl, 4xl</td>
+<td>10+ tokens</td>
+</tr>
+<tr>
+<td><strong>Typography</strong></td>
+<td>tokens.css</td>
+<td>text-xs through text-6xl, font-light through font-bold</td>
+<td>20+ tokens</td>
+</tr>
+<tr>
+<td><strong>Radius</strong></td>
+<td>tokens.css</td>
+<td>none, sm, md, lg, xl, 2xl, full</td>
+<td>7 tokens</td>
+</tr>
+<tr>
+<td><strong>Shadows</strong></td>
+<td>tokens.css</td>
+<td>none, sm, md, lg, xl, inner</td>
+<td>6 tokens</td>
+</tr>
+<tr>
+<td><strong>Durations</strong></td>
+<td>animation-tokens.css</td>
+<td>instant, fast, normal, slow, lazy</td>
+<td>5 tokens</td>
+</tr>
+<tr>
+<td><strong>Easings</strong></td>
+<td>animation-tokens.css</td>
+<td>linear, in, out, in-out, bounce</td>
+<td>5 tokens</td>
+</tr>
+<tr>
+<td><strong>Springs</strong></td>
+<td>animation-tokens.css</td>
+<td>smooth, bounce, stiff</td>
+<td>3 configurations</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total: 70+ tokens</strong></p>
+<hr />
+<h2 id="common-token-mistakes">Common Token Mistakes<a class="headerlink" href="#common-token-mistakes" title="Permanent link">&para;</a></h2>
+<h3 id="mistake-1-hardcoded-color">❌ Mistake 1: Hardcoded Color<a class="headerlink" href="#mistake-1-hardcoded-color" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wrong</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#2563eb&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;bg-blue-600&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Fix:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Correct</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;bg-primary&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--color-primary)&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+</code></pre></div></p>
+<h3 id="mistake-2-arbitrary-spacing">❌ Mistake 2: Arbitrary Spacing<a class="headerlink" href="#mistake-2-arbitrary-spacing" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wrong</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;mt-[14px]&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">marginTop</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;14px&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+</code></pre></div>
+<p><strong>Fix:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Correct (use nearest token)</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;mt-sm&quot;</span><span class="p">&gt;</span><span class="w">    </span><span class="p">{</span><span class="cm">/* 8px, close to 14px */</span><span class="p">}</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">marginTop</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--spacing-md)&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+</code></pre></div></p>
+<h3 id="mistake-3-hardcoded-font-size">❌ Mistake 3: Hardcoded Font Size<a class="headerlink" href="#mistake-3-hardcoded-font-size" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wrong</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-[36px]&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;36px&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+</code></pre></div>
+<p><strong>Fix:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Correct</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-4xl&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--text-4xl)&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+</code></pre></div></p>
+<h3 id="mistake-4-animation-without-variable">❌ Mistake 4: Animation Without Variable<a class="headerlink" href="#mistake-4-animation-without-variable" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wrong</span>
+<span class="p">&lt;</span><span class="nt">motion</span><span class="p">.</span><span class="na">div</span><span class="w"> </span><span class="na">transition</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="kt">0.3</span><span class="w"> </span><span class="p">}}&gt;</span>
+
+<span class="c1">// Wrong (seconds vs ms confusion)</span>
+<span class="p">&lt;</span><span class="nt">motion</span><span class="p">.</span><span class="na">div</span><span class="w"> </span><span class="na">transition</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="kt">300</span><span class="w"> </span><span class="p">}}&gt;</span><span class="w">  </span><span class="p">{</span><span class="cm">/* 300 seconds?! */</span><span class="p">}</span>
+</code></pre></div>
+<p><strong>Fix:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Correct (use CSS variable)</span>
+<span class="p">&lt;</span><span class="nt">motion</span><span class="p">.</span><span class="na">div</span><span class="w"> </span><span class="na">transition</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">  </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="kt">parseInt</span><span class="p">(</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">).</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s1">&#39;--duration-normal&#39;</span><span class="p">))</span>
+<span class="p">}}&gt;</span>
+
+<span class="c1">// Better: Use the lib/animation.ts variants directly</span>
+<span class="p">&lt;</span><span class="nt">motion</span><span class="p">.</span><span class="na">div</span><span class="w"> </span><span class="na">variants</span><span class="o">=</span><span class="p">{</span><span class="nx">fadeInUp</span><span class="p">}</span><span class="w"> </span><span class="na">initial</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span><span class="w"> </span><span class="na">animate</span><span class="o">=</span><span class="s">&quot;visible&quot;</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<hr />
+<h2 id="token-system-examples">Token System Examples<a class="headerlink" href="#token-system-examples" title="Permanent link">&para;</a></h2>
+<h3 id="example-1-card-component">Example 1: Card Component<a class="headerlink" href="#example-1-card-component" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Card</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">children</span><span class="o">:</span><span class="w"> </span><span class="kt">React.ReactNode</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;bg-muted rounded-lg shadow-md p-md&quot;</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="cm">/* Uses tokens:</span>
+<span class="cm">   - bg-muted (color token)</span>
+<span class="cm">   - rounded-lg (radius token)</span>
+<span class="cm">   - shadow-md (shadow token)</span>
+<span class="cm">   - p-md (spacing token)</span>
+<span class="cm">*/</span>
+</code></pre></div>
+<h3 id="example-2-button-variants">Example 2: Button Variants<a class="headerlink" href="#example-2-button-variants" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">buttonStyles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cva</span><span class="p">(</span>
+<span class="w">  </span><span class="s2">&quot;px-md py-sm rounded-md font-medium transition-colors&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">variants</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">intent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">primary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bg-primary text-primary-foreground hover:bg-primary/90&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">secondary</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bg-secondary text-secondary-foreground hover:bg-secondary/90&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">destructive</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bg-destructive text-destructive-foreground hover:bg-destructive/90&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="cm">/* Uses tokens:</span>
+<span class="cm">   - px-md, py-sm (spacing)</span>
+<span class="cm">   - rounded-md (radius)</span>
+<span class="cm">   - bg-primary, bg-secondary, bg-destructive (colors)</span>
+<span class="cm">   - text-primary-foreground, text-secondary-foreground (colors)</span>
+<span class="cm">*/</span>
+</code></pre></div>
+<h3 id="example-3-typography">Example 3: Typography<a class="headerlink" href="#example-3-typography" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Heading</span><span class="p">({</span><span class="w"> </span><span class="nx">level</span><span class="p">,</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">sizes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">h1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text-4xl font-bold leading-snug&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">h2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text-3xl font-bold leading-snug&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">h3</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text-2xl font-semibold leading-snug&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">h4</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text-xl font-semibold leading-normal&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">Tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`h</span><span class="si">${</span><span class="nx">level</span><span class="si">}</span><span class="sb">`</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">Tag</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">sizes</span><span class="p">[</span><span class="sb">`h</span><span class="si">${</span><span class="nx">level</span><span class="si">}</span><span class="sb">`</span><span class="p">]}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Tag&gt;</span>
+<span class="p">}</span>
+
+<span class="cm">/* Uses tokens:</span>
+<span class="cm">   - text-4xl, text-3xl, text-2xl, text-xl (typography)</span>
+<span class="cm">   - font-bold, font-semibold (typography)</span>
+<span class="cm">   - leading-snug, leading-normal (typography)</span>
+<span class="cm">*/</span>
+</code></pre></div>
+<hr />
+<h2 id="dark-mode-token-testing">Dark Mode Token Testing<a class="headerlink" href="#dark-mode-token-testing" title="Permanent link">&para;</a></h2>
+<h3 id="testing-steps">Testing Steps<a class="headerlink" href="#testing-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Open Storybook</strong>
+   <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>storybook
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Locate theme switcher</strong> (top-right corner)</p>
+</li>
+<li>
+<p><strong>Switch to dark mode</strong></p>
+</li>
+<li>Check colors are readable</li>
+<li>Check contrast is WCAG AA (4.5:1 minimum)</li>
+<li>Check no images are broken</li>
+<li>
+<p>Check no hardcoded colors show (they don't change)</p>
+</li>
+<li>
+<p><strong>Verify specific colors:</strong></p>
+</li>
+<li>Text is light on dark background</li>
+<li>Buttons have proper contrast</li>
+<li>Borders are visible</li>
+<li>Shadows are subtle but visible</li>
+</ol>
+<h3 id="automated-dark-mode-checking">Automated Dark Mode Checking<a class="headerlink" href="#automated-dark-mode-checking" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Color contrast checker (in Storybook)</span>
+<span class="c1"># See: src/components/Button/Button.stories.tsx</span>
+<span class="c1"># Look for: WithDarkMode story</span>
+</code></pre></div>
+<hr />
+<h2 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Token System Overview:</strong> <code>token-system.md</code></li>
+<li><strong>Component Decisions:</strong> <code>component-guide.md</code></li>
+<li><strong>Token Audit Prompt:</strong> <code>design-system-shadcn-tailwind/docs/token-audit-prompt.md</code></li>
+<li><strong>Animation System:</strong> <code>animation-system-complete.md</code> (proposed)</li>
+<li><strong>Dark Mode Guide:</strong> <code>dark-mode-guide.md</code> (proposed)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
