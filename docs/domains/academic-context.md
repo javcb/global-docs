@@ -1,4 +1,16 @@
-<!-- type: reference -->
+---
+title: "Academic (EMBA Program)"
+type: context
+domain: academic
+audience: self
+status: active
+quadrant: KK
+change-velocity: low
+review-by: 2026-10-15
+last-updated: 2026-04-15
+related: []
+standalone: false
+---
 
 # Domain Context: Academic (EMBA Program)
 

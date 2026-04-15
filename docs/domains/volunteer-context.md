@@ -1,4 +1,16 @@
-<!-- type: reference -->
+---
+title: "Volunteer (Organizational Operations)"
+type: context
+domain: volunteer
+audience: "collaborators, self"
+status: active
+quadrant: KK
+change-velocity: low
+review-by: 2026-10-15
+last-updated: 2026-04-15
+related: []
+standalone: false
+---
 
 # Domain Context: Volunteer (Organizational Operations)
 

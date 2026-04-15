@@ -1,4 +1,16 @@
-<!-- type: reference -->
+---
+title: "Marketing Advisory"
+type: context
+domain: marketing-advisory
+audience: collaborators
+status: active
+quadrant: KK
+change-velocity: low
+review-by: 2026-10-15
+last-updated: 2026-04-15
+related: []
+standalone: false
+---
 
 # Domain Context: Marketing Advisory
 

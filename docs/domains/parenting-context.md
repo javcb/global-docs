@@ -1,4 +1,16 @@
-<!-- type: reference -->
+---
+title: "Parenting (Educational Focus)"
+type: context
+domain: parenting
+audience: "self, family"
+status: active
+quadrant: KK
+change-velocity: low
+review-by: 2026-10-15
+last-updated: 2026-04-15
+related: []
+standalone: false
+---
 
 # Domain Context: Parenting (Educational Focus)
 

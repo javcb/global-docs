@@ -1,4 +1,16 @@
-<!-- type: reference -->
+---
+title: "Personal Processes"
+type: context
+domain: personal-processes
+audience: self
+status: active
+quadrant: KK
+change-velocity: low
+review-by: 2026-10-15
+last-updated: 2026-04-15
+related: []
+standalone: false
+---
 
 # Domain Context: Personal Processes
 

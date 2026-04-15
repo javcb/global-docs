@@ -1,4 +1,16 @@
-<!-- type: reference -->
+---
+title: "Business Advisory"
+type: context
+domain: business-advisory
+audience: collaborators
+status: active
+quadrant: KK
+change-velocity: low
+review-by: 2026-10-15
+last-updated: 2026-04-15
+related: []
+standalone: false
+---
 
 # Domain Context: Business Advisory
 
