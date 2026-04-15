@@ -3,14 +3,19 @@ title: "Academic (EMBA Program)"
 type: context
 domain: academic
 audience: self
-status: active
+status: deprecated
 quadrant: KK
 change-velocity: low
 review-by: 2026-10-15
 last-updated: 2026-04-15
+updated-by: personal-os/docs/domains/academic-context.md
 related: []
 standalone: false
 ---
+
+> **DEPRECATED** (2026-04-15): This domain context has been superseded by 
+> [personal-os/docs/domains/academic-context.md](../../../../../../personal-os/docs/domains/academic-context.md) as the canonical location.
+> This file is kept here for historical reference only.
 
 # Domain Context: Academic (EMBA Program)
 

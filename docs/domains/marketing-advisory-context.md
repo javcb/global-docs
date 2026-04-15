@@ -3,14 +3,19 @@ title: "Marketing Advisory"
 type: context
 domain: marketing-advisory
 audience: collaborators
-status: active
+status: deprecated
 quadrant: KK
 change-velocity: low
 review-by: 2026-10-15
 last-updated: 2026-04-15
+updated-by: personal-os/docs/domains/marketing-advisory-context.md
 related: []
 standalone: false
 ---
+
+> **DEPRECATED** (2026-04-15): This domain context has been superseded by 
+> [personal-os/docs/domains/marketing-advisory-context.md](../../../../../../personal-os/docs/domains/marketing-advisory-context.md) as the canonical location.
+> This file is kept here for historical reference only.
 
 # Domain Context: Marketing Advisory
 

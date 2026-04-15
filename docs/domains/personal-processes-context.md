@@ -3,14 +3,19 @@ title: "Personal Processes"
 type: context
 domain: personal-processes
 audience: self
-status: active
+status: deprecated
 quadrant: KK
 change-velocity: low
 review-by: 2026-10-15
 last-updated: 2026-04-15
+updated-by: personal-os/docs/domains/personal-processes-context.md
 related: []
 standalone: false
 ---
+
+> **DEPRECATED** (2026-04-15): This domain context has been superseded by 
+> [personal-os/docs/domains/personal-processes-context.md](../../../../../../personal-os/docs/domains/personal-processes-context.md) as the canonical location.
+> This file is kept here for historical reference only.
 
 # Domain Context: Personal Processes
 
